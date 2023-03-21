@@ -1,4 +1,6 @@
-- file: index
+format: jb-book
+root: index
+chapters:
 - file: overview
 - file: procedure
 - file: outline
