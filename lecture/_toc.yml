@@ -1,6 +1,9 @@
 format: jb-book
 root: index
 chapters:
+- file: test
+  sections:
+    - file: test/test_binder.ipynb
 - file: overview
 - file: procedure
 - file: outline

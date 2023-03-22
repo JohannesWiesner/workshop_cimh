@@ -6,3 +6,6 @@
 
 # build
 lecture/_build/*
+
+# ignore jupyter-notebook stuff
+**/.ipynb_checkpoints/
