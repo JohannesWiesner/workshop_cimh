@@ -41,7 +41,7 @@ launch_buttons:
   thebe                     : false  # Add a thebe button to pages (requires the repository to run on Binder)
 
 repository:
-  url                       : https://github.com/G0RELLA/gorella_base  # The URL to your book's repository
+  url                       : https://github.com/JohannesWiesner/workshop_cimh  # The URL to your book's repository
   path_to_book              : "lecture"  # A path to your book's folder, relative to the repository root.
   branch                    : master  # Which branch of the repository should be used when creating links
 
