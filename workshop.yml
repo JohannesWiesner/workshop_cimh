@@ -1,0 +1,7 @@
+dependencies:
+- jupyterlab
+- pandas
+- nipype
+- pip
+- pip:
+  - networkx < 3.0

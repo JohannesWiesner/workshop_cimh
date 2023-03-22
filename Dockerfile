@@ -49,53 +49,7 @@ RUN export TMPDIR="$(mktemp -d)" \
     && rm -rf /tmp/spm* \
     # Test
     && /opt/spm12-r7771/run_spm12.sh /opt/matlab-compiler-runtime-2010a/v713 quit
-ENV OS="Linux" \
-    PATH="/opt/freesurfer-7.1.1/bin:/opt/freesurfer-7.1.1/fsfast/bin:/opt/freesurfer-7.1.1/tktools:/opt/freesurfer-7.1.1/mni/bin:$PATH" \
-    FREESURFER_HOME="/opt/freesurfer-7.1.1" \
-    FREESURFER="/opt/freesurfer-7.1.1" \
-    SUBJECTS_DIR="/opt/freesurfer-7.1.1/subjects" \
-    LOCAL_DIR="/opt/freesurfer-7.1.1/local" \
-    FSFAST_HOME="/opt/freesurfer-7.1.1/fsfast" \
-    FMRI_ANALYSIS_DIR="/opt/freesurfer-7.1.1/fsfast" \
-    FUNCTIONALS_DIR="/opt/freesurfer-7.1.1/sessions" \
-    FS_OVERRIDE="0" \
-    FIX_VERTEX_AREA="" \
-    FSF_OUTPUT_FORMAT="nii.gz# mni env requirements" \
-    MINC_BIN_DIR="/opt/freesurfer-7.1.1/mni/bin" \
-    MINC_LIB_DIR="/opt/freesurfer-7.1.1/mni/lib" \
-    MNI_DIR="/opt/freesurfer-7.1.1/mni" \
-    MNI_DATAPATH="/opt/freesurfer-7.1.1/mni/data" \
-    MNI_PERL5LIB="/opt/freesurfer-7.1.1/mni/share/perl5" \
-    PERL5LIB="/opt/freesurfer-7.1.1/mni/share/perl5"
-RUN apt-get update -qq \
-    && apt-get install -y -q --no-install-recommends \
-           bc \
-           ca-certificates \
-           curl \
-           libgomp1 \
-           libxmu6 \
-           libxt6 \
-           perl \
-           tcsh \
-    && rm -rf /var/lib/apt/lists/* \
-    && echo "Downloading FreeSurfer ..." \
-    && mkdir -p /opt/freesurfer-7.1.1 \
-    && curl -fL https://surfer.nmr.mgh.harvard.edu/pub/dist/freesurfer/7.1.1/freesurfer-linux-centos6_x86_64-7.1.1.tar.gz \
-    | tar -xz -C /opt/freesurfer-7.1.1 --owner root --group root --no-same-owner --strip-components 1 \
-         --exclude='average/mult-comp-cor' \
-         --exclude='lib/cuda' \
-         --exclude='lib/qt' \
-         --exclude='subjects/V1_average' \
-         --exclude='subjects/bert' \
-         --exclude='subjects/cvs_avg35' \
-         --exclude='subjects/cvs_avg35_inMNI152' \
-         --exclude='subjects/fsaverage3' \
-         --exclude='subjects/fsaverage4' \
-         --exclude='subjects/fsaverage5' \
-         --exclude='subjects/fsaverage6' \
-         --exclude='subjects/fsaverage_sym' \
-         --exclude='trctrain'
-COPY ["test.yml", \
+COPY ["workshop.yml", \
       "/tmp/"]
 ENV CONDA_DIR="/opt/miniconda-latest" \
     PATH="/opt/miniconda-latest/bin:$PATH"
@@ -124,7 +78,7 @@ RUN apt-get update -qq \
     && conda config --system --set show_channel_urls true \
     # Enable `conda activate`
     && conda init bash \
-    && conda env create  --name csp --file /tmp/test.yml \
+    && conda env create  --name csp --file /tmp/workshop.yml \
     # Clean up
     && sync && conda clean --all --yes && sync \
     && rm -rf ~/.cache/pip/*
@@ -187,39 +141,10 @@ RUN printf '{ \
       } \
     }, \
     { \
-      "name": "env", \
-      "kwds": { \
-        "OS": "Linux", \
-        "PATH": "/opt/freesurfer-7.1.1/bin:/opt/freesurfer-7.1.1/fsfast/bin:/opt/freesurfer-7.1.1/tktools:/opt/freesurfer-7.1.1/mni/bin:$PATH", \
-        "FREESURFER_HOME": "/opt/freesurfer-7.1.1", \
-        "FREESURFER": "/opt/freesurfer-7.1.1", \
-        "SUBJECTS_DIR": "/opt/freesurfer-7.1.1/subjects", \
-        "LOCAL_DIR": "/opt/freesurfer-7.1.1/local", \
-        "FSFAST_HOME": "/opt/freesurfer-7.1.1/fsfast", \
-        "FMRI_ANALYSIS_DIR": "/opt/freesurfer-7.1.1/fsfast", \
-        "FUNCTIONALS_DIR": "/opt/freesurfer-7.1.1/sessions", \
-        "FS_OVERRIDE": "0", \
-        "FIX_VERTEX_AREA": "", \
-        "FSF_OUTPUT_FORMAT": "nii.gz# mni env requirements", \
-        "MINC_BIN_DIR": "/opt/freesurfer-7.1.1/mni/bin", \
-        "MINC_LIB_DIR": "/opt/freesurfer-7.1.1/mni/lib", \
-        "MNI_DIR": "/opt/freesurfer-7.1.1/mni", \
-        "MNI_DATAPATH": "/opt/freesurfer-7.1.1/mni/data", \
-        "MNI_PERL5LIB": "/opt/freesurfer-7.1.1/mni/share/perl5", \
-        "PERL5LIB": "/opt/freesurfer-7.1.1/mni/share/perl5" \
-      } \
-    }, \
-    { \
-      "name": "run", \
-      "kwds": { \
-        "command": "apt-get update -qq\\napt-get install -y -q --no-install-recommends \\\\\\n    bc \\\\\\n    ca-certificates \\\\\\n    curl \\\\\\n    libgomp1 \\\\\\n    libxmu6 \\\\\\n    libxt6 \\\\\\n    perl \\\\\\n    tcsh\\nrm -rf /var/lib/apt/lists/*\\necho \\"Downloading FreeSurfer ...\\"\\nmkdir -p /opt/freesurfer-7.1.1\\ncurl -fL https://surfer.nmr.mgh.harvard.edu/pub/dist/freesurfer/7.1.1/freesurfer-linux-centos6_x86_64-7.1.1.tar.gz \\\\\\n| tar -xz -C /opt/freesurfer-7.1.1 --owner root --group root --no-same-owner --strip-components 1 \\\\\\n  --exclude='"'"'average/mult-comp-cor'"'"' \\\\\\n  --exclude='"'"'lib/cuda'"'"' \\\\\\n  --exclude='"'"'lib/qt'"'"' \\\\\\n  --exclude='"'"'subjects/V1_average'"'"' \\\\\\n  --exclude='"'"'subjects/bert'"'"' \\\\\\n  --exclude='"'"'subjects/cvs_avg35'"'"' \\\\\\n  --exclude='"'"'subjects/cvs_avg35_inMNI152'"'"' \\\\\\n  --exclude='"'"'subjects/fsaverage3'"'"' \\\\\\n  --exclude='"'"'subjects/fsaverage4'"'"' \\\\\\n  --exclude='"'"'subjects/fsaverage5'"'"' \\\\\\n  --exclude='"'"'subjects/fsaverage6'"'"' \\\\\\n  --exclude='"'"'subjects/fsaverage_sym'"'"' \\\\\\n  --exclude='"'"'trctrain'"'"'" \
-      } \
-    }, \
-    { \
       "name": "copy", \
       "kwds": { \
         "source": [ \
-          "test.yml", \
+          "workshop.yml", \
           "/tmp/" \
         ], \
         "destination": "/tmp/" \
@@ -235,7 +160,7 @@ RUN printf '{ \
     { \
       "name": "run", \
       "kwds": { \
-        "command": "apt-get update -qq\\napt-get install -y -q --no-install-recommends \\\\\\n    bzip2 \\\\\\n    ca-certificates \\\\\\n    curl\\nrm -rf /var/lib/apt/lists/*\\n# Install dependencies.\\nexport PATH=\\"/opt/miniconda-latest/bin:$PATH\\"\\necho \\"Downloading Miniconda installer ...\\"\\nconda_installer=\\"/tmp/miniconda.sh\\"\\ncurl -fsSL -o \\"$conda_installer\\" https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh\\nbash \\"$conda_installer\\" -b -p /opt/miniconda-latest\\nrm -f \\"$conda_installer\\"\\nconda update -yq -nbase conda\\n# Prefer packages in conda-forge\\nconda config --system --prepend channels conda-forge\\n# Packages in lower-priority channels not considered if a package with the same\\n# name exists in a higher priority channel. Can dramatically speed up installations.\\n# Conda recommends this as a default\\n# https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-channels.html\\nconda config --set channel_priority strict\\nconda config --system --set auto_update_conda false\\nconda config --system --set show_channel_urls true\\n# Enable `conda activate`\\nconda init bash\\nconda env create  --name csp --file /tmp/test.yml\\n# Clean up\\nsync && conda clean --all --yes && sync\\nrm -rf ~/.cache/pip/*" \
+        "command": "apt-get update -qq\\napt-get install -y -q --no-install-recommends \\\\\\n    bzip2 \\\\\\n    ca-certificates \\\\\\n    curl\\nrm -rf /var/lib/apt/lists/*\\n# Install dependencies.\\nexport PATH=\\"/opt/miniconda-latest/bin:$PATH\\"\\necho \\"Downloading Miniconda installer ...\\"\\nconda_installer=\\"/tmp/miniconda.sh\\"\\ncurl -fsSL -o \\"$conda_installer\\" https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh\\nbash \\"$conda_installer\\" -b -p /opt/miniconda-latest\\nrm -f \\"$conda_installer\\"\\nconda update -yq -nbase conda\\n# Prefer packages in conda-forge\\nconda config --system --prepend channels conda-forge\\n# Packages in lower-priority channels not considered if a package with the same\\n# name exists in a higher priority channel. Can dramatically speed up installations.\\n# Conda recommends this as a default\\n# https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-channels.html\\nconda config --set channel_priority strict\\nconda config --system --set auto_update_conda false\\nconda config --system --set show_channel_urls true\\n# Enable `conda activate`\\nconda init bash\\nconda env create  --name csp --file /tmp/workshop.yml\\n# Clean up\\nsync && conda clean --all --yes && sync\\nrm -rf ~/.cache/pip/*" \
       } \
     }, \
     { \
