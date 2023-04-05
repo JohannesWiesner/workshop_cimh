@@ -1,9 +1,10 @@
 format: jb-book
 root: index
 chapters:
-- file: test
+- file: testing
   sections:
-    - file: test/test_binder.ipynb
+    - file: testing/test_jupyter_notebook.ipynb
+    - file: testing/test_markdown.md
 - file: overview
 - file: procedure
 - file: outline
