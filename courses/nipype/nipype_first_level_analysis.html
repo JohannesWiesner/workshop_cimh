@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Import all the packages you need and set up paths</title>
+    <title>First level analysis with Nipype + SPM</title>
   
   
   
@@ -65,6 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'courses/nipype/nipype_first_level_analysis';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Nipype" href="nipype_introduction.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -156,11 +157,20 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Courses</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Outline</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../outline/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../outline/setup.html">Setup for the Workshop</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Courses</span></p>
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../containerization/containerization.html">Containerization</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../containerization/containerization_1.html">Containerization Part 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../containerization/containerization_2.html">Containerization Part 2</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="nipype_introduction.html">Nipype</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">First level analysis with Nipype + SPM</a></li>
 </ul>
 </li>
 </ul>
@@ -394,7 +404,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Import all the packages you need and set up paths</h1>
+    <h1>First level analysis with Nipype + SPM</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -404,18 +414,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Import all the packages you need and set up paths</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#set-necessary-paths-not-necessary-when-using-a-dockerfile-generated-from-neurodocker">Set necessary paths (not necessary when using a Dockerfile generated from Neurodocker</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#get-the-current-working-directory-of-this-script">Get the current working directory of this script</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#download-the-dataset">Download the dataset</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-first-3d-image-of-the-time-series">Plot the first 3D image of the time series</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenate-the-images-to-one-4d-file">Concatenate the images to one 4D file</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-also-get-the-events">Let’s also get the events</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#use-nipype-spm-to-conduct-a-first-level-analysis">Use Nipype &amp; SPM to conduct a first level analysis</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#specify-everything-that-spm-needs">Specify everything that SPM needs</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#connect-all-nodes-to-a-workflow">Connect all nodes to a Workflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-necessary-paths-not-necessary-when-using-a-dockerfile-generated-from-neurodocker">Set necessary paths (not necessary when using a Dockerfile generated from Neurodocker</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-the-current-working-directory-of-this-script">Get the current working directory of this script</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-the-dataset">Download the dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-first-3d-image-of-the-time-series">Plot the first 3D image of the time series</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenate-the-images-to-one-4d-file">Concatenate the images to one 4D file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-also-get-the-events">Let’s also get the events</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-nipype-spm-to-conduct-a-first-level-analysis">Use Nipype &amp; SPM to conduct a first level analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specify-everything-that-spm-needs">Specify everything that SPM needs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connect-all-nodes-to-a-workflow">Connect all nodes to a Workflow</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -426,8 +434,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="import-all-the-packages-you-need-and-set-up-paths">
-<h1>Import all the packages you need and set up paths<a class="headerlink" href="#import-all-the-packages-you-need-and-set-up-paths" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="first-level-analysis-with-nipype-spm">
+<h1>First level analysis with Nipype + SPM<a class="headerlink" href="#first-level-analysis-with-nipype-spm" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nipype.interfaces</span> <span class="kn">import</span> <span class="n">spm</span>
@@ -441,9 +449,8 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="set-necessary-paths-not-necessary-when-using-a-dockerfile-generated-from-neurodocker">
-<h1>Set necessary paths (not necessary when using a Dockerfile generated from Neurodocker<a class="headerlink" href="#set-necessary-paths-not-necessary-when-using-a-dockerfile-generated-from-neurodocker" title="Permalink to this heading">#</a></h1>
+<section id="set-necessary-paths-not-necessary-when-using-a-dockerfile-generated-from-neurodocker">
+<h2>Set necessary paths (not necessary when using a Dockerfile generated from Neurodocker<a class="headerlink" href="#set-necessary-paths-not-necessary-when-using-a-dockerfile-generated-from-neurodocker" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#import nipype.interfaces.matlab as mlab</span>
@@ -472,8 +479,8 @@ stty: &#39;standard input&#39;: Inappropriate ioctl for device
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="get-the-current-working-directory-of-this-script">
-<h1>Get the current working directory of this script<a class="headerlink" href="#get-the-current-working-directory-of-this-script" title="Permalink to this heading">#</a></h1>
+<section id="get-the-current-working-directory-of-this-script">
+<h2>Get the current working directory of this script<a class="headerlink" href="#get-the-current-working-directory-of-this-script" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">working_directory</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
@@ -488,18 +495,30 @@ stty: &#39;standard input&#39;: Inappropriate ioctl for device
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="download-the-dataset">
-<h1>Download the dataset<a class="headerlink" href="#download-the-dataset" title="Permalink to this heading">#</a></h1>
+<section id="download-the-dataset">
+<h2>Download the dataset<a class="headerlink" href="#download-the-dataset" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">subject_data</span> <span class="o">=</span> <span class="n">fetch_spm_auditory</span><span class="p">(</span><span class="n">data_dir</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">working_directory</span><span class="p">,</span><span class="s1">&#39;data&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset created in /home/johannes.wiesner/work/repos/workshop_cimh/lecture/courses/nipype/data/spm_auditory
+
+Data absent, downloading...
+Downloading data from http://www.fil.ion.ucl.ac.uk/spm/download/data/MoAEpilot/MoAEpilot.zip ...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloaded 26263552 of 34212021 bytes (76.8%,    0.9s remaining) ...done. (4 seconds, 0 min)
+Extracting data from /home/johannes.wiesner/work/repos/workshop_cimh/lecture/courses/nipype/data/spm_auditory/sub001/MoAEpilot.zip..... done.
+</pre></div>
+</div>
+</div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="plot-the-first-3d-image-of-the-time-series">
-<h1>Plot the first 3D image of the time series<a class="headerlink" href="#plot-the-first-3d-image-of-the-time-series" title="Permalink to this heading">#</a></h1>
+<section id="plot-the-first-3d-image-of-the-time-series">
+<h2>Plot the first 3D image of the time series<a class="headerlink" href="#plot-the-first-3d-image-of-the-time-series" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_img</span><span class="p">(</span><span class="n">subject_data</span><span class="o">.</span><span class="n">func</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">colorbar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cbar_tick_format</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%i</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -508,7 +527,7 @@ stty: &#39;standard input&#39;: Inappropriate ioctl for device
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays._slicers.OrthoSlicer at 0x7f70bddb70a0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays._slicers.OrthoSlicer at 0x7fe4ef2195e0&gt;
 </pre></div>
 </div>
 <img alt="../../_images/d381ecb6106a057fd503be3fcc51da763c42db1b767e743b41983bf48b1fca30.png" src="../../_images/d381ecb6106a057fd503be3fcc51da763c42db1b767e743b41983bf48b1fca30.png" />
@@ -516,8 +535,8 @@ stty: &#39;standard input&#39;: Inappropriate ioctl for device
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="concatenate-the-images-to-one-4d-file">
-<h1>Concatenate the images to one 4D file<a class="headerlink" href="#concatenate-the-images-to-one-4d-file" title="Permalink to this heading">#</a></h1>
+<section id="concatenate-the-images-to-one-4d-file">
+<h2>Concatenate the images to one 4D file<a class="headerlink" href="#concatenate-the-images-to-one-4d-file" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fmri_img</span> <span class="o">=</span> <span class="n">concat_imgs</span><span class="p">(</span><span class="n">subject_data</span><span class="o">.</span><span class="n">func</span><span class="p">)</span>
@@ -528,8 +547,8 @@ stty: &#39;standard input&#39;: Inappropriate ioctl for device
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="let-s-also-get-the-events">
-<h1>Let’s also get the events<a class="headerlink" href="#let-s-also-get-the-events" title="Permalink to this heading">#</a></h1>
+<section id="let-s-also-get-the-events">
+<h2>Let’s also get the events<a class="headerlink" href="#let-s-also-get-the-events" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">events</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="n">subject_data</span><span class="p">[</span><span class="s2">&quot;events&quot;</span><span class="p">])</span>
@@ -683,8 +702,8 @@ stty: &#39;standard input&#39;: Inappropriate ioctl for device
 </div></div></div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="use-nipype-spm-to-conduct-a-first-level-analysis">
-<h1>Use Nipype &amp; SPM to conduct a first level analysis<a class="headerlink" href="#use-nipype-spm-to-conduct-a-first-level-analysis" title="Permalink to this heading">#</a></h1>
+<section id="use-nipype-spm-to-conduct-a-first-level-analysis">
+<h2>Use Nipype &amp; SPM to conduct a first level analysis<a class="headerlink" href="#use-nipype-spm-to-conduct-a-first-level-analysis" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nipype.interfaces.spm</span> <span class="kn">import</span> <span class="n">Level1Design</span><span class="p">,</span> <span class="n">EstimateModel</span><span class="p">,</span> <span class="n">EstimateContrast</span>
@@ -697,8 +716,8 @@ stty: &#39;standard input&#39;: Inappropriate ioctl for device
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="specify-everything-that-spm-needs">
-<h1>Specify everything that SPM needs<a class="headerlink" href="#specify-everything-that-spm-needs" title="Permalink to this heading">#</a></h1>
+<section id="specify-everything-that-spm-needs">
+<h2>Specify everything that SPM needs<a class="headerlink" href="#specify-everything-that-spm-needs" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_specifier</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">SpecifySPMModel</span><span class="p">(</span><span class="n">concatenate_runs</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
@@ -732,8 +751,8 @@ stty: &#39;standard input&#39;: Inappropriate ioctl for device
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="connect-all-nodes-to-a-workflow">
-<h1>Connect all nodes to a Workflow<a class="headerlink" href="#connect-all-nodes-to-a-workflow" title="Permalink to this heading">#</a></h1>
+<section id="connect-all-nodes-to-a-workflow">
+<h2>Connect all nodes to a Workflow<a class="headerlink" href="#connect-all-nodes-to-a-workflow" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define workflow</span>
@@ -748,63 +767,55 @@ stty: &#39;standard input&#39;: Inappropriate ioctl for device
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230417-14:08:49,34 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230417-17:00:23,150 nipype.workflow INFO:
 	 Workflow first_level_analysis settings: [&#39;check&#39;, &#39;execution&#39;, &#39;logging&#39;, &#39;monitoring&#39;]
-230417-14:08:49,37 nipype.workflow INFO:
+230417-17:00:23,152 nipype.workflow INFO:
 	 Running serially.
-230417-14:08:49,38 nipype.workflow INFO:
+230417-17:00:23,153 nipype.workflow INFO:
 	 [Node] Setting-up &quot;first_level_analysis.model_specifier&quot; in &quot;/home/johannes.wiesner/work/repos/workshop_cimh/lecture/courses/nipype/first_level_analysis/model_specifier&quot;.
-230417-14:08:49,38 nipype.workflow INFO:
-	 [Node] Outdated cache found for &quot;first_level_analysis.model_specifier&quot;.
-230417-14:08:49,40 nipype.workflow INFO:
+230417-17:00:23,155 nipype.workflow INFO:
 	 [Node] Executing &quot;model_specifier&quot; &lt;nipype.algorithms.modelgen.SpecifySPMModel&gt;
-230417-14:08:49,41 nipype.workflow INFO:
-	 [Node] Finished &quot;model_specifier&quot;, elapsed time 0.000574s.
-230417-14:08:49,42 nipype.workflow INFO:
+230417-17:00:23,156 nipype.workflow INFO:
+	 [Node] Finished &quot;model_specifier&quot;, elapsed time 0.000568s.
+230417-17:00:23,158 nipype.workflow INFO:
 	 [Node] Setting-up &quot;first_level_analysis.first_level_design&quot; in &quot;/home/johannes.wiesner/work/repos/workshop_cimh/lecture/courses/nipype/first_level_analysis/first_level_design&quot;.
-230417-14:08:49,44 nipype.workflow INFO:
-	 [Node] Outdated cache found for &quot;first_level_analysis.first_level_design&quot;.
-230417-14:08:49,46 nipype.workflow INFO:
+230417-17:00:23,160 nipype.workflow INFO:
 	 [Node] Executing &quot;first_level_design&quot; &lt;nipype.interfaces.spm.model.Level1Design&gt;
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stty: &#39;standard input&#39;: Inappropriate ioctl for device
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230417-14:09:06,46 nipype.workflow INFO:
-	 [Node] Finished &quot;first_level_design&quot;, elapsed time 10.82743s.
-230417-14:09:06,49 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230417-17:00:41,13 nipype.workflow INFO:
+	 [Node] Finished &quot;first_level_design&quot;, elapsed time 11.468289s.
+230417-17:00:41,16 nipype.workflow INFO:
 	 [Node] Setting-up &quot;first_level_analysis.first_level_estimator&quot; in &quot;/home/johannes.wiesner/work/repos/workshop_cimh/lecture/courses/nipype/first_level_analysis/first_level_estimator&quot;.
-230417-14:09:06,50 nipype.workflow INFO:
-	 [Node] Outdated cache found for &quot;first_level_analysis.first_level_estimator&quot;.
-230417-14:09:06,55 nipype.workflow INFO:
+230417-17:00:41,19 nipype.workflow INFO:
 	 [Node] Executing &quot;first_level_estimator&quot; &lt;nipype.interfaces.spm.model.EstimateModel&gt;
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stty: &#39;standard input&#39;: Inappropriate ioctl for device
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230417-14:09:20,642 nipype.workflow INFO:
-	 [Node] Finished &quot;first_level_estimator&quot;, elapsed time 14.5861s.
-230417-14:09:20,645 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230417-17:00:55,827 nipype.workflow INFO:
+	 [Node] Finished &quot;first_level_estimator&quot;, elapsed time 14.806575s.
+230417-17:00:55,829 nipype.workflow INFO:
 	 [Node] Setting-up &quot;first_level_analysis.first_level_contrasts&quot; in &quot;/home/johannes.wiesner/work/repos/workshop_cimh/lecture/courses/nipype/first_level_analysis/first_level_contrasts&quot;.
-230417-14:09:20,647 nipype.workflow INFO:
-	 [Node] Outdated cache found for &quot;first_level_analysis.first_level_contrasts&quot;.
-230417-14:09:20,652 nipype.workflow INFO:
+230417-17:00:55,833 nipype.workflow INFO:
 	 [Node] Executing &quot;first_level_contrasts&quot; &lt;nipype.interfaces.spm.model.EstimateContrast&gt;
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stty: &#39;standard input&#39;: Inappropriate ioctl for device
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230417-14:09:31,830 nipype.workflow INFO:
-	 [Node] Finished &quot;first_level_contrasts&quot;, elapsed time 11.176719s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230417-17:01:06,981 nipype.workflow INFO:
+	 [Node] Finished &quot;first_level_contrasts&quot;, elapsed time 11.147643s.
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stty: &#39;standard input&#39;: Inappropriate ioctl for device
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;networkx.classes.digraph.DiGraph at 0x7f70be2123d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;networkx.classes.digraph.DiGraph at 0x7fe4ed1b9b80&gt;
 </pre></div>
 </div>
 </div>
@@ -817,7 +828,7 @@ stty: &#39;standard input&#39;: Inappropriate ioctl for device
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230417-14:09:47,481 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230417-17:01:07,110 nipype.workflow INFO:
 	 Generated workflow graph: ./first_level_analysis/graph.png (graph2use=hierarchical, simple_form=True).
 </pre></div>
 </div>
@@ -862,12 +873,13 @@ stty: &#39;standard input&#39;: Inappropriate ioctl for device
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays._slicers.ZSlicer at 0x7f70bdaf36d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays._slicers.ZSlicer at 0x7fe4fcad17f0&gt;
 </pre></div>
 </div>
 <img alt="../../_images/9d0fcae23b0e28705b71704573afcc2431abdec05a3622c615cd0ad85c716228.png" src="../../_images/9d0fcae23b0e28705b71704573afcc2431abdec05a3622c615cd0ad85c716228.png" />
 </div>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -901,6 +913,15 @@ stty: &#39;standard input&#39;: Inappropriate ioctl for device
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="nipype_introduction.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Nipype</p>
+      </div>
+    </a>
 </div></div>
   
 </div>
@@ -919,18 +940,16 @@ stty: &#39;standard input&#39;: Inappropriate ioctl for device
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Import all the packages you need and set up paths</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#set-necessary-paths-not-necessary-when-using-a-dockerfile-generated-from-neurodocker">Set necessary paths (not necessary when using a Dockerfile generated from Neurodocker</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#get-the-current-working-directory-of-this-script">Get the current working directory of this script</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#download-the-dataset">Download the dataset</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-first-3d-image-of-the-time-series">Plot the first 3D image of the time series</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenate-the-images-to-one-4d-file">Concatenate the images to one 4D file</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-also-get-the-events">Let’s also get the events</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#use-nipype-spm-to-conduct-a-first-level-analysis">Use Nipype &amp; SPM to conduct a first level analysis</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#specify-everything-that-spm-needs">Specify everything that SPM needs</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#connect-all-nodes-to-a-workflow">Connect all nodes to a Workflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-necessary-paths-not-necessary-when-using-a-dockerfile-generated-from-neurodocker">Set necessary paths (not necessary when using a Dockerfile generated from Neurodocker</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-the-current-working-directory-of-this-script">Get the current working directory of this script</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-the-dataset">Download the dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-first-3d-image-of-the-time-series">Plot the first 3D image of the time series</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenate-the-images-to-one-4d-file">Concatenate the images to one 4D file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-also-get-the-events">Let’s also get the events</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-nipype-spm-to-conduct-a-first-level-analysis">Use Nipype &amp; SPM to conduct a first level analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specify-everything-that-spm-needs">Specify everything that SPM needs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connect-all-nodes-to-a-workflow">Connect all nodes to a Workflow</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>
