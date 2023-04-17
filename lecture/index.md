@@ -7,7 +7,7 @@ titlesonly: true
 ---
 ```
 
-![gorella logo](static/gorella_logo.png)
+![oso logo](static/oso_logo.jpg)
 
 ```{admonition} About the content of this Jupyter Book
 :class: warning
