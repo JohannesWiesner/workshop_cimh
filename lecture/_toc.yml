@@ -6,13 +6,16 @@ parts:
     - file: welcome/oso
     - file: welcome/cimh_ecrs
     - file: welcome/questionnaires
+  - caption: Outline
+    chapters:
+    - file: outline/overview
+    - file: outline/setup
   - caption: Courses
     chapters:
     - file: courses/containerization/containerization
       sections:
       - file: courses/containerization/containerization_1
       - file: courses/containerization/containerization_2
-    - file: courses/nipype/nipype
+    - file: courses/nipype/nipype_introduction
       sections:
-      - file: courses/nipype/nipype_introduction
       - file: courses/nipype/nipype_first_level_analysis
