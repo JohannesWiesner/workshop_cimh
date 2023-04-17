@@ -1,4 +1,4 @@
-![logo](lecture/static/oso.png)
+![logo](lecture/static/oso_logo.jpg)
 
 ## "What's in this repository?"
 
@@ -10,4 +10,4 @@ This repository was created using the [G0RELLA template](https://github.com/G0RE
 
 ## "I have some questions..."
 
-[Open an issue]() on this repository and someone will try and get back to you as soon as possible!
+[Open an issue](https://github.com/JohannesWiesner/workshop_cimh/issues) on this repository and someone will try and get back to you as soon as possible!
