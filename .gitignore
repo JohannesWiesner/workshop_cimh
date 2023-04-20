@@ -9,3 +9,10 @@ lecture/_build/*
 
 # ignore jupyter-notebook stuff
 **/.ipynb_checkpoints/
+
+# ignore data and output folders
+output/
+data/
+
+# course specific stuff
+first_level_analysis/
