@@ -19,3 +19,4 @@ parts:
     - file: courses/nipype/nipype_introduction
       sections:
       - file: courses/nipype/nipype_first_level_analysis
+      - file: courses/nipype/nipype_handson

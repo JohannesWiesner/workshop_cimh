@@ -5,7 +5,7 @@
 .idea/
 
 # build
-lecture/_build/*
+workshop/_build/*
 
 # ignore jupyter-notebook stuff
 **/.ipynb_checkpoints/
