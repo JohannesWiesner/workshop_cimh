@@ -14,5 +14,12 @@ workshop/_build/*
 output/
 data/
 
+# nipype specific stuff
+## ignore matlab scripts
+pyscript.m
+## ignore nipype-crash files
+crash-*.pklz
+
 # course specific stuff
 first_level_analysis/
+preprocessing_wf/
