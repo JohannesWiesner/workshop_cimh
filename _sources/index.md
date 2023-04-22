@@ -16,7 +16,7 @@ Hello everyone and welcome to our CIMH Workshop page!
 ## I've got a question!
 
 In case you have any questions or difficulties, please don’t hesitate to get in touch with
-us. A great way to do this is to [open an issue](https://github.com/JohannesWiesner/workshop_cimh/issues) on the
+us. A great way to do this is to [open an issue](https://github.com/JohannesWiesner/workshop_cimh/issues) on GitHub.
 We would also highly appreciate and value every feedback or idea or you
 might have.
 
