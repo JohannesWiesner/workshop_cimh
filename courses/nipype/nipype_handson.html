@@ -160,7 +160,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Outline</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../outline/overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../outline/setup.html">Setup for the Workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../outline/setup.html">Setup for the workshop</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Courses</span></p>
 <ul class="current nav bd-sidenav">
@@ -489,7 +489,7 @@ document.write(`
 <span class="n">segment</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">tissues</span> <span class="o">=</span> <span class="n">tissues</span>
 
 <span class="c1"># Warp functional and structural data to SPM’s T1 template using Normalize.</span>
-<span class="n">normalize</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">interface</span><span class="o">=</span><span class="n">spm</span><span class="o">.</span><span class="n">Normalize12</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;normalize_func&quot;</span><span class="p">)</span>
+<span class="n">normalize</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">interface</span><span class="o">=</span><span class="n">spm</span><span class="o">.</span><span class="n">Normalize12</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;normalize&quot;</span><span class="p">)</span>
 
 <span class="c1"># Smooth the functional data using Smooth</span>
 <span class="n">smooth</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">interface</span><span class="o">=</span><span class="n">spm</span><span class="o">.</span><span class="n">Smooth</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;smooth&quot;</span><span class="p">)</span>
@@ -515,283 +515,36 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230421-17:45:18,93 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230421-17:52:24,828 nipype.workflow INFO:
 	 Workflow preprocessing_wf settings: [&#39;check&#39;, &#39;execution&#39;, &#39;logging&#39;, &#39;monitoring&#39;]
-230421-17:45:18,97 nipype.workflow INFO:
+230421-17:52:24,831 nipype.workflow INFO:
 	 Running serially.
-230421-17:45:18,97 nipype.workflow INFO:
+230421-17:52:24,831 nipype.workflow INFO:
 	 [Node] Setting-up &quot;preprocessing_wf.realign&quot; in &quot;/home/johannes.wiesner/work/repos/workshop_cimh/workshop/courses/nipype/preprocessing_wf/realign&quot;.
-230421-17:45:18,99 nipype.workflow INFO:
+230421-17:52:24,833 nipype.workflow INFO:
 	 [Node] Cached &quot;preprocessing_wf.realign&quot; - collecting precomputed outputs
-230421-17:45:18,99 nipype.workflow INFO:
+230421-17:52:24,833 nipype.workflow INFO:
 	 [Node] &quot;preprocessing_wf.realign&quot; found cached.
-230421-17:45:18,99 nipype.workflow INFO:
+230421-17:52:24,833 nipype.workflow INFO:
 	 [Node] Setting-up &quot;preprocessing_wf.coregister&quot; in &quot;/home/johannes.wiesner/work/repos/workshop_cimh/workshop/courses/nipype/preprocessing_wf/coregister&quot;.
-230421-17:45:18,101 nipype.workflow INFO:
+230421-17:52:24,835 nipype.workflow INFO:
 	 [Node] Cached &quot;preprocessing_wf.coregister&quot; - collecting precomputed outputs
-230421-17:45:18,101 nipype.workflow INFO:
+230421-17:52:24,835 nipype.workflow INFO:
 	 [Node] &quot;preprocessing_wf.coregister&quot; found cached.
-230421-17:45:18,102 nipype.workflow INFO:
+230421-17:52:24,835 nipype.workflow INFO:
 	 [Node] Setting-up &quot;preprocessing_wf.segment&quot; in &quot;/home/johannes.wiesner/work/repos/workshop_cimh/workshop/courses/nipype/preprocessing_wf/segment&quot;.
-230421-17:45:18,103 nipype.workflow INFO:
+230421-17:52:24,836 nipype.workflow INFO:
 	 [Node] Outdated cache found for &quot;preprocessing_wf.segment&quot;.
-230421-17:45:18,108 nipype.workflow INFO:
+230421-17:52:24,841 nipype.workflow INFO:
 	 [Node] Executing &quot;segment&quot; &lt;nipype.interfaces.spm.preprocess.NewSegment&gt;
+230421-17:53:12,556 nipype.workflow INFO:
+	 [Node] Finished &quot;segment&quot;, elapsed time 47.715084s.
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stty: &#39;standard input&#39;: Inappropriate ioctl for device
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230421-17:46:12,298 nipype.workflow INFO:
-	 [Node] Finished &quot;segment&quot;, elapsed time 47.884242s.
-230421-17:46:12,301 nipype.workflow INFO:
-	 [Node] Setting-up &quot;preprocessing_wf.normalize_func&quot; in &quot;/home/johannes.wiesner/work/repos/workshop_cimh/workshop/courses/nipype/preprocessing_wf/normalize_func&quot;.
-230421-17:46:12,303 nipype.workflow INFO:
-	 [Node] Executing &quot;normalize_func&quot; &lt;nipype.interfaces.spm.preprocess.Normalize12&gt;
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stty: &#39;standard input&#39;: Inappropriate ioctl for device
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230421-17:46:22,662 nipype.workflow INFO:
-	 [Node] Finished &quot;normalize_func&quot;, elapsed time 10.357802s.
-230421-17:46:22,662 nipype.workflow WARNING:
-	 Storing result file without outputs
-230421-17:46:22,663 nipype.workflow WARNING:
-	 [Node] Error on &quot;preprocessing_wf.normalize_func&quot; (/home/johannes.wiesner/work/repos/workshop_cimh/workshop/courses/nipype/preprocessing_wf/normalize_func)
-230421-17:46:22,664 nipype.workflow ERROR:
-	 Node normalize_func failed to run on host pf41jell.zi.local.
-230421-17:46:22,664 nipype.workflow ERROR:
-	 Saving crash info to /home/johannes.wiesner/work/repos/workshop_cimh/workshop/courses/nipype/crash-20230421-174622-johannes.wiesner-normalize_func-2010ce03-47b4-4e7a-ac27-35da0cc8faa4.pklz
-Traceback (most recent call last):
-  File &quot;/home/johannes.wiesner/.conda/envs/csp_wiesner_johannes/lib/python3.9/site-packages/nipype/pipeline/plugins/linear.py&quot;, line 47, in run
-    node.run(updatehash=updatehash)
-  File &quot;/home/johannes.wiesner/.conda/envs/csp_wiesner_johannes/lib/python3.9/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 527, in run
-    result = self._run_interface(execute=True)
-  File &quot;/home/johannes.wiesner/.conda/envs/csp_wiesner_johannes/lib/python3.9/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 645, in _run_interface
-    return self._run_command(execute)
-  File &quot;/home/johannes.wiesner/.conda/envs/csp_wiesner_johannes/lib/python3.9/site-packages/nipype/pipeline/engine/nodes.py&quot;, line 771, in _run_command
-    raise NodeExecutionError(msg)
-nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node normalize_func.
-
-Traceback:
-	Traceback (most recent call last):
-	  File &quot;/home/johannes.wiesner/.conda/envs/csp_wiesner_johannes/lib/python3.9/site-packages/nipype/interfaces/base/core.py&quot;, line 398, in run
-	    runtime = self._run_interface(runtime)
-	  File &quot;/home/johannes.wiesner/.conda/envs/csp_wiesner_johannes/lib/python3.9/site-packages/nipype/interfaces/spm/base.py&quot;, line 387, in _run_interface
-	    results = self.mlab.run()
-	  File &quot;/home/johannes.wiesner/.conda/envs/csp_wiesner_johannes/lib/python3.9/site-packages/nipype/interfaces/base/core.py&quot;, line 398, in run
-	    runtime = self._run_interface(runtime)
-	  File &quot;/home/johannes.wiesner/.conda/envs/csp_wiesner_johannes/lib/python3.9/site-packages/nipype/interfaces/matlab.py&quot;, line 164, in _run_interface
-	    self.raise_exception(runtime)
-	  File &quot;/home/johannes.wiesner/.conda/envs/csp_wiesner_johannes/lib/python3.9/site-packages/nipype/interfaces/base/core.py&quot;, line 686, in raise_exception
-	    raise RuntimeError(
-	RuntimeError: Command:
-	/opt/matlab/R2022a/bin/matlab -nodesktop -nosplash -singleCompThread -r &quot;addpath(&#39;/home/johannes.wiesner/work/repos/workshop_cimh/workshop/courses/nipype/preprocessing_wf/normalize_func&#39;);pyscript_normalize12;exit&quot;
-	Standard output:
-	MATLAB is selecting SOFTWARE OPENGL rendering.
-
-	                            &lt; M A T L A B (R) &gt;
-	                  Copyright 1984-2022 The MathWorks, Inc.
-	                  R2022a (9.12.0.1884302) 64-bit (glnxa64)
-	                             February 16, 2022
-
- 
-	To get started, type doc.
-	For product information, visit www.mathworks.com.
- 
-	    ----------------------------------------------------
-		Your license will expire in 9 days.
-		Please contact your system administrator or
-		MathWorks to renew this license.
-	    ----------------------------------------------------
-	Executing pyscript_normalize12 at 21-Apr-2023 17:46:15:
-	Executing pyscript_normalize12 at 21-Apr-2023 17:46:15:
-	-----------------------------------------------------------------------------------------------------
-	MATLAB Version: 9.12.0.1884302 (R2022a)
-	MATLAB License Number: 886879
-	Operating System: Linux 5.15.0-52-generic #58-Ubuntu SMP Thu Oct 13 08:03:55 UTC 2022 x86_64
-	Java Version: Java 1.8.0_202-b08 with Oracle Corporation Java HotSpot(TM) 64-Bit Server VM mixed mode
-	-----------------------------------------------------------------------------------------------------
-	MATLAB                                                Version 9.12        (R2022a)
-	Automated Driving Toolbox                             Version 3.5         (R2022a)
-	Bioinformatics Toolbox                                Version 4.16        (R2022a)
-	Computer Vision Toolbox                               Version 10.2        (R2022a)
-	Curve Fitting Toolbox                                 Version 3.7         (R2022a)
-	DSP System Toolbox                                    Version 9.14        (R2022a)
-	Econometrics Toolbox                                  Version 6.0         (R2022a)
-	Image Processing Toolbox                              Version 11.5        (R2022a)
-	Instrument Control Toolbox                            Version 4.6         (R2022a)
-	MATLAB Compiler                                       Version 8.4         (R2022a)
-	Optimization Toolbox                                  Version 9.3         (R2022a)
-	Parallel Computing Toolbox                            Version 7.6         (R2022a)
-	Signal Processing Toolbox                             Version 9.0         (R2022a)
-	Statistical Parametric Mapping                        Version 7771        (SPM12) 
-	Statistics and Machine Learning Toolbox               Version 12.3        (R2022a)
-	Symbolic Math Toolbox                                 Version 9.1         (R2022a)
-	Wavelet Toolbox                                       Version 6.1         (R2022a)
-	SPM version: SPM12 Release: 7771
-	SPM path: /opt/matlab/toolboxes/spm12/spm.m
-	Item subj: No field(s) named
-	def
-	Standard error:
-	MATLAB code threw an exception:
-	No executable modules, but still unresolved dependencies or incomplete module inputs.
-	File:/opt/matlab/toolboxes/spm12/spm_jobman.m
-	Name:/opt/matlab/toolboxes/spm12/spm_jobman.m
-	Line:47
-	File:home/johannes.wiesner/work/repos/workshop_cimh/workshop/courses/nipype/preprocessing_wf/normalize_func/pyscript_normalize12.m
-	Name:fill_run_job
-	Line:115
-	File:pm_jobman
-	Name:pyscript_normalize12
-	Line:472
-	File:÷
-	Name:
-
-	Line:
-	Return code: 0
-
-
-230421-17:46:22,665 nipype.workflow INFO:
-	 ***********************************
-230421-17:46:22,666 nipype.workflow ERROR:
-	 could not run node: preprocessing_wf.normalize_func
-230421-17:46:22,666 nipype.workflow INFO:
-	 crashfile: /home/johannes.wiesner/work/repos/workshop_cimh/workshop/courses/nipype/crash-20230421-174622-johannes.wiesner-normalize_func-2010ce03-47b4-4e7a-ac27-35da0cc8faa4.pklz
-230421-17:46:22,666 nipype.workflow INFO:
-	 ***********************************
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stty: &#39;standard input&#39;: Inappropriate ioctl for device
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
-NodeExecutionError                        Traceback (most recent call last)
-Cell In[70], line 5
-      3 preprocessing_wf.connect(coregister,&#39;coregistered_source&#39;,segment,&#39;channel_files&#39;)
-      4 preprocessing_wf.connect(segment,&#39;forward_deformation_field&#39;,normalize,&#39;deformation_file&#39;)
-----&gt; 5 preprocessing_wf.run()
-
-File ~/.conda/envs/csp_wiesner_johannes/lib/python3.9/site-packages/nipype/pipeline/engine/workflows.py:638, in Workflow.run(self, plugin, plugin_args, updatehash)
-    636 if str2bool(self.config[&quot;execution&quot;][&quot;create_report&quot;]):
-    637     self._write_report_info(self.base_dir, self.name, execgraph)
---&gt; 638 runner.run(execgraph, updatehash=updatehash, config=self.config)
-    639 datestr = datetime.utcnow().strftime(&quot;%Y%m%dT%H%M%S&quot;)
-    640 if str2bool(self.config[&quot;execution&quot;][&quot;write_provenance&quot;]):
-
-File ~/.conda/envs/csp_wiesner_johannes/lib/python3.9/site-packages/nipype/pipeline/plugins/linear.py:82, in LinearPlugin.run(self, graph, config, updatehash)
-     76 if len(errors) &gt; 1:
-     77     error, cause = (
-     78         RuntimeError(f&quot;{len(errors)} raised. Re-raising first.&quot;),
-     79         error,
-     80     )
----&gt; 82 raise error from cause
-
-File ~/.conda/envs/csp_wiesner_johannes/lib/python3.9/site-packages/nipype/pipeline/plugins/linear.py:47, in LinearPlugin.run(self, graph, config, updatehash)
-     45     if self._status_callback:
-     46         self._status_callback(node, &quot;start&quot;)
----&gt; 47     node.run(updatehash=updatehash)
-     48 except Exception as exc:
-     49     endstatus = &quot;exception&quot;
-
-File ~/.conda/envs/csp_wiesner_johannes/lib/python3.9/site-packages/nipype/pipeline/engine/nodes.py:527, in Node.run(self, updatehash)
-    524 savepkl(op.join(outdir, &quot;_inputs.pklz&quot;), self.inputs.get_traitsfree())
-    526 try:
---&gt; 527     result = self._run_interface(execute=True)
-    528 except Exception:
-    529     logger.warning(&#39;[Node] Error on &quot;%s&quot; (%s)&#39;, self.fullname, outdir)
-
-File ~/.conda/envs/csp_wiesner_johannes/lib/python3.9/site-packages/nipype/pipeline/engine/nodes.py:645, in Node._run_interface(self, execute, updatehash)
-    643     self._update_hash()
-    644     return self._load_results()
---&gt; 645 return self._run_command(execute)
-
-File ~/.conda/envs/csp_wiesner_johannes/lib/python3.9/site-packages/nipype/pipeline/engine/nodes.py:771, in Node._run_command(self, execute, copyfiles)
-    769     # Always pass along the traceback
-    770     msg += f&quot;Traceback:\n{_tab(runtime.traceback)}&quot;
---&gt; 771     raise NodeExecutionError(msg)
-    773 return result
-
-NodeExecutionError: Exception raised while executing Node normalize_func.
-
-Traceback:
-	Traceback (most recent call last):
-	  File &quot;/home/johannes.wiesner/.conda/envs/csp_wiesner_johannes/lib/python3.9/site-packages/nipype/interfaces/base/core.py&quot;, line 398, in run
-	    runtime = self._run_interface(runtime)
-	  File &quot;/home/johannes.wiesner/.conda/envs/csp_wiesner_johannes/lib/python3.9/site-packages/nipype/interfaces/spm/base.py&quot;, line 387, in _run_interface
-	    results = self.mlab.run()
-	  File &quot;/home/johannes.wiesner/.conda/envs/csp_wiesner_johannes/lib/python3.9/site-packages/nipype/interfaces/base/core.py&quot;, line 398, in run
-	    runtime = self._run_interface(runtime)
-	  File &quot;/home/johannes.wiesner/.conda/envs/csp_wiesner_johannes/lib/python3.9/site-packages/nipype/interfaces/matlab.py&quot;, line 164, in _run_interface
-	    self.raise_exception(runtime)
-	  File &quot;/home/johannes.wiesner/.conda/envs/csp_wiesner_johannes/lib/python3.9/site-packages/nipype/interfaces/base/core.py&quot;, line 686, in raise_exception
-	    raise RuntimeError(
-	RuntimeError: Command:
-	/opt/matlab/R2022a/bin/matlab -nodesktop -nosplash -singleCompThread -r &quot;addpath(&#39;/home/johannes.wiesner/work/repos/workshop_cimh/workshop/courses/nipype/preprocessing_wf/normalize_func&#39;);pyscript_normalize12;exit&quot;
-	Standard output:
-	MATLAB is selecting SOFTWARE OPENGL rendering.
-
-	                            &lt; M A T L A B (R) &gt;
-	                  Copyright 1984-2022 The MathWorks, Inc.
-	                  R2022a (9.12.0.1884302) 64-bit (glnxa64)
-	                             February 16, 2022
-
- 
-	To get started, type doc.
-	For product information, visit www.mathworks.com.
- 
-	    ----------------------------------------------------
-		Your license will expire in 9 days.
-		Please contact your system administrator or
-		MathWorks to renew this license.
-	    ----------------------------------------------------
-	Executing pyscript_normalize12 at 21-Apr-2023 17:46:15:
-	Executing pyscript_normalize12 at 21-Apr-2023 17:46:15:
-	-----------------------------------------------------------------------------------------------------
-	MATLAB Version: 9.12.0.1884302 (R2022a)
-	MATLAB License Number: 886879
-	Operating System: Linux 5.15.0-52-generic #58-Ubuntu SMP Thu Oct 13 08:03:55 UTC 2022 x86_64
-	Java Version: Java 1.8.0_202-b08 with Oracle Corporation Java HotSpot(TM) 64-Bit Server VM mixed mode
-	-----------------------------------------------------------------------------------------------------
-	MATLAB                                                Version 9.12        (R2022a)
-	Automated Driving Toolbox                             Version 3.5         (R2022a)
-	Bioinformatics Toolbox                                Version 4.16        (R2022a)
-	Computer Vision Toolbox                               Version 10.2        (R2022a)
-	Curve Fitting Toolbox                                 Version 3.7         (R2022a)
-	DSP System Toolbox                                    Version 9.14        (R2022a)
-	Econometrics Toolbox                                  Version 6.0         (R2022a)
-	Image Processing Toolbox                              Version 11.5        (R2022a)
-	Instrument Control Toolbox                            Version 4.6         (R2022a)
-	MATLAB Compiler                                       Version 8.4         (R2022a)
-	Optimization Toolbox                                  Version 9.3         (R2022a)
-	Parallel Computing Toolbox                            Version 7.6         (R2022a)
-	Signal Processing Toolbox                             Version 9.0         (R2022a)
-	Statistical Parametric Mapping                        Version 7771        (SPM12) 
-	Statistics and Machine Learning Toolbox               Version 12.3        (R2022a)
-	Symbolic Math Toolbox                                 Version 9.1         (R2022a)
-	Wavelet Toolbox                                       Version 6.1         (R2022a)
-	SPM version: SPM12 Release: 7771
-	SPM path: /opt/matlab/toolboxes/spm12/spm.m
-	Item subj: No field(s) named
-	def
-	Standard error:
-	MATLAB code threw an exception:
-	No executable modules, but still unresolved dependencies or incomplete module inputs.
-	File:/opt/matlab/toolboxes/spm12/spm_jobman.m
-	Name:/opt/matlab/toolboxes/spm12/spm_jobman.m
-	Line:47
-	File:home/johannes.wiesner/work/repos/workshop_cimh/workshop/courses/nipype/preprocessing_wf/normalize_func/pyscript_normalize12.m
-	Name:fill_run_job
-	Line:115
-	File:pm_jobman
-	Name:pyscript_normalize12
-	Line:472
-	File:÷
-	Name:
-
-	Line:
-	Return code: 0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;networkx.classes.digraph.DiGraph at 0x7f4c8ab3a850&gt;
 </pre></div>
 </div>
 </div>
