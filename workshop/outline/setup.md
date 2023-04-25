@@ -25,30 +25,31 @@ If you foresee any of these being a problem please reach out to one of the instr
 
 To get the most out of our course, we ask that you arrive with the following software already installed:
 
-1. A modern browser
-2. `Python 3` via `Miniconda`
-3. A command-line shell: `Bash`: This is needed to download content for this workshop and to later check your installation.
-4. A virtualization system: `Docker`
-5. A remote-capable text editor: `VSCode`.  VSCode has the ability to use docker container as environments.
+| Software           | Why do I need this?                                                                        |
+|--------------------|--------------------------------------------------------------------------------------------|
+| A modern browser   | We will work with jupyter-lab which allows you to write code within a browser.             |
+| Bash               | This is needed to download content for this workshop and to later check your installation. |
+| Docker             | This is needed for the nipype workshop                                                     |
+| Miniconda & Python | Miniconda allows you to have multiple Python installations on your machine.                |
+| Visual Studio Code | VSCode has the ability to use docker container as environments.                            |
 
-If you already have all of the above software tools/packages installed, or are confident you’ll be able to install them by the time the course starts, you can jump straight to [checking your install](#checking-your-install). The rest of this page provides more detail on installation procedures for each of the above elements, with separate instructions for each of the three major operating systems (`Windows`, `Mac OS`, and `Linux`).
+### Notes on instructions
 
-### Some quick general notes on instructions
-
-- There is no difference between `Enter` and `Return` in these instructions, so just press whatever the equivalent on your keyboard is whenever one is stated
-- If you already have some of these things installed on your computer already that should (theoretically) be okay. However, you need to make sure that you are able to complete the steps described in [checking your install](#checking-your-install) without issue. For example, having multiple different `Python` installations on your computer can lead to incredibly frustrating issues that are very difficult to debug. As such, if you have already installed `Python` via some other application (not `Miniconda`/`Anaconda`), we strongly encourage you to uninstall it before following the instructions below. You _must_ have `Python` installed via `Miniconda` for this course.
-
-**Note**: If the instructions aren't working and you have spent more than 15-20 minutes troubleshooting on your own, reach out with the exact problems you're having. One of the instructors will try and get back to you quickly to help resolve the situation.`
-
-### Modern web browser
-
-Install Firefox or Chrome (Safari will also work). Microsoft Edge is not modern, despite what Microsoft might try and otherwise tell you.
+1. In the following section, Select the tab that corresponds to your operating system and follow the instructions therein.
+2. There is no difference between `Enter` and `Return` in these instructions, so just press whatever the equivalent on your keyboard is whenever one is stated
+2. If the instructions aren't working and you have spent more than 15-20 minutes troubleshooting on your own, reach out with the exact problems you're having. One of the instructors will try and get back to you quickly to help resolve the situation.`
+3. If you already have some (or all) of these things installed on your computer already that should (theoretically) be okay. However, you need to make sure that you are able to complete the steps described in [checking your install](#checking-your-install) without issue. For example, having multiple different `Python` installations on your computer can lead to incredibly frustrating issues that are very difficult to debug. As such, if you have already installed `Python` via some other application (not `Miniconda`/`Anaconda`), we strongly encourage you to uninstall it before following the instructions below. You _must_ have `Python` installed via `Miniconda` for this course.
 
 #### OS-specific installation instructions
 
-Select the tab that corresponds to your operating system and follow the instructions therein.
+
+
 ````{tab-set}
 ```{tab-item} Windows
+
+***Modern Web Browser***
+Install Firefox or Chrome (Safari will also work). Microsoft Edge is not modern, despite what Microsoft might try and otherwise tell you.
+
 **Bash shell**
 
 FIXME: Can't we use Git Bash or PowerShell here?
@@ -194,6 +195,9 @@ If you have questions during the installation procedure please check those links
 ```
 
 ```{tab-item} Linux
+***Modern Web Browser***
+Install Firefox or Chrome (Safari will also work). Microsoft Edge is not modern, despite what Microsoft might try and otherwise tell you.
+
 **Bash shell**
 
 You already have it!
@@ -265,6 +269,8 @@ Open a terminal and type the following commands:
 ```
 
 ```{tab-item} MacOs
+***Modern Web Browser***
+Install Firefox or Chrome (Safari will also work). Microsoft Edge is not modern, despite what Microsoft might try and otherwise tell you.
 **Bash shell**
 
 You already have it!
