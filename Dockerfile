@@ -1,7 +1,7 @@
 FROM ubuntu:22.04
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y install \
-     unzip xorg wget curl \
+     unzip xorg wget curl acl \
  && apt-get clean \
  && rm -rf \
      /tmp/hsperfdata* \
@@ -71,12 +71,15 @@ ENV SPMMCRCMD="/opt/spm12/run_spm12.sh /opt/mcr/v97 script"
 ENV MATLABCMD="/opt/mcr/v97/toolbox/matlab"
 ENV FORCE_SPMMCR="1"
 
-# create user stuff
-USER csp
-RUN mkdir /home/csp/code && chmod -R 777 /home/csp/code
-RUN mkdir /home/csp/data && chmod -R 777 /home/csp/data
-RUN mkdir /home/csp/cache && chmod -R 777 /home/csp/cache
-RUN mkdir /home/csp/output && chmod -R 777 /home/csp/output
-RUN mkdir /home/csp/.jupyter && echo c.NotebookApp.ip = \"0.0.0.0\" > home/csp/.jupyter/jupyter_notebook_config.py
-WORKDIR /home/csp/code
-RUN echo source activate csp >> /home/csp/.bashrc
+# create directories and set user settings
+RUN mkdir /code && setfacl -Rdm o::rwx /code
+RUN mkdir /data && setfacl -Rdm o::rwx /data
+RUN mkdir /cache && setfacl -Rdm o::rwx /cache
+RUN mkdir /output && setfacl -Rdm o::rwx /output
+RUN mkdir ~root/.jupyter && echo c.NotebookApp.ip = \"0.0.0.0\" > ~root/.jupyter/jupyter_notebook_config.py
+RUN echo c.NotebookApp.allow_root=True >> ~root/.jupyter/jupyter_notebook_config.py
+RUN echo source activate csp >> ~root/.bashrc
+WORKDIR /code
+
+COPY ["setfacl.sh","/tmp"]
+CMD ["/tmp/setfacl.sh","/bin/sh -c"]
