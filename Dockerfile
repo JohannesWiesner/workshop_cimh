@@ -1,16 +1,5 @@
 FROM ubuntu:22.04
 
-LABEL org.opencontainers.image.authors="SPM <fil.spm@ucl.ac.uk>"
-LABEL org.opencontainers.image.source="https://github.com/spm/spm-docker"
-LABEL org.opencontainers.image.url="https://www.fil.ion.ucl.ac.uk/spm/"
-LABEL org.opencontainers.image.documentation="https://www.fil.ion.ucl.ac.uk/spm/"
-LABEL org.opencontainers.image.version="SPM12"
-LABEL org.opencontainers.image.revision="r7771"
-LABEL org.opencontainers.image.vendor="Wellcome Centre for Human Neuroimaging"
-LABEL org.opencontainers.image.licenses="GPL-2.0+"
-LABEL org.opencontainers.image.title="Statistical Parametric Mapping (SPM) Software"
-LABEL org.opencontainers.image.description="Analysis of brain imaging data sequences (fMRI, PET, EEG, MEG)"
-
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y install \
      unzip xorg wget curl \
  && apt-get clean \
@@ -76,6 +65,11 @@ RUN export PATH="/opt/miniconda-latest/bin:$PATH" \
     && rm -rf ~/.cache/pip/*
 RUN test "$(getent passwd csp)" \
     || useradd --no-user-group --create-home --shell /bin/bash csp
+
+# set global variables for SPM and Matlab
+ENV SPMMCRCMD="/opt/spm12/run_spm12.sh /opt/mcr/v97 script"
+ENV MATLABCMD="/opt/mcr/v97/toolbox/matlab"
+ENV FORCE_SPMMCR="1"
 
 # create user stuff
 USER csp
