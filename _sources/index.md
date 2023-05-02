@@ -26,4 +26,8 @@ This jupyter-book is based on the [G0RELLA template](https://github.com/G0RELLA/
 
 Special thanks goes to [Peer Herholz](https://github.com/PeerHerholz) and the [Center for Reproducible Neuroimaging Computation](https://github.com/ReproNim). A lot of the structure and content of this workshop is adapted from openly available workshops conducted by Peer and/or the ReproNim team:
 
-1. [DGPA Workshop 2022](http://www.repronim.org/DGPA_workshop_2022/)
+- [DGPA Workshop 2022](http://www.repronim.org/DGPA_workshop_2022/)
+
+We thank [Michael Notter](https://miykael.github.io/) for setting up a  [nipype tutorial](https://miykael.github.io/nipype_tutorial/) online
+
+
