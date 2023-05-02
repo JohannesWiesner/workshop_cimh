@@ -2,6 +2,7 @@ dependencies:
 - jupyterlab
 - pandas
 - nipype
+- nilearn
 - pip
 - pip:
   - networkx < 3.0
