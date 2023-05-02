@@ -72,14 +72,13 @@ ENV MATLABCMD="/opt/mcr/v97/toolbox/matlab"
 ENV FORCE_SPMMCR="1"
 
 # create directories and set user settings
-RUN mkdir /code && setfacl -Rdm o::rwx /code
-RUN mkdir /data && setfacl -Rdm o::rwx /data
-RUN mkdir /cache && setfacl -Rdm o::rwx /cache
-RUN mkdir /output && setfacl -Rdm o::rwx /output
+RUN mkdir /code
+RUN mkdir /data
+RUN mkdir /cache
+RUN mkdir /output
 RUN mkdir ~root/.jupyter && echo c.NotebookApp.ip = \"0.0.0.0\" > ~root/.jupyter/jupyter_notebook_config.py
 RUN echo c.NotebookApp.allow_root=True >> ~root/.jupyter/jupyter_notebook_config.py
 RUN echo source activate csp >> ~root/.bashrc
 WORKDIR /code
-
 COPY ["setfacl.sh","/tmp"]
-CMD ["/tmp/setfacl.sh","/bin/sh -c"]
+CMD ["/tmp/setfacl.sh"]
