@@ -22,11 +22,12 @@ crash-*.pklz
 
 # course specific stuff
 ## nipype
+workshop/courses/nipype/cache*
+!workshop/courses/nipype/cache/.gitkeep
+
 workshop/courses/nipype/data/*
 !workshop/courses/nipype/data/.gitkeep
 
 workshop/courses/nipype/output*
 !workshop/courses/nipype/output/.gitkeep
 
-workshop/courses/nipype/cache*
-!workshop/courses/nipype/cache/.gitkeep
