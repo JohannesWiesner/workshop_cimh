@@ -16,7 +16,8 @@ parts:
       sections:
       - file: courses/containerization/containerization_basics
       - file: courses/containerization/containerization_advanced
-    - file: courses/nipype/code/nipype_1_introduction
+    - file: courses/nipype/code/nipype_1_presentation
       sections:
-      - file: courses/nipype/code/nipype_2_preview
-      - file: courses/nipype/code/nipype_3_handson
+      - file: courses/nipype/code/nipype_2_introduction
+      - file: courses/nipype/code/nipype_3_first_level
+      - file: courses/nipype/code/nipype_4_handson
