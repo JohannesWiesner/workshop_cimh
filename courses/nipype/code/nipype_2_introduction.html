@@ -436,7 +436,7 @@ document.write(`
 <h1>Nipype introduction<a class="headerlink" href="#nipype-introduction" title="Permalink to this heading">#</a></h1>
 <section id="setup-your-analysis-import-packages-set-paths-etc">
 <h2>Setup your analysis (import packages, set paths, etc.)<a class="headerlink" href="#setup-your-analysis-import-packages-set-paths-etc" title="Permalink to this heading">#</a></h2>
-<div class="cell tag_{_____&quot;tags&quot;:_[_________&quot;remove-output&quot;_____]_} docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all the packages that we need</span>
 <span class="kn">from</span> <span class="nn">nipype</span> <span class="kn">import</span> <span class="n">Node</span>
@@ -460,7 +460,7 @@ document.write(`
 </section>
 <section id="neuroimaging-example">
 <h2>Neuroimaging example<a class="headerlink" href="#neuroimaging-example" title="Permalink to this heading">#</a></h2>
-<div class="cell tag_{_____&quot;tags&quot;:_[_________&quot;remove-output&quot;_____]_} docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Let&#39;s smooth a structural image</span>
 <span class="n">smooth</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">Smooth</span><span class="p">(</span><span class="n">fwhm</span><span class="o">=</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span><span class="n">in_files</span> <span class="o">=</span> <span class="n">t1_image</span><span class="p">),</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;smooth&#39;</span><span class="p">,</span><span class="n">base_dir</span><span class="o">=</span><span class="n">base_dir</span><span class="p">)</span>
@@ -469,25 +469,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230711-13:43:29,514 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230711-13:55:02,53 nipype.workflow INFO:
 	 [Node] Setting-up &quot;smooth&quot; in &quot;/home/johannes.wiesner/work/repos/workshop_cimh/workshop/courses/nipype/cache/smooth&quot;.
-230711-13:43:29,515 nipype.workflow INFO:
-	 [Node] Outdated cache found for &quot;smooth&quot;.
-230711-13:43:29,546 nipype.workflow INFO:
-	 [Node] Executing &quot;smooth&quot; &lt;nipype.interfaces.spm.preprocess.Smooth&gt;
+230711-13:55:02,54 nipype.workflow INFO:
+	 [Node] Cached &quot;smooth&quot; - collecting precomputed outputs
+230711-13:55:02,55 nipype.workflow INFO:
+	 [Node] &quot;smooth&quot; found cached.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stty: &#39;standard input&#39;: Inappropriate ioctl for device
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230711-13:43:47,193 nipype.workflow INFO:
-	 [Node] Finished &quot;smooth&quot;, elapsed time 11.440254s.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stty: &#39;standard input&#39;: Inappropriate ioctl for device
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;nipype.interfaces.base.support.InterfaceResult at 0x7ff5504f9910&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;nipype.interfaces.base.support.InterfaceResult at 0x7f92061a43a0&gt;
 </pre></div>
 </div>
 </div>
@@ -501,7 +491,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays._slicers.OrthoSlicer at 0x7ff48813beb0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays._slicers.OrthoSlicer at 0x7f92b4dc56a0&gt;
 </pre></div>
 </div>
 <img alt="../../../_images/870fbe8299a2965881c1b5b6e59ff5b72e7897b536b6f158ac7aa157a565d843.png" src="../../../_images/870fbe8299a2965881c1b5b6e59ff5b72e7897b536b6f158ac7aa157a565d843.png" />
