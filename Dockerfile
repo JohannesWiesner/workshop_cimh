@@ -94,6 +94,21 @@ ENV LD_LIBRARY_PATH=/usr/local/fsl/lib
 ENV FSLOUTPUTTYPE=NIFTI_GZ
 RUN . $FSLDIR/etc/fslconf/fsl.sh
 
+# Install ANTS
+ENV ANTSPATH="/opt/ants-2.4.1/" \
+    PATH="/opt/ants-2.4.1:$PATH"
+RUN apt-get update -qq \
+    && apt-get install -y -q --no-install-recommends \
+           ca-certificates \
+           curl \
+           unzip \
+    && rm -rf /var/lib/apt/lists/* \
+    && echo "Downloading ANTs ..." \
+    && curl -fsSL -o ants.zip https://github.com/ANTsX/ANTs/releases/download/v2.4.1/ants-2.4.1-centos7-X64-gcc.zip \
+    && unzip ants.zip -d /opt \
+    && mv /opt/ants-2.4.1/bin/* /opt/ants-2.4.1 \
+    && rm ants.zip
+
 # create directories and set user settings
 RUN mkdir /code
 RUN mkdir /data
