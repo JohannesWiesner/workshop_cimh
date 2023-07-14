@@ -71,6 +71,29 @@ ENV SPMMCRCMD="/opt/spm12/run_spm12.sh /opt/mcr/v97 script"
 ENV MATLABCMD="/opt/mcr/v97/toolbox/matlab"
 ENV FORCE_SPMMCR="1"
 
+# INSTALL FSL
+# Setup Workdir
+RUN mkdir /opt/fsl_install
+WORKDIR   /opt/fsl_install
+
+# Download fsl files
+RUN wget https://fsl.fmrib.ox.ac.uk/fsldownloads/fslinstaller.py
+
+# Modify order of channels in python env
+RUN python3 fslinstaller.py  -d /usr/local/fsl
+
+# RM src
+WORKDIR /
+RUN rm -rf /usr/local/fsl/src
+RUN rm -rf /opt/fsl_install
+
+# Setup FSL ENV
+ENV FSLDIR=/usr/local/fsl
+ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/fsl/bin
+ENV LD_LIBRARY_PATH=/usr/local/fsl/lib
+ENV FSLOUTPUTTYPE=NIFTI_GZ
+RUN . $FSLDIR/etc/fslconf/fsl.sh
+
 # create directories and set user settings
 RUN mkdir /code
 RUN mkdir /data
