@@ -35,3 +35,15 @@ cd courses/nipype/data/single_files
 curl -kLSs https://files.osf.io/v1/resources/fvuh8/providers/osfstorage/580705089ad5a101f17944a9 | tar xz --wildcards '*1mm_T1.nii.gz' --strip-components=1
 
 echo "Finished downloading data for CIMH neuroimaging workshop"
+
+#####################################################################################################################################
+# Download docker image
+#####################################################################################################################################
+
+# if this script is run from Windows Git Bash (should equal to "msys") we have to put 'winpty'
+# before docker command
+if [[ "$OSTYPE" == "msys" ]]; then
+    alias docker='winpty docker'
+fi
+
+docker pull johanneswiesner/workshop_cimh:2023.07.14
