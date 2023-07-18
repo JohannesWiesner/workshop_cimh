@@ -29,9 +29,7 @@ To get the most out of our course, we ask that you arrive with the following sof
 |--------------------|--------------------------------------------------------------------------------------------|
 | A modern browser   | We will work with jupyter-lab which allows you to write code within a browser.             |
 | Bash               | This is needed to download content for this workshop and to later check your installation. |
-| Docker             | This is needed for the nipype workshop                                                     |
-| Miniconda & Python | Miniconda allows you to have multiple Python installations on your machine.                |
-| Visual Studio Code | VSCode has the ability to use docker container as environments.                            |
+| Docker             | This is needed for the nipype workshop
 
 ### Notes on instructions
 
@@ -42,8 +40,6 @@ To get the most out of our course, we ask that you arrive with the following sof
 
 #### OS-specific installation instructions
 
-
-
 ````{tab-set}
 ```{tab-item} Windows
 
@@ -52,59 +48,9 @@ Install Firefox or Chrome (Safari will also work). Microsoft Edge is not modern,
 
 **Bash shell**
 
-FIXME: Can't we use Git Bash or PowerShell here?
+Install Git Bash on your system. Follow [these instructions](https://git-scm.com/downloads).
 
-**VSCode**
-
-1. Go to https://code.visualstudio.com/ and click the download button, then run the `.exe` file.
-1. Leave all the defaults during the installation with the following exception:
-      - Please make sure the box labelled "Register Code as an editor for supported file types" is selected
-
-**VSCode extensions**
-
-1. Open the `Ubuntu` application.
-1. Type `code .` into the terminal and press `Enter`.
-   You should see a message reading "Installing VS Code Server" and then a new windows will open up.
-1. Press `Ctrl+Shift+P` in the new window that opens and type "Extensions: Install extensions" into the search bar that appears at the top of the screen.
-   Select the appropriate entry from the dropdown menu that appears (there should be four entries; simply select the one that reads "Extensions: Install extensions").
-1. A new panel should appear on the left-hand side of the screen with a search bar.
-   Search for each of the following extensions and press `Install` for the first entry that appears. (The author listed for all of these extensions should be "Microsoft".)
-      - `Python` (n.b., you will need to reload `VSCode` after installing this)
-      - `Live Share` (n.b., you may need to press "Ctrl/Cmd+Shift+P" and type "install extensions" again after installing this)
-      - `Live Share Extension Pack`
-      - `Docker`
-      - `Remote - WSL`
-
-**Python**
-
-1. Open a new terminal and type the following lines (separately) into the terminal, pressing `Enter` after each one:
-
-        wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-        bash Miniconda3-latest-Linux-x86_64.sh
-
-1. A license agreement will be displayed and the bottom of the terminal will read `--More--`.
-   Press `Enter` or the space bar until you are prompted with "Do you accept the license terms? [yes|no]."
-   Type `yes` and then press `Enter`
-1. The installation script will inform you that it is going to install into a default directory (e.g., `/home/$USER/miniconda3`).
-   Leave this default and press `Enter`.
-1. When you are asked "Do you wish the installer to initialize Miniconda3 by running conda init? [yes|no]," type `yes` and press `Enter`.
-   Exit the `terminal` once the installation has finished.
-1. Re-open the `Ubuntu` application.
-   Type `which python` into the terminal and it should return a path (e.g., `/home/$USER/miniconda3/bin/python`).
-   - If you do not see a path like this then please try typing `conda init`, closing your terminal, and repeating this step.
-     If your issue is still not resolved skip the following step and contact an instructor.
-1. Type the following to remove the installation script that was downloaded:
-
-        rm ./Miniconda3-latest-Linux-x86_64.sh
-
-
-**Python packages**
-
-Open a `terminal` and type the following commands:
-
-        conda config --append channels conda-forge
-        conda config --set channel_priority strict
-        conda install -y flake8 ipython jupyter jupyterlab matplotlib nibabel nilearn numpy pandas scipy seaborn
+**Note**:  From this point on whenever the instructions specify to “open a terminal” please assume you are supposed to open the Git Bash terminal.
 
 **Docker**
 
@@ -208,55 +154,7 @@ To check whether this is necessary, follow these steps:
    If it reads `/bin/bash` then you are all set!
    If not, whenever the instructions read "open a terminal," please assume you are to open a terminal, type `bash`, and the proceed with the instructions as specified.
 
-**VSCode**
-
-1. Go to https://code.visualstudio.com/ and click the download button for either the .deb (`Ubuntu`, `Debian`) or the .rpm (`Fedora`, `CentOS`) file.
-1. Double-click the downloaded file to install `VSCode`.
-   (You may be prompted to type your administrator password during the install).
-
-**VSCode extensions**
-
-1. Open the `Visual Studio Code` application.
-1. Press `Ctrl+Shift+P` in the new window that opens and type "Extensions: Install extensions" into the search bar that appears at the top of the screen.
-   Select the appropriate entry from the dropdown menu that appears (there should be four entries; simply select the one that reads "Extensions: Install extensions").
-1. A new panel should appear on the left-hand side of the screen with a search bar.
-   Search for each of the following extensions and press `Install` for the first entry that appears. (The author listed for all of these extensions should be "Microsoft".)
-      - `Python` (n.b., you will need to reload `VSCode` after installing this)
-      - `Live Share` (n.b., you may need to press "Ctrl/Cmd+Shift+P" and type "install extensions" again after installing this)
-      - `Live Share Extension Pack`
-      - `Docker`
-
-**Python**
-
-1. Open a new terminal and type the following lines (separately) into the `terminal`, pressing `Enter` after each one:
-
-        wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-        bash Miniconda3-latest-Linux-x86_64.sh
-
-
-1. A license agreement will be displayed and the bottom of the terminal will read `--More--`.
-   Press `Enter` or the space bar until you are prompted with "Do you accept the license terms? [yes|no]."
-   Type `yes` and then press `Enter`
-1. The installation script will inform you that it is going to install into a default directory (e.g., `/home/$USER/miniconda3`).
-   Leave this default and press `Enter`.
-1. When you are asked "Do you wish the installer to initialize Miniconda3 by running conda init? [yes|no]," type `yes` and press `Enter`.
-   Exit the `terminal` once the installation has finished.
-1. Re-open a new `terminal`.
-   Type `which python` into the `terminal` and it should return a path (e.g., `/home/$USER/miniconda3/bin/python`).
-   - If you do not see a path like this then please try typing `conda init`, closing your terminal, and repeating this step.
-     If your issue is still not resolved skip the following step and contact an instructor.
-1. Type the following to remove the installation script that was downloaded:
-
-        rm ./Miniconda3-latest-Linux-x86_64.sh
-
-**Python packages**
-
-Open a terminal and type the following commands:
-
-        conda config --append channels conda-forge
-        conda config --set channel_priority strict
-        conda install -y flake8 ipython jupyter jupyterlab matplotlib nibabel nilearn numpy pandas scipy seaborn
-
+**Note**:  From this point on whenever the instructions specify to “open a terminal” please assume you are supposed to open the Bash terminal.
 
 **Docker**
 
@@ -283,58 +181,7 @@ To check whether this is necessary, follow these steps:
 Note: If you are using `Mac Catalina (10.15.X)` then it is possible your default `shell` is NOT CORRECT.
 To set the default to `bash`, type `chsh -s /bin/bash` in the `terminal`, enter your password when prompted, and then close + re-open the `terminal`.
 
-**VSCode**
-
-1. Go to https://code.visualstudio.com/ and click the download button.
-1. Unzip the downloaded file (e.g., `VSCode-darwin-stable.zip`) and moving the resulting `Visual Studio Code` file to your Applications directory.
-
-**VSCode extensions**
-
-1. Open the Visual Studio Code application
-1. Type `Cmd+Shift+P` and then enter "Shell command: Install 'code' command in PATH" into the search bar that appears at the top of the screen.
-   Select the highlighted entry.
-   A notification box should appear in the bottom-right corner indicating that the command was installed successfully.
-1. Type `Cmd+Shift+P` again and then enter "Extensions: Install extensions" into the search bar.
-   Select the appropriate entry from the dropdown menu that appears (there should be four entries; simply select the one that reads "Extensions: Install extensions").
-1. A new panel should appear on the left-hand side of the screen with a search bar.
-   Search for each of the following extensions and press `Install` for the first entry that appears. (The author listed for all of these extensions should be "Microsoft".)
-      - `Python` (n.b., you will need to reload VSCode after installing this)
-      - `Live Share` (n.b., you may need to press "Ctrl/Cmd+Shift+P" and type "install extensions" again after installing this)
-      - `Live Share Extension Pack`
-      - `Docker`
-
-**Python**
-
-1. Open a new `terminal` and type the following lines (separately) into the terminal, pressing `Enter` after each one:
-
-        curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
-        bash Miniconda3-latest-MacOSX-x86_64.sh
-
-
-1. A license agreement will be displayed and the bottom of the `terminal` will read `--More--`.
-   Press `Enter` or the space bar until you are prompted with "Do you accept the license terms? [yes|no]."
-   Type `yes` and then press `Enter`
-1. The installation script will inform you that it is going to install into a default directory (e.g., `/home/$USER/miniconda3`).
-   Leave this default and press `Enter`.
-1. When you are asked "Do you wish the installer to initialize Miniconda3 by running conda init? [yes|no]," type `yes` and press `Enter`.
-   Exit the terminal once the installation has finished.
-1. Re-open a terminal.
-   Type `which python` into the terminal and it should return a path (e.g., `/home/$USER/miniconda3/bin/python`).
-   - If you do not see a path like this then please try typing `conda init`, closing your terminal, and repeating this step.
-     If your issue is still not resolved skip the following step and contact an instructor.
-1. Type the following to remove the installation script that was downloaded:
-
-        rm ./Miniconda3-latest-MacOSX-x86_64.sh
-
-
-**Python packages**
-
-Open a terminal and type the following commands:
-
-        conda config --append channels conda-forge
-        conda config --set channel_priority strict
-        conda install -y flake8 ipython jupyter jupyterlab matplotlib nibabel nilearn numpy pandas scipy seaborn
-
+**Note**:  From this point on whenever the instructions specify to “open a terminal” please assume you are supposed to open the Bash terminal.
 
 **Docker**
 
@@ -351,17 +198,20 @@ If you have questions during the installation procedure please check that link f
 ```
 ````
 
-
 ## Checking your install
 
-Now that you've installed everything it's time to check that everything works as expected!
-Type the following into your terminal:
+Now that you've installed everything it's time to check that everything works as expected! Type the following into your terminal:
 
-    bash <( curl -s https://raw.githubusercontent.com/ReproNim/DGPA_workshop_2022/main/check_install.sh)
+    bash <( curl -s https://raw.githubusercontent.com/JohannesWiesner/workshop_cimh/master/check_install.sh)
+
 
 If you installed everything correctly you should see a message informing you as such. If any problems were detected you should receive some brief instructions on what is wrong with potential suggestions on how to remedy it.
 If you followed these instructions step-by-step and cannot resolve the issue please contact one of the course instructors for more help.
 
-## DOWNLOAD DATA
+## Download the workshop material
 
-FIXME: Tell users to download data
+Now that you got everything installed correctly, it's time to download the course material for this workshop. In your terminal navigate to a folder of your choice where you want to place the course material. Then paste and execute this command:
+
+    bash <( curl -s https://raw.githubusercontent.com/JohannesWiesner/workshop_cimh/master/download_courses.sh)
+
+This will download all the data (and the docker image) for this workshop.
