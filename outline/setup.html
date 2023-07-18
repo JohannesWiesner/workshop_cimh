@@ -397,7 +397,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-your-install">Checking your install</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-data">DOWNLOAD DATA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-the-workshop-material">Download the workshop material</a></li>
 </ul>
             </nav>
         </div>
@@ -449,12 +449,6 @@ generated a rather comprehensive set of install instructions below. While not al
 <tr class="row-even"><td><p>Docker</p></td>
 <td><p>This is needed for the nipype workshop</p></td>
 </tr>
-<tr class="row-odd"><td><p>Miniconda &amp; Python</p></td>
-<td><p>Miniconda allows you to have multiple Python installations on your machine.</p></td>
-</tr>
-<tr class="row-even"><td><p>Visual Studio Code</p></td>
-<td><p>VSCode has the ability to use docker container as environments.</p></td>
-</tr>
 </tbody>
 </table>
 <section id="notes-on-instructions">
@@ -474,69 +468,8 @@ Windows</label><div class="sd-tab-content docutils">
 <p><em><strong>Modern Web Browser</strong></em>
 Install Firefox or Chrome (Safari will also work). Microsoft Edge is not modern, despite what Microsoft might try and otherwise tell you.</p>
 <p><strong>Bash shell</strong></p>
-<p>FIXME: Can’t we use Git Bash or PowerShell here?</p>
-<p><strong>VSCode</strong></p>
-<ol class="arabic simple">
-<li><p>Go to <a class="reference external" href="https://code.visualstudio.com/">https://code.visualstudio.com/</a> and click the download button, then run the <code class="docutils literal notranslate"><span class="pre">.exe</span></code> file.</p></li>
-<li><p>Leave all the defaults during the installation with the following exception:</p>
-<ul class="simple">
-<li><p>Please make sure the box labelled “Register Code as an editor for supported file types” is selected</p></li>
-</ul>
-</li>
-</ol>
-<p><strong>VSCode extensions</strong></p>
-<ol class="arabic simple">
-<li><p>Open the <code class="docutils literal notranslate"><span class="pre">Ubuntu</span></code> application.</p></li>
-<li><p>Type <code class="docutils literal notranslate"><span class="pre">code</span> <span class="pre">.</span></code> into the terminal and press <code class="docutils literal notranslate"><span class="pre">Enter</span></code>.
-You should see a message reading “Installing VS Code Server” and then a new windows will open up.</p></li>
-<li><p>Press <code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+P</span></code> in the new window that opens and type “Extensions: Install extensions” into the search bar that appears at the top of the screen.
-Select the appropriate entry from the dropdown menu that appears (there should be four entries; simply select the one that reads “Extensions: Install extensions”).</p></li>
-<li><p>A new panel should appear on the left-hand side of the screen with a search bar.
-Search for each of the following extensions and press <code class="docutils literal notranslate"><span class="pre">Install</span></code> for the first entry that appears. (The author listed for all of these extensions should be “Microsoft”.)</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Python</span></code> (n.b., you will need to reload <code class="docutils literal notranslate"><span class="pre">VSCode</span></code> after installing this)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Live</span> <span class="pre">Share</span></code> (n.b., you may need to press “Ctrl/Cmd+Shift+P” and type “install extensions” again after installing this)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Live</span> <span class="pre">Share</span> <span class="pre">Extension</span> <span class="pre">Pack</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Docker</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Remote</span> <span class="pre">-</span> <span class="pre">WSL</span></code></p></li>
-</ul>
-</li>
-</ol>
-<p><strong>Python</strong></p>
-<ol class="arabic">
-<li><p>Open a new terminal and type the following lines (separately) into the terminal, pressing <code class="docutils literal notranslate"><span class="pre">Enter</span></code> after each one:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
- bash Miniconda3-latest-Linux-x86_64.sh
-</pre></div>
-</div>
-</li>
-<li><p>A license agreement will be displayed and the bottom of the terminal will read <code class="docutils literal notranslate"><span class="pre">--More--</span></code>.
-Press <code class="docutils literal notranslate"><span class="pre">Enter</span></code> or the space bar until you are prompted with “Do you accept the license terms? [yes|no].”
-Type <code class="docutils literal notranslate"><span class="pre">yes</span></code> and then press <code class="docutils literal notranslate"><span class="pre">Enter</span></code></p></li>
-<li><p>The installation script will inform you that it is going to install into a default directory (e.g., <code class="docutils literal notranslate"><span class="pre">/home/$USER/miniconda3</span></code>).
-Leave this default and press <code class="docutils literal notranslate"><span class="pre">Enter</span></code>.</p></li>
-<li><p>When you are asked “Do you wish the installer to initialize Miniconda3 by running conda init? [yes|no],” type <code class="docutils literal notranslate"><span class="pre">yes</span></code> and press <code class="docutils literal notranslate"><span class="pre">Enter</span></code>.
-Exit the <code class="docutils literal notranslate"><span class="pre">terminal</span></code> once the installation has finished.</p></li>
-<li><p>Re-open the <code class="docutils literal notranslate"><span class="pre">Ubuntu</span></code> application.
-Type <code class="docutils literal notranslate"><span class="pre">which</span> <span class="pre">python</span></code> into the terminal and it should return a path (e.g., <code class="docutils literal notranslate"><span class="pre">/home/$USER/miniconda3/bin/python</span></code>).</p>
-<ul class="simple">
-<li><p>If you do not see a path like this then please try typing <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">init</span></code>, closing your terminal, and repeating this step.
-If your issue is still not resolved skip the following step and contact an instructor.</p></li>
-</ul>
-</li>
-<li><p>Type the following to remove the installation script that was downloaded:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> rm ./Miniconda3-latest-Linux-x86_64.sh
-</pre></div>
-</div>
-</li>
-</ol>
-<p><strong>Python packages</strong></p>
-<p>Open a <code class="docutils literal notranslate"><span class="pre">terminal</span></code> and type the following commands:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    conda config --append channels conda-forge
-    conda config --set channel_priority strict
-    conda install -y flake8 ipython jupyter jupyterlab matplotlib nibabel nilearn numpy pandas scipy seaborn
-</pre></div>
-</div>
+<p>Install Git Bash on your system. Follow <a class="reference external" href="https://git-scm.com/downloads">these instructions</a>.</p>
+<p><strong>Note</strong>:  From this point on whenever the instructions specify to “open a terminal” please assume you are supposed to open the Git Bash terminal.</p>
 <p><strong>Docker</strong></p>
 <p>Unfortunately, <code class="docutils literal notranslate"><span class="pre">Docker</span></code> for <code class="docutils literal notranslate"><span class="pre">Windows</span></code> is a bit of a mess.
 The recommended version of <code class="docutils literal notranslate"><span class="pre">Docker</span></code> to install varies dramatically depending not only on which version of <code class="docutils literal notranslate"><span class="pre">Windows</span></code> you have installed (e.g., <code class="docutils literal notranslate"><span class="pre">Windows</span> <span class="pre">10</span> <span class="pre">Home</span></code> versus <code class="docutils literal notranslate"><span class="pre">Professional</span></code>/<code class="docutils literal notranslate"><span class="pre">Enterprise</span></code>/<code class="docutils literal notranslate"><span class="pre">Education</span></code>), but also which <em>build</em> of <code class="docutils literal notranslate"><span class="pre">Windows</span></code> you have.
@@ -634,62 +567,7 @@ To check whether this is necessary, follow these steps:</p>
 If it reads <code class="docutils literal notranslate"><span class="pre">/bin/bash</span></code> then you are all set!
 If not, whenever the instructions read “open a terminal,” please assume you are to open a terminal, type <code class="docutils literal notranslate"><span class="pre">bash</span></code>, and the proceed with the instructions as specified.</p></li>
 </ol>
-<p><strong>VSCode</strong></p>
-<ol class="arabic simple">
-<li><p>Go to <a class="reference external" href="https://code.visualstudio.com/">https://code.visualstudio.com/</a> and click the download button for either the .deb (<code class="docutils literal notranslate"><span class="pre">Ubuntu</span></code>, <code class="docutils literal notranslate"><span class="pre">Debian</span></code>) or the .rpm (<code class="docutils literal notranslate"><span class="pre">Fedora</span></code>, <code class="docutils literal notranslate"><span class="pre">CentOS</span></code>) file.</p></li>
-<li><p>Double-click the downloaded file to install <code class="docutils literal notranslate"><span class="pre">VSCode</span></code>.
-(You may be prompted to type your administrator password during the install).</p></li>
-</ol>
-<p><strong>VSCode extensions</strong></p>
-<ol class="arabic simple">
-<li><p>Open the <code class="docutils literal notranslate"><span class="pre">Visual</span> <span class="pre">Studio</span> <span class="pre">Code</span></code> application.</p></li>
-<li><p>Press <code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+P</span></code> in the new window that opens and type “Extensions: Install extensions” into the search bar that appears at the top of the screen.
-Select the appropriate entry from the dropdown menu that appears (there should be four entries; simply select the one that reads “Extensions: Install extensions”).</p></li>
-<li><p>A new panel should appear on the left-hand side of the screen with a search bar.
-Search for each of the following extensions and press <code class="docutils literal notranslate"><span class="pre">Install</span></code> for the first entry that appears. (The author listed for all of these extensions should be “Microsoft”.)</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Python</span></code> (n.b., you will need to reload <code class="docutils literal notranslate"><span class="pre">VSCode</span></code> after installing this)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Live</span> <span class="pre">Share</span></code> (n.b., you may need to press “Ctrl/Cmd+Shift+P” and type “install extensions” again after installing this)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Live</span> <span class="pre">Share</span> <span class="pre">Extension</span> <span class="pre">Pack</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Docker</span></code></p></li>
-</ul>
-</li>
-</ol>
-<p><strong>Python</strong></p>
-<ol class="arabic">
-<li><p>Open a new terminal and type the following lines (separately) into the <code class="docutils literal notranslate"><span class="pre">terminal</span></code>, pressing <code class="docutils literal notranslate"><span class="pre">Enter</span></code> after each one:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
- bash Miniconda3-latest-Linux-x86_64.sh
-</pre></div>
-</div>
-</li>
-<li><p>A license agreement will be displayed and the bottom of the terminal will read <code class="docutils literal notranslate"><span class="pre">--More--</span></code>.
-Press <code class="docutils literal notranslate"><span class="pre">Enter</span></code> or the space bar until you are prompted with “Do you accept the license terms? [yes|no].”
-Type <code class="docutils literal notranslate"><span class="pre">yes</span></code> and then press <code class="docutils literal notranslate"><span class="pre">Enter</span></code></p></li>
-<li><p>The installation script will inform you that it is going to install into a default directory (e.g., <code class="docutils literal notranslate"><span class="pre">/home/$USER/miniconda3</span></code>).
-Leave this default and press <code class="docutils literal notranslate"><span class="pre">Enter</span></code>.</p></li>
-<li><p>When you are asked “Do you wish the installer to initialize Miniconda3 by running conda init? [yes|no],” type <code class="docutils literal notranslate"><span class="pre">yes</span></code> and press <code class="docutils literal notranslate"><span class="pre">Enter</span></code>.
-Exit the <code class="docutils literal notranslate"><span class="pre">terminal</span></code> once the installation has finished.</p></li>
-<li><p>Re-open a new <code class="docutils literal notranslate"><span class="pre">terminal</span></code>.
-Type <code class="docutils literal notranslate"><span class="pre">which</span> <span class="pre">python</span></code> into the <code class="docutils literal notranslate"><span class="pre">terminal</span></code> and it should return a path (e.g., <code class="docutils literal notranslate"><span class="pre">/home/$USER/miniconda3/bin/python</span></code>).</p>
-<ul class="simple">
-<li><p>If you do not see a path like this then please try typing <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">init</span></code>, closing your terminal, and repeating this step.
-If your issue is still not resolved skip the following step and contact an instructor.</p></li>
-</ul>
-</li>
-<li><p>Type the following to remove the installation script that was downloaded:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> rm ./Miniconda3-latest-Linux-x86_64.sh
-</pre></div>
-</div>
-</li>
-</ol>
-<p><strong>Python packages</strong></p>
-<p>Open a terminal and type the following commands:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    conda config --append channels conda-forge
-    conda config --set channel_priority strict
-    conda install -y flake8 ipython jupyter jupyterlab matplotlib nibabel nilearn numpy pandas scipy seaborn
-</pre></div>
-</div>
+<p><strong>Note</strong>:  From this point on whenever the instructions specify to “open a terminal” please assume you are supposed to open the Bash terminal.</p>
 <p><strong>Docker</strong></p>
 <ol class="arabic simple">
 <li><p>You will be following different instructions depending on your distro (<a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/">Ubuntu</a>, <a class="reference external" href="https://docs.docker.com/engine/install/debian/">Debian</a>, <a class="reference external" href="https://docs.docker.com/engine/install/fedora/">Fedora</a>, <a class="reference external" href="https://docs.docker.com/engine/install/centos/">CentOS</a>).
@@ -715,64 +593,7 @@ If it reads <code class="docutils literal notranslate"><span class="pre">/bin/ba
 </ol>
 <p>Note: If you are using <code class="docutils literal notranslate"><span class="pre">Mac</span> <span class="pre">Catalina</span> <span class="pre">(10.15.X)</span></code> then it is possible your default <code class="docutils literal notranslate"><span class="pre">shell</span></code> is NOT CORRECT.
 To set the default to <code class="docutils literal notranslate"><span class="pre">bash</span></code>, type <code class="docutils literal notranslate"><span class="pre">chsh</span> <span class="pre">-s</span> <span class="pre">/bin/bash</span></code> in the <code class="docutils literal notranslate"><span class="pre">terminal</span></code>, enter your password when prompted, and then close + re-open the <code class="docutils literal notranslate"><span class="pre">terminal</span></code>.</p>
-<p><strong>VSCode</strong></p>
-<ol class="arabic simple">
-<li><p>Go to <a class="reference external" href="https://code.visualstudio.com/">https://code.visualstudio.com/</a> and click the download button.</p></li>
-<li><p>Unzip the downloaded file (e.g., <code class="docutils literal notranslate"><span class="pre">VSCode-darwin-stable.zip</span></code>) and moving the resulting <code class="docutils literal notranslate"><span class="pre">Visual</span> <span class="pre">Studio</span> <span class="pre">Code</span></code> file to your Applications directory.</p></li>
-</ol>
-<p><strong>VSCode extensions</strong></p>
-<ol class="arabic simple">
-<li><p>Open the Visual Studio Code application</p></li>
-<li><p>Type <code class="docutils literal notranslate"><span class="pre">Cmd+Shift+P</span></code> and then enter “Shell command: Install ‘code’ command in PATH” into the search bar that appears at the top of the screen.
-Select the highlighted entry.
-A notification box should appear in the bottom-right corner indicating that the command was installed successfully.</p></li>
-<li><p>Type <code class="docutils literal notranslate"><span class="pre">Cmd+Shift+P</span></code> again and then enter “Extensions: Install extensions” into the search bar.
-Select the appropriate entry from the dropdown menu that appears (there should be four entries; simply select the one that reads “Extensions: Install extensions”).</p></li>
-<li><p>A new panel should appear on the left-hand side of the screen with a search bar.
-Search for each of the following extensions and press <code class="docutils literal notranslate"><span class="pre">Install</span></code> for the first entry that appears. (The author listed for all of these extensions should be “Microsoft”.)</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Python</span></code> (n.b., you will need to reload VSCode after installing this)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Live</span> <span class="pre">Share</span></code> (n.b., you may need to press “Ctrl/Cmd+Shift+P” and type “install extensions” again after installing this)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Live</span> <span class="pre">Share</span> <span class="pre">Extension</span> <span class="pre">Pack</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Docker</span></code></p></li>
-</ul>
-</li>
-</ol>
-<p><strong>Python</strong></p>
-<ol class="arabic">
-<li><p>Open a new <code class="docutils literal notranslate"><span class="pre">terminal</span></code> and type the following lines (separately) into the terminal, pressing <code class="docutils literal notranslate"><span class="pre">Enter</span></code> after each one:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
- bash Miniconda3-latest-MacOSX-x86_64.sh
-</pre></div>
-</div>
-</li>
-<li><p>A license agreement will be displayed and the bottom of the <code class="docutils literal notranslate"><span class="pre">terminal</span></code> will read <code class="docutils literal notranslate"><span class="pre">--More--</span></code>.
-Press <code class="docutils literal notranslate"><span class="pre">Enter</span></code> or the space bar until you are prompted with “Do you accept the license terms? [yes|no].”
-Type <code class="docutils literal notranslate"><span class="pre">yes</span></code> and then press <code class="docutils literal notranslate"><span class="pre">Enter</span></code></p></li>
-<li><p>The installation script will inform you that it is going to install into a default directory (e.g., <code class="docutils literal notranslate"><span class="pre">/home/$USER/miniconda3</span></code>).
-Leave this default and press <code class="docutils literal notranslate"><span class="pre">Enter</span></code>.</p></li>
-<li><p>When you are asked “Do you wish the installer to initialize Miniconda3 by running conda init? [yes|no],” type <code class="docutils literal notranslate"><span class="pre">yes</span></code> and press <code class="docutils literal notranslate"><span class="pre">Enter</span></code>.
-Exit the terminal once the installation has finished.</p></li>
-<li><p>Re-open a terminal.
-Type <code class="docutils literal notranslate"><span class="pre">which</span> <span class="pre">python</span></code> into the terminal and it should return a path (e.g., <code class="docutils literal notranslate"><span class="pre">/home/$USER/miniconda3/bin/python</span></code>).</p>
-<ul class="simple">
-<li><p>If you do not see a path like this then please try typing <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">init</span></code>, closing your terminal, and repeating this step.
-If your issue is still not resolved skip the following step and contact an instructor.</p></li>
-</ul>
-</li>
-<li><p>Type the following to remove the installation script that was downloaded:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> rm ./Miniconda3-latest-MacOSX-x86_64.sh
-</pre></div>
-</div>
-</li>
-</ol>
-<p><strong>Python packages</strong></p>
-<p>Open a terminal and type the following commands:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    conda config --append channels conda-forge
-    conda config --set channel_priority strict
-    conda install -y flake8 ipython jupyter jupyterlab matplotlib nibabel nilearn numpy pandas scipy seaborn
-</pre></div>
-</div>
+<p><strong>Note</strong>:  From this point on whenever the instructions specify to “open a terminal” please assume you are supposed to open the Bash terminal.</p>
 <p><strong>Docker</strong></p>
 <ol class="arabic simple">
 <li><p>Go to <a class="reference external" href="https://hub.docker.com/editions/community/docker-ce-desktop-mac/">https://hub.docker.com/editions/community/docker-ce-desktop-mac/</a> and press “Get Docker”.</p></li>
@@ -792,17 +613,20 @@ If you have questions during the installation procedure please check that link f
 </section>
 <section id="checking-your-install">
 <h2>Checking your install<a class="headerlink" href="#checking-your-install" title="Permalink to this heading">#</a></h2>
-<p>Now that you’ve installed everything it’s time to check that everything works as expected!
-Type the following into your terminal:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bash &lt;( curl -s https://raw.githubusercontent.com/ReproNim/DGPA_workshop_2022/main/check_install.sh)
+<p>Now that you’ve installed everything it’s time to check that everything works as expected! Type the following into your terminal:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bash &lt;( curl -s https://raw.githubusercontent.com/JohannesWiesner/workshop_cimh/master/check_install.sh)
 </pre></div>
 </div>
 <p>If you installed everything correctly you should see a message informing you as such. If any problems were detected you should receive some brief instructions on what is wrong with potential suggestions on how to remedy it.
 If you followed these instructions step-by-step and cannot resolve the issue please contact one of the course instructors for more help.</p>
 </section>
-<section id="download-data">
-<h2>DOWNLOAD DATA<a class="headerlink" href="#download-data" title="Permalink to this heading">#</a></h2>
-<p>FIXME: Tell users to download data</p>
+<section id="download-the-workshop-material">
+<h2>Download the workshop material<a class="headerlink" href="#download-the-workshop-material" title="Permalink to this heading">#</a></h2>
+<p>Now that you got everything installed correctly, it’s time to download the course material for this workshop. In your terminal navigate to a folder of your choice where you want to place the course material. Then paste and execute this command:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bash &lt;( curl -s https://raw.githubusercontent.com/JohannesWiesner/workshop_cimh/master/download_courses.sh)
+</pre></div>
+</div>
+<p>This will download all the data (and the docker image) for this workshop.</p>
 </section>
 </section>
 
@@ -882,7 +706,7 @@ If you followed these instructions step-by-step and cannot resolve the issue ple
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-your-install">Checking your install</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-data">DOWNLOAD DATA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-the-workshop-material">Download the workshop material</a></li>
 </ul>
   </nav></div>
 
