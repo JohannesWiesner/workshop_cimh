@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Now it’s your turn! &#8212; CIMH Workshop</title>
+    <title>Hands-On &#8212; CIMH Workshop</title>
   
   
   
@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'courses/nipype/code/nipype_4_handson';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Links" href="../../../outro/outro.html" />
+    <link rel="next" title="Only for real nerds" href="nipype_5_handson.html" />
     <link rel="prev" title="First level analysis with Nipype + SPM" href="nipype_3_first_level.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -175,7 +175,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="nipype_3_first_level.html">First level analysis with Nipype + SPM</a></li>
 
 
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Now it’s your turn!</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Hands-On</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nipype_5_handson.html">Only for real nerds</a></li>
 </ul>
 </li>
 </ul>
@@ -400,9 +401,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -413,24 +412,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Now it’s your turn!</h1>
+    <h1>Hands-On</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-preprocessing-workflow-that-includes-realignment-coregistration-normalization-and-smoothing">Create a preprocessing workflow that includes Realignment, Coregistration, Normalization and Smoothing</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-all-the-nodes-we-need-for-preprocessing">Set up all the nodes we need for preprocessing</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-the-workflow-and-run-it">Setup the workflow and run it</a></li>
-</ul>
-</li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -440,150 +426,51 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="now-it-s-your-turn">
-<h1>Now it’s your turn!<a class="headerlink" href="#now-it-s-your-turn" title="Permalink to this heading">#</a></h1>
-<section id="create-a-preprocessing-workflow-that-includes-realignment-coregistration-normalization-and-smoothing">
-<h2>Create a preprocessing workflow that includes Realignment, Coregistration, Normalization and Smoothing<a class="headerlink" href="#create-a-preprocessing-workflow-that-includes-realignment-coregistration-normalization-and-smoothing" title="Permalink to this heading">#</a></h2>
-<section id="setup">
-<h3>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">#</a></h3>
+  <section class="tex2jax_ignore mathjax_ignore" id="hands-on">
+<h1>Hands-On<a class="headerlink" href="#hands-on" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all the stuff that you need</span>
-<span class="kn">from</span> <span class="nn">nipype.interfaces</span> <span class="kn">import</span> <span class="n">spm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define a workflow that iterates over two subjects and then:</span>
+<span class="c1"># 1.) Skullstrip (using FSL BET)</span>
+<span class="c1"># 2.) Normalize (use ANTS): https://miykael.github.io/nipype_tutorial/notebooks/example_normalize.html#Normalization-with-ANTs</span>
+<span class="c1"># Use https://nipype.readthedocs.io/en/latest/api/generated/nipype.interfaces.ants.html#registrationsynquick otherwise it will take too long!</span>
+
+<span class="c1">#t1_image = &#39;/home/johannes.wiesner/work/repos/workshop_cimh/workshop/courses/nipype/data/anatomical.nii&#39;</span>
+<span class="c1">#import nipype.interfaces.fsl as fsl</span>
+<span class="c1">#mybet = fsl.BET(in_file=t1_image, out_file=&#39;bar.nii&#39;)</span>
+<span class="c1">#result = mybet.run()</span>
+
+<span class="kn">from</span> <span class="nn">nipype.interfaces.utility</span> <span class="kn">import</span> <span class="n">Function</span><span class="p">,</span><span class="n">IdentityInterface</span><span class="p">,</span> <span class="n">Rename</span>
+<span class="kn">from</span> <span class="nn">nipype.interfaces.io</span> <span class="kn">import</span> <span class="n">BIDSDataGrabber</span>
 <span class="kn">from</span> <span class="nn">nipype</span> <span class="kn">import</span> <span class="n">Workflow</span><span class="p">,</span> <span class="n">Node</span>
-<span class="kn">import</span> <span class="nn">os</span>
 
-<span class="c1"># get current working directory</span>
-<span class="n">working_directory</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+<span class="n">data_dir</span> <span class="o">=</span> <span class="s1">&#39;/home/johannes.wiesner/work/repos/workshop_cimh/workshop/courses/nipype/data/bids_dataset/&#39;</span>
+<span class="n">cache_dir</span> <span class="o">=</span> <span class="s1">&#39;/home/johannes.wiesner/work/repos/workshop_cimh/workshop/courses/nipype/cache/&#39;</span>
 
-<span class="c1"># configure spm</span>
-<span class="n">spm</span><span class="o">.</span><span class="n">SPMCommand</span><span class="o">.</span><span class="n">set_mlab_paths</span><span class="p">(</span><span class="n">matlab_cmd</span><span class="o">=</span><span class="s1">&#39;/opt/matlab/R2022a/bin/matlab&#39;</span><span class="p">,</span> <span class="n">paths</span><span class="o">=</span><span class="s1">&#39;/opt/matlab/toolboxes/spm12&#39;</span><span class="p">,</span> <span class="n">use_mcr</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="c1"># create a node that iterates over the subject(s)</span>
+<span class="n">subject_iterator</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">IdentityInterface</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;subject_id&quot;</span><span class="p">]),</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;subject_iterator&quot;</span><span class="p">)</span>
+<span class="n">subject_iterator</span><span class="o">.</span><span class="n">iterables</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;subject_id&quot;</span><span class="p">,[</span><span class="s1">&#39;01&#39;</span><span class="p">,</span><span class="s1">&#39;02&#39;</span><span class="p">])]</span>
 
-<span class="c1"># get paths to functional and anatomical images</span>
-<span class="n">fmri_img</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">working_directory</span><span class="p">,</span><span class="s1">&#39;data/fmri_img.nii&#39;</span><span class="p">)</span>
-<span class="n">anatomical_img</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">working_directory</span><span class="p">,</span><span class="s1">&#39;data/spm_auditory/sub001/sM00223/sM00223_002.img&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stty: &#39;standard input&#39;: Inappropriate ioctl for device
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="set-up-all-the-nodes-we-need-for-preprocessing">
-<h3>Set up all the nodes we need for preprocessing<a class="headerlink" href="#set-up-all-the-nodes-we-need-for-preprocessing" title="Permalink to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use Realign for motion correction and register all images to the mean image. Since this is the first node, we have to provide with the filepath </span>
-<span class="n">realign</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">interface</span><span class="o">=</span><span class="n">spm</span><span class="o">.</span><span class="n">Realign</span><span class="p">(</span><span class="n">in_files</span><span class="o">=</span><span class="p">[</span><span class="n">fmri_img</span><span class="p">],</span><span class="n">jobtype</span><span class="o">=</span><span class="s1">&#39;estwrite&#39;</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;realign&quot;</span><span class="p">)</span>
+<span class="c1"># create a Node that takes in a BIDS-Dataset and returns data for one subject</span>
+<span class="n">data_grabber</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">BIDSDataGrabber</span><span class="p">(</span><span class="n">base_dir</span><span class="o">=</span><span class="n">data_dir</span><span class="p">,</span><span class="n">raise_on_empty</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;data_grabber&#39;</span><span class="p">)</span>
 
-<span class="c1"># Use Coregister to perform a rigid body registration of the functional data to the structural data. We have to provide it with the anatomical image</span>
-<span class="n">coregister</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">interface</span><span class="o">=</span><span class="n">spm</span><span class="o">.</span><span class="n">Coregister</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="p">[</span><span class="n">anatomical_img</span><span class="p">]),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;coregister&quot;</span><span class="p">)</span>
+<span class="c1"># define workflow</span>
+<span class="n">wf</span> <span class="o">=</span> <span class="n">Workflow</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;anatomical_workflow&#39;</span><span class="p">,</span><span class="n">base_dir</span><span class="o">=</span><span class="n">cache_dir</span><span class="p">)</span>
+<span class="n">wf</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">subject_iterator</span><span class="p">,</span><span class="s1">&#39;subject_id&#39;</span><span class="p">,</span><span class="n">data_grabber</span><span class="p">,</span><span class="s1">&#39;subject&#39;</span><span class="p">)</span>
+<span class="n">wf</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 
-<span class="c1"># Segment the coregistered structural image</span>
-<span class="n">segment</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">interface</span><span class="o">=</span><span class="n">spm</span><span class="o">.</span><span class="n">NewSegment</span><span class="p">(</span><span class="n">channel_info</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0001</span><span class="p">,</span><span class="mi">60</span><span class="p">,(</span><span class="kc">True</span><span class="p">,</span><span class="kc">True</span><span class="p">)),</span><span class="n">write_deformation_fields</span><span class="o">=</span><span class="p">[</span><span class="kc">False</span><span class="p">,</span><span class="kc">True</span><span class="p">]),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;segment&quot;</span><span class="p">)</span>
-<span class="n">tpm_img</span> <span class="o">=</span><span class="s1">&#39;/opt/matlab/toolboxes/spm12/tpm/TPM.nii&#39;</span>
-<span class="n">tissue1</span> <span class="o">=</span> <span class="p">((</span><span class="n">tpm_img</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="kc">True</span><span class="p">,</span><span class="kc">False</span><span class="p">),</span> <span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">))</span>
-<span class="n">tissue2</span> <span class="o">=</span> <span class="p">((</span><span class="n">tpm_img</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="kc">True</span><span class="p">,</span><span class="kc">False</span><span class="p">),</span> <span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">))</span>
-<span class="n">tissue3</span> <span class="o">=</span> <span class="p">((</span><span class="n">tpm_img</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="kc">True</span><span class="p">,</span><span class="kc">False</span><span class="p">),</span> <span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">))</span>
-<span class="n">tissue4</span> <span class="o">=</span> <span class="p">((</span><span class="n">tpm_img</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="mi">3</span><span class="p">,</span> <span class="p">(</span><span class="kc">False</span><span class="p">,</span><span class="kc">False</span><span class="p">),</span> <span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">))</span>
-<span class="n">tissue5</span> <span class="o">=</span> <span class="p">((</span><span class="n">tpm_img</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="mi">4</span><span class="p">,</span> <span class="p">(</span><span class="kc">False</span><span class="p">,</span><span class="kc">False</span><span class="p">),</span> <span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">))</span>
-<span class="n">tissue6</span> <span class="o">=</span> <span class="p">((</span><span class="n">tpm_img</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="kc">False</span><span class="p">,</span><span class="kc">False</span><span class="p">),</span> <span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">))</span>
-<span class="n">tissues</span> <span class="o">=</span> <span class="p">[</span><span class="n">tissue1</span><span class="p">,</span> <span class="n">tissue2</span><span class="p">,</span> <span class="n">tissue3</span><span class="p">,</span> <span class="n">tissue4</span><span class="p">,</span> <span class="n">tissue5</span><span class="p">,</span> <span class="n">tissue6</span><span class="p">]</span>
-<span class="n">segment</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">tissues</span> <span class="o">=</span> <span class="n">tissues</span>
 
-<span class="c1"># Warp functional and structural data to SPM’s T1 template using Normalize.</span>
-<span class="n">normalize</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">interface</span><span class="o">=</span><span class="n">spm</span><span class="o">.</span><span class="n">Normalize12</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;normalize&quot;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">nipype.interfaces.fsl</span> <span class="k">as</span> <span class="nn">fsl</span>
+<span class="n">mybet</span> <span class="o">=</span> <span class="n">fsl</span><span class="o">.</span><span class="n">BET</span><span class="p">(</span><span class="n">in_file</span><span class="o">=</span><span class="s1">&#39;/data/anatomical.nii&#39;</span><span class="p">,</span> <span class="n">out_file</span><span class="o">=</span><span class="s1">&#39;bar.nii&#39;</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">mybet</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 
-<span class="c1"># Smooth the functional data using Smooth</span>
-<span class="n">smooth</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">interface</span><span class="o">=</span><span class="n">spm</span><span class="o">.</span><span class="n">Smooth</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;smooth&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stty: &#39;standard input&#39;: Inappropriate ioctl for device
+<span class="kn">from</span> <span class="nn">nipype.interfaces.ants</span> <span class="kn">import</span> <span class="n">RegistrationSynQuick</span>
+<span class="n">reg</span> <span class="o">=</span> <span class="n">RegistrationSynQuick</span><span class="p">(</span><span class="n">moving_image</span><span class="o">=</span><span class="s1">&#39;/data/anatomical.nii&#39;</span><span class="p">,</span><span class="n">fixed_image</span><span class="o">=</span><span class="s1">&#39;/data/1mm_T1.nii.gz&#39;</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="setup-the-workflow-and-run-it">
-<h3>Setup the workflow and run it<a class="headerlink" href="#setup-the-workflow-and-run-it" title="Permalink to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">preprocessing_wf</span> <span class="o">=</span> <span class="n">Workflow</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;preprocessing_wf&#39;</span><span class="p">,</span><span class="n">base_dir</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
-<span class="n">preprocessing_wf</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">realign</span><span class="p">,</span><span class="s1">&#39;mean_image&#39;</span><span class="p">,</span><span class="n">coregister</span><span class="p">,</span><span class="s1">&#39;target&#39;</span><span class="p">)</span>
-<span class="n">preprocessing_wf</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">coregister</span><span class="p">,</span><span class="s1">&#39;coregistered_source&#39;</span><span class="p">,</span><span class="n">segment</span><span class="p">,</span><span class="s1">&#39;channel_files&#39;</span><span class="p">)</span>
-<span class="n">preprocessing_wf</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230421-17:52:24,828 nipype.workflow INFO:
-	 Workflow preprocessing_wf settings: [&#39;check&#39;, &#39;execution&#39;, &#39;logging&#39;, &#39;monitoring&#39;]
-230421-17:52:24,831 nipype.workflow INFO:
-	 Running serially.
-230421-17:52:24,831 nipype.workflow INFO:
-	 [Node] Setting-up &quot;preprocessing_wf.realign&quot; in &quot;/home/johannes.wiesner/work/repos/workshop_cimh/workshop/courses/nipype/preprocessing_wf/realign&quot;.
-230421-17:52:24,833 nipype.workflow INFO:
-	 [Node] Cached &quot;preprocessing_wf.realign&quot; - collecting precomputed outputs
-230421-17:52:24,833 nipype.workflow INFO:
-	 [Node] &quot;preprocessing_wf.realign&quot; found cached.
-230421-17:52:24,833 nipype.workflow INFO:
-	 [Node] Setting-up &quot;preprocessing_wf.coregister&quot; in &quot;/home/johannes.wiesner/work/repos/workshop_cimh/workshop/courses/nipype/preprocessing_wf/coregister&quot;.
-230421-17:52:24,835 nipype.workflow INFO:
-	 [Node] Cached &quot;preprocessing_wf.coregister&quot; - collecting precomputed outputs
-230421-17:52:24,835 nipype.workflow INFO:
-	 [Node] &quot;preprocessing_wf.coregister&quot; found cached.
-230421-17:52:24,835 nipype.workflow INFO:
-	 [Node] Setting-up &quot;preprocessing_wf.segment&quot; in &quot;/home/johannes.wiesner/work/repos/workshop_cimh/workshop/courses/nipype/preprocessing_wf/segment&quot;.
-230421-17:52:24,836 nipype.workflow INFO:
-	 [Node] Outdated cache found for &quot;preprocessing_wf.segment&quot;.
-230421-17:52:24,841 nipype.workflow INFO:
-	 [Node] Executing &quot;segment&quot; &lt;nipype.interfaces.spm.preprocess.NewSegment&gt;
-230421-17:53:12,556 nipype.workflow INFO:
-	 [Node] Finished &quot;segment&quot;, elapsed time 47.715084s.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stty: &#39;standard input&#39;: Inappropriate ioctl for device
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;networkx.classes.digraph.DiGraph at 0x7f4c8ab3a850&gt;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seg</span> <span class="o">=</span> <span class="n">spm</span><span class="o">.</span><span class="n">NewSegment</span><span class="p">()</span>
-<span class="n">seg</span><span class="o">.</span><span class="n">inputs</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stty: &#39;standard input&#39;: Inappropriate ioctl for device
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>affine_regularization = &lt;undefined&gt;
-channel_files = &lt;undefined&gt;
-channel_info = &lt;undefined&gt;
-matlab_cmd = /opt/matlab/R2022a/bin/matlab
-mfile = True
-paths = [&#39;/opt/matlab/toolboxes/spm12&#39;]
-sampling_distance = &lt;undefined&gt;
-tissues = &lt;undefined&gt;
-use_mcr = &lt;undefined&gt;
-use_v8struct = True
-warping_regularization = &lt;undefined&gt;
-write_deformation_fields = &lt;undefined&gt;
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -627,11 +514,11 @@ write_deformation_fields = &lt;undefined&gt;
       </div>
     </a>
     <a class="right-next"
-       href="../../../outro/outro.html"
+       href="nipype_5_handson.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Links</p>
+        <p class="prev-next-title">Only for real nerds</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -644,25 +531,6 @@ write_deformation_fields = &lt;undefined&gt;
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-preprocessing-workflow-that-includes-realignment-coregistration-normalization-and-smoothing">Create a preprocessing workflow that includes Realignment, Coregistration, Normalization and Smoothing</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-all-the-nodes-we-need-for-preprocessing">Set up all the nodes we need for preprocessing</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-the-workflow-and-run-it">Setup the workflow and run it</a></li>
-</ul>
-</li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

@@ -175,7 +175,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="nipype_3_first_level.html">First level analysis with Nipype + SPM</a></li>
 
 
-<li class="toctree-l2"><a class="reference internal" href="nipype_4_handson.html">Now it’s your turn!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nipype_4_handson.html">Hands-On</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nipype_5_handson.html">Only for real nerds</a></li>
 </ul>
 </li>
 </ul>
@@ -424,7 +425,10 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-your-analysis-import-packages-set-paths-etc">Setup your analysis (import packages, set paths, etc.)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neuroimaging-example">Neuroimaging example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neuroimaging-example">Neuroimaging example</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-check-what-happend-behind-the-scenes">Let’s check what happend behind the scenes</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -447,11 +451,10 @@ document.write(`
 <span class="kn">from</span> <span class="nn">nipype.interfaces.spm</span> <span class="kn">import</span> <span class="n">Smooth</span>
 <span class="kn">from</span> <span class="nn">nipype.interfaces</span> <span class="kn">import</span> <span class="n">spm</span>
 <span class="kn">from</span> <span class="nn">nilearn.plotting</span> <span class="kn">import</span> <span class="n">plot_anat</span>
-<span class="n">spm</span><span class="o">.</span><span class="n">SPMCommand</span><span class="o">.</span><span class="n">set_mlab_paths</span><span class="p">(</span><span class="n">matlab_cmd</span><span class="o">=</span><span class="s1">&#39;/opt/matlab/R2022a/bin/matlab&#39;</span><span class="p">,</span> <span class="n">paths</span><span class="o">=</span><span class="s1">&#39;/opt/matlab/toolboxes/spm12&#39;</span><span class="p">,</span> <span class="n">use_mcr</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 <span class="c1"># set general paths</span>
-<span class="n">base_dir</span> <span class="o">=</span> <span class="s1">&#39;/home/johannes.wiesner/work/repos/workshop_cimh/workshop/courses/nipype/cache/&#39;</span>
-<span class="n">t1_image</span> <span class="o">=</span> <span class="s1">&#39;/home/johannes.wiesner/work/repos/workshop_cimh/workshop/courses/nipype/data/anatomical.nii&#39;</span>
+<span class="n">base_dir</span> <span class="o">=</span> <span class="s1">&#39;/cache&#39;</span>
+<span class="n">anatomical_image</span> <span class="o">=</span> <span class="s1">&#39;/data/single_files/anatomical.nii&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -462,8 +465,84 @@ document.write(`
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Let&#39;s smooth a structural image</span>
-<span class="n">smooth</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">Smooth</span><span class="p">(</span><span class="n">fwhm</span><span class="o">=</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span><span class="n">in_files</span> <span class="o">=</span> <span class="n">t1_image</span><span class="p">),</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;smooth&#39;</span><span class="p">,</span><span class="n">base_dir</span><span class="o">=</span><span class="n">base_dir</span><span class="p">)</span>
+<span class="n">smooth</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">Smooth</span><span class="p">(</span><span class="n">fwhm</span><span class="o">=</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span><span class="n">in_files</span><span class="o">=</span><span class="n">anatomical_image</span><span class="p">),</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;smooth&#39;</span><span class="p">,</span><span class="n">base_dir</span><span class="o">=</span><span class="n">base_dir</span><span class="p">)</span>
 <span class="n">smooth</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="let-s-check-what-happend-behind-the-scenes">
+<h3>Let’s check what happend behind the scenes<a class="headerlink" href="#let-s-check-what-happend-behind-the-scenes" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># let&#39;s print what&#39;s inside our cache directory</span>
+<span class="o">!</span>ls<span class="w"> </span>-la<span class="w"> </span>/cache/smooth
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>total 392880
+drwxr-xrwx+ 3 root   root        4096 Jul 21 15:05 .
+drwxr-xr-x+ 5 154520 100513      4096 Jul 21 15:04 ..
+-rw-r--rw-  1 root   root         593 Jul 21 15:04 _0x50e47bf527977e689aeee620d45e026b.json
+-rw-r--rw-  1 root   root         206 Jul 21 15:04 _inputs.pklz
+-rw-r--rw-  1 root   root        1474 Jul 21 15:04 _node.pklz
+drwxr-xrwx+ 2 root   root        4096 Jul 21 15:04 _report
+-rw-r--rw-  1 root   root       14425 Jul 21 15:04 pyscript_smooth.m
+-rw-r--rw-  1 root   root        2544 Jul 21 15:05 result_smooth.pklz
+-rw-r--rw-  1 root   root   402260320 Jul 21 15:05 sanatomical.nii
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># let&#39;s check what&#39;s inside pyscript_smooth.m</span>
+<span class="o">!</span>cat<span class="w"> </span>/cache/smooth/pyscript_smooth.m<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="o">(</span>head<span class="w"> </span>--lines<span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>tail<span class="w"> </span>--lines<span class="w"> </span><span class="m">20</span><span class="o">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fprintf(1,&#39;Executing %s at %s:\n&#39;,mfilename(),datestr(now));
+fprintf(1,&#39;Executing %s at %s:\n&#39;,mfilename(),datestr(now));
+ver,
+try,
+        %% Generated by nipype.interfaces.spm
+        if isempty(which(&#39;spm&#39;)),
+             throw(MException(&#39;SPMCheck:NotFound&#39;, &#39;SPM not in matlab path&#39;));
+        end
+        [name, version] = spm(&#39;ver&#39;);
+        fprintf(&#39;SPM version: %s Release: %s\n&#39;,name, version);
+        fprintf(&#39;SPM path: %s\n&#39;, which(&#39;spm&#39;));
+        spm(&#39;Defaults&#39;,&#39;fMRI&#39;);
+
+        if strcmp(name, &#39;SPM8&#39;) || strcmp(name(1:5), &#39;SPM12&#39;),
+           spm_jobman(&#39;initcfg&#39;);
+           spm_get_defaults(&#39;cmdline&#39;, 1);
+        end
+
+        jobs{1}.spm.spatial.smooth.data = {...
+&#39;/cache/smooth/anatomical.nii,1&#39;;...
+&#39;/cache/smooth/anatomical.nii,340&#39;;...
+&#39;/cache/smooth/anatomical.nii,341&#39;;...
+};
+jobs{1}.spm.spatial.smooth.fwhm(1) = 4.0;
+jobs{1}.spm.spatial.smooth.fwhm(2) = 4.0;
+jobs{1}.spm.spatial.smooth.fwhm(3) = 4.0;
+jobs{1}.spm.spatial.smooth.prefix = &#39;s&#39;;
+
+        spm_jobman(&#39;run&#39;, jobs);
+
+        
+        if strcmp(name, &#39;SPM8&#39;) || strcmp(name(1:5), &#39;SPM12&#39;),
+            close(&#39;all&#39;, &#39;force&#39;);
+        end;
+            
+,catch ME,
+fprintf(2,&#39;MATLAB code threw an exception:\n&#39;);
+fprintf(2,&#39;%s\n&#39;,ME.message);
+if length(ME.stack) ~= 0, fprintf(2,&#39;File:%s\nName:%s\nLine:%d\n&#39;,ME.stack.file,ME.stack.name,ME.stack.line);, end;
+end;
 </pre></div>
 </div>
 </div>
@@ -471,19 +550,13 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s plot the image before and after smoothing</span>
-<span class="n">plot_anat</span><span class="p">(</span><span class="n">t1_image</span><span class="p">,</span><span class="n">annotate</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">draw_cross</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">cut_coords</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
-<span class="n">plot_anat</span><span class="p">(</span><span class="s1">&#39;/home/johannes.wiesner/work/repos/workshop_cimh/workshop/courses/nipype/cache/smooth/sanatomical.nii&#39;</span><span class="p">,</span><span class="n">annotate</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">draw_cross</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">cut_coords</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="c1">#plot_anat(anatomical_image,annotate=False,draw_cross=False,cut_coords=(10,10,10))</span>
+<span class="c1">#plot_anat(&#39;/cache/smooth/sanatomical.nii&#39;,annotate=False,draw_cross=False,cut_coords=(10,10,10))</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays._slicers.OrthoSlicer at 0x7feefacdbd00&gt;
-</pre></div>
 </div>
-<img alt="../../../_images/870fbe8299a2965881c1b5b6e59ff5b72e7897b536b6f158ac7aa157a565d843.png" src="../../../_images/870fbe8299a2965881c1b5b6e59ff5b72e7897b536b6f158ac7aa157a565d843.png" />
-<img alt="../../../_images/81cfc799d6efc12b81cd12a358993bc928e8e56a8d75e5fd32a5f667c60fd744.png" src="../../../_images/81cfc799d6efc12b81cd12a358993bc928e8e56a8d75e5fd32a5f667c60fd744.png" />
-</div>
-</div>
+</section>
 </section>
 </section>
 
@@ -555,7 +628,10 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-your-analysis-import-packages-set-paths-etc">Setup your analysis (import packages, set paths, etc.)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neuroimaging-example">Neuroimaging example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neuroimaging-example">Neuroimaging example</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-check-what-happend-behind-the-scenes">Let’s check what happend behind the scenes</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
