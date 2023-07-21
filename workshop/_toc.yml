@@ -21,6 +21,7 @@ parts:
       - file: courses/nipype/code/nipype_2_introduction
       - file: courses/nipype/code/nipype_3_first_level
       - file: courses/nipype/code/nipype_4_handson
+      - file: courses/nipype/code/nipype_5_handson
   - caption: After the workshop
     chapters:
     - file: outro/outro
