@@ -448,10 +448,13 @@ generated a rather comprehensive set of install instructions below. While not al
 <tr class="row-even"><td><p>A modern browser</p></td>
 <td><p>We will work with jupyter-lab which allows you to write code within a browser.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Bash</p></td>
-<td><p>This is needed to download content for this workshop and to later check your installation.</p></td>
+<tr class="row-odd"><td><p>Git Bash (When using Windows)</p></td>
+<td><p>This is needed to execute bash code on a Windows Computer that will download content for this workshop, check your installation and start your docker containers.</p></td>
 </tr>
-<tr class="row-even"><td><p>Docker</p></td>
+<tr class="row-even"><td><p>WSL (when using Windows)</p></td>
+<td><p>This is the backend for Docker let’s you run Linux on an Windows Computer</p></td>
+</tr>
+<tr class="row-odd"><td><p>Docker</p></td>
 <td><p>This is needed for the nipype workshop</p></td>
 </tr>
 </tbody>
@@ -470,93 +473,19 @@ generated a rather comprehensive set of install instructions below. While not al
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-0">
 Windows</label><div class="sd-tab-content docutils">
-<p><em><strong>Modern Web Browser</strong></em>
+<p><strong>Modern Web Browser</strong>
 Install Firefox or Chrome (Safari will also work). Microsoft Edge is not modern, despite what Microsoft might try and otherwise tell you.</p>
+<p><strong>Powershell</strong></p>
+<p>If you haven’t Powershell already installed on your machine (check by searching for Powershell in the navigation bar), follow <a class="reference external" href="https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3">these instructions</a> and install it (you most certainly have a 64 bit machine so download the <code class="docutils literal notranslate"><span class="pre">x64.msi</span></code> file).</p>
+<p><strong>WSL</strong></p>
+<p>Open the Powershell as Administrator and run <code class="docutils literal notranslate"><span class="pre">wsl</span> <span class="pre">--install</span> <span class="pre">-d</span> <span class="pre">ubuntu</span></code>. This will first install WSL + a Ubuntu terminal environment on your Windows machine which is needed for Docker. More on that <a class="reference external" href="https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-10#1-overview">here</a></p>
 <p><strong>Bash shell</strong></p>
-<p>Install Git Bash on your system. Follow <a class="reference external" href="https://git-scm.com/downloads">these instructions</a>.</p>
-<p><strong>Note</strong>:  From this point on whenever the instructions specify to “open a terminal” please assume you are supposed to open the Git Bash terminal.</p>
+<p>Install Git Bash on your system. Follow <a class="reference external" href="https://git-scm.com/downloads">these instructions</a>. When installing it, you will be asked
+a lot of configuration questions. Just leave the defaults as they are :)</p>
+<p><strong>Note: From this point on whenever the instructions specify to “open a terminal” please assume you are supposed to open the Git Bash terminal.</strong></p>
 <p><strong>Docker</strong></p>
-<p>Unfortunately, <code class="docutils literal notranslate"><span class="pre">Docker</span></code> for <code class="docutils literal notranslate"><span class="pre">Windows</span></code> is a bit of a mess.
-The recommended version of <code class="docutils literal notranslate"><span class="pre">Docker</span></code> to install varies dramatically depending not only on which version of <code class="docutils literal notranslate"><span class="pre">Windows</span></code> you have installed (e.g., <code class="docutils literal notranslate"><span class="pre">Windows</span> <span class="pre">10</span> <span class="pre">Home</span></code> versus <code class="docutils literal notranslate"><span class="pre">Professional</span></code>/<code class="docutils literal notranslate"><span class="pre">Enterprise</span></code>/<code class="docutils literal notranslate"><span class="pre">Education</span></code>), but also which <em>build</em> of <code class="docutils literal notranslate"><span class="pre">Windows</span></code> you have.
-As such, developing a comprehensive set of instructions for installing <code class="docutils literal notranslate"><span class="pre">Docker</span></code> is rather difficult.</p>
-<p>For this course, you will need to install either <a class="reference external" href="https://docs.docker.com/toolbox/toolbox_install_windows/">Docker Toolbox for Windows</a> or <a class="reference external" href="https://docs.docker.com/docker-for-windows/install/">Docker for Windows Desktop</a>.
-Which you install will depend on your OS.
-<strong>PLEASE NOTE</strong> that installing <code class="docutils literal notranslate"><span class="pre">Docker</span> <span class="pre">for</span> <span class="pre">Windows</span> <span class="pre">Desktop</span></code> will disable <code class="docutils literal notranslate"><span class="pre">VirtualBox</span></code> on your computer.
-If you actively use <code class="docutils literal notranslate"><span class="pre">VirtualBox</span></code> we recommend you install <code class="docutils literal notranslate"><span class="pre">Docker</span> <span class="pre">Toolbox</span></code>.</p>
-<p>(<strong>Note</strong>: the below instructions assume you are installing <code class="docutils literal notranslate"><span class="pre">Docker</span> <span class="pre">Toolbox</span></code>.
-Because there are fewer requirements for <code class="docutils literal notranslate"><span class="pre">Docker</span> <span class="pre">Toolbox</span></code>, it is likely that you will be able to install this more easily.)</p>
-<ol class="arabic">
-<li><p>Download the latest <a class="reference external" href="https://github.com/docker/toolbox/releases/download/v19.03.1/DockerToolbox-19.03.1.exe">Docker Toolbox installer</a> (note: that link will automatically download the file)</p></li>
-<li><p>Run the downloaded <code class="docutils literal notranslate"><span class="pre">.exe</span></code> file and leave all the defaults during the installation procedure.
-Click <code class="docutils literal notranslate"><span class="pre">Yes</span></code>on the prompt that appears asking if the application can make changes to your computer.</p></li>
-<li><p>Search for and open the newly-installed “Docker Quickstart” application.
-Again, click <code class="docutils literal notranslate"><span class="pre">Yes</span></code>on the prompt that appears asking if the application can make changes to your computer.
-The application will do a number of things to finish installing and setting up Docker.</p></li>
-<li><p>Once you see a <code class="docutils literal notranslate"><span class="pre">$</span></code> prompt type <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">hello-world</span></code>.
-A brief introductory message should be printed to the screen.</p></li>
-<li><p>Close the “Docker Quickstart” application and open a terminal (i.e., the Ubuntu application).</p></li>
-<li><p>Copy-paste the following commands.
-You will be prompted to enter your password once.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> # Update the apt package list.
- sudo apt-get update -y
- # Install Docker&#39;s package dependencies.
- sudo apt-get install -y \
-     apt-transport-https \
-     ca-certificates \
-     curl \
-     software-properties-common
- # Download and add Docker&#39;s official public PGP key.
- curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
- # Verify the fingerprint.
- sudo apt-key fingerprint 0EBFCD88
- # Add the `stable` channel&#39;s Docker upstream repository.
- sudo add-apt-repository \
-     &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-     $(lsb_release -cs) \
-     stable&quot;
- # Update the apt package list (for the new apt repo).
- sudo apt-get update -y
- # Install the latest version of Docker CE.
- sudo apt-get install -y docker-ce
- # Allow your user to access the Docker CLI without needing root access.
- sudo usermod -aG docker $USER
-</pre></div>
-</div>
-</li>
-<li><p>Close and re-open the terminal.</p></li>
-<li><p>Type <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">docker-compose</span></code>.</p></li>
-<li><p>Type <code class="docutils literal notranslate"><span class="pre">powershell.exe</span> <span class="pre">&quot;docker-machine</span> <span class="pre">config&quot;</span></code>.
-You should get output similar to the following:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> --tlsverify
- --tlscacert=&quot;C:\\Users\\&lt;YOUR_USERNAME&gt;\\.docker\\machine\\machines\\default\\ca.pem&quot;
- --tlscert=&quot;C:\\Users\\&lt;YOUR_USERNAME&gt;\\.docker\\machine\\machines\\default\\cert.pem&quot;
- --tlskey=&quot;C:\\Users\\&lt;YOUR_USERNAME&gt;\\.docker\\machine\\machines\\default\\key.pem&quot;
- -H=tcp://xxx.xxx.xx.xxx:xxxx
-</pre></div>
-</div>
-<p>where <code class="docutils literal notranslate"><span class="pre">&lt;YOUR_USERNAME&gt;</span></code> will have an actual value (likely your Windows username), and <code class="docutils literal notranslate"><span class="pre">tcp=xxx.xxx.xx.xxx:xxx</span></code> will be a series of numbers.
-If you don’t get this output then something has gone wrong.
-Please make sure you were able to run the <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">hello-world</span></code> command, above.
-If you were and you still don’t receive this output, please contact one of the instructors.</p>
-</li>
-<li><p>You will use the the outputs of the above command to modify the commands below before running them in the terminal.
-First, take the numbers printed in place of the <code class="docutils literal notranslate"><span class="pre">x</span></code>s on the output of the line <code class="docutils literal notranslate"><span class="pre">-H=tcp://xxx.xxx.xx.xxx:xxxx</span></code> from above and replace the placeholder <code class="docutils literal notranslate"><span class="pre">xxx.xxx.xx.xxx:xxxx</span></code> on the first command below (<code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">DOCKER_HOST</span></code>).
-Second, take whatever value is printed in place of <code class="docutils literal notranslate"><span class="pre">&lt;YOUR_USERNAME&gt;</span></code> above and replace the <code class="docutils literal notranslate"><span class="pre">&lt;YOUR_USERNAME&gt;</span></code> placeholder on the second command below (<code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">DOCKER_CERT_PATH</span></code>).
-Once you have updated the commands appropriately, copy and paste them into the terminal:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> echo &quot;export DOCKER_HOST=tcp://xxx.xxx.xx.xxx:xxxx&quot; &gt;&gt; $HOME/.bashrc
- echo &quot;export DOCKER_CERT_PATH=/mnt/c/Users/&lt;YOUR_USERNAME&gt;/.docker/machine/certs&quot; &gt;&gt; $HOME/.bashrc
- echo &quot;export DOCKER_TLS_VERIFY=1&quot; &gt;&gt; $HOME/.bashrc
-</pre></div>
-</div>
-</li>
-<li><p>Close and re-open a terminal (i.e., the Ubuntu application).
-Type <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">hello-world</span></code>.
-The same brief introductory message you saw before should be printed to the screen.</p></li>
-</ol>
-<p><strong>Note</strong>: If you restart your computer (or somehow otherwise shut down the Docker VM) you will need to re-open the “Docker Quickstart” application and wait until you see the <code class="docutils literal notranslate"><span class="pre">$</span></code> prompt again before your <code class="docutils literal notranslate"><span class="pre">docker</span></code> commands will work again!
-If you are having problems running <code class="docutils literal notranslate"><span class="pre">docker</span></code> commands in the terminal, try re-opening the “Docker Quickstart” application.</p>
-<p>(The above step-by-step instructions are distilled from <a class="reference external" href="https://docs.docker.com/toolbox/toolbox_install_windows/">here</a> and <a class="reference external" href="https://medium.com/&#64;joaoh82/setting-up-docker-toolbox-for-windows-home-10-and-wsl-to-work-perfectly-2fd34ed41d51">here</a>.
-If you have questions during the installation procedure please check those links for potential answers!)</p>
+<p><a class="reference external" href="https://docs.docker.com/desktop/install/windows-install/#install-docker-desktop-on-windows">Download the installation file</a> and then follow <a class="reference external" href="https://docs.docker.com/desktop/install/windows-install/#install-docker-desktop-on-windows">these instructions</a> to install Docker Desktop on your machine.</p>
+<p>After installing Docker Desktop, start it and leave it running while proceeding with the next steps.</p>
 </div>
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-1">
@@ -586,9 +515,9 @@ A brief introductory message should be printed to the screen.</p></li>
 <input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-2">
 MacOs</label><div class="sd-tab-content docutils">
-<p><em><strong>Modern Web Browser</strong></em>
-Install Firefox or Chrome (Safari will also work). Microsoft Edge is not modern, despite what Microsoft might try and otherwise tell you.
-<strong>Bash shell</strong></p>
+<p><strong>Modern Web Browser</strong>
+Install Firefox or Chrome (Safari will also work). Microsoft Edge is not modern, despite what Microsoft might try and otherwise tell you.</p>
+<p><strong>Bash shell</strong></p>
 <p>You already have it!
 Depending on which version of Mac OS you’re running you may need to type <code class="docutils literal notranslate"><span class="pre">bash</span></code> inside the <code class="docutils literal notranslate"><span class="pre">terminal</span></code> to access it.
 To check whether this is necessary, follow these steps:</p>
@@ -618,7 +547,7 @@ If you have questions during the installation procedure please check that link f
 </section>
 <section id="checking-your-install">
 <h2>Checking your install<a class="headerlink" href="#checking-your-install" title="Permalink to this heading">#</a></h2>
-<p>Now that you’ve installed everything it’s time to check that everything works as expected! Type the following into your terminal:</p>
+<p>Now that you’ve installed everything it’s time to check that everything works as expected! Type the following into your terminal (User tip: You can use the middle click on your mouse for effortless pasting):</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bash &lt;( curl -s https://raw.githubusercontent.com/JohannesWiesner/workshop_cimh/master/check_install.sh)
 </pre></div>
 </div>
@@ -627,11 +556,11 @@ If you followed these instructions step-by-step and cannot resolve the issue ple
 </section>
 <section id="download-the-workshop-material">
 <h2>Download the workshop material<a class="headerlink" href="#download-the-workshop-material" title="Permalink to this heading">#</a></h2>
-<p>Now that you got everything installed correctly, it’s time to download the course material for this workshop. In your terminal navigate to a folder of your choice where you want to place the course material. Then paste and execute this command:</p>
+<p>Now that you got everything installed correctly, it’s time to download the course material for this workshop. In your terminal navigate to a folder of your choice where you want to place the course material and execute this command:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bash &lt;( curl -s https://raw.githubusercontent.com/JohannesWiesner/workshop_cimh/master/download_courses.sh)
 </pre></div>
 </div>
-<p>This will download all the data (and the docker image) for this workshop.</p>
+<p>This will download all the data (and the docker image) for this workshop. If everything works correctly you should now have a folder named <code class="docutils literal notranslate"><span class="pre">courses</span></code> in your specified download directory.</p>
 </section>
 </section>
 
