@@ -62,8 +62,8 @@ a lot of configuration questions. Just leave the defaults as they are.
 
 **Docker**
 
-[Download the installation file](https://docs.docker.com/desktop/install/windows-install/#install-docker-desktop-on-windows) and then follow [these instructions](https://docs.docker.com/desktop/install/windows-install/#install-docker-desktop-on-windows) to install Docker Desktop on your machine.
-After installing Docker Desktop, start it and leave it running while proceeding with the next steps.
+Download the installation file and then follow [these instructions](https://docs.docker.com/desktop/install/windows-install/#install-docker-desktop-on-windows) to install Docker Desktop on your machine. The download
+button can be found at the top of the page. After installing Docker Desktop, please start it and leave it running while proceeding with the next steps.
 
 ```
 
