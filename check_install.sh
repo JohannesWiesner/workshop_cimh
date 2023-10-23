@@ -52,15 +52,7 @@ check_installed docker
 
 # congratulations, you did it!
 if [ -z ${missing} ]; then
-    if [ "${curr_os}" != "windows" ]; then
-        python -c 'print("\U0001f389" * 3, end=" ")'
-    fi
     printf "Everything seems to be installed correctly! "
-    if [ "${curr_os}" != "windows" ]; then
-        python -c 'print("\U0001f389" * 3)'
-    else
-        printf "\n"
-    fi
     printf "Congratulations, you're all ready for the course!\n"
 fi
 
