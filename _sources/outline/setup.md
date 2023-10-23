@@ -43,36 +43,32 @@ To get the most out of our course, we ask that you arrive with the following sof
 
 ````{tab-set}
 ```{tab-item} Windows
-
 **Modern Web Browser**
 Install Firefox or Chrome (Safari will also work). Microsoft Edge is not modern, despite what Microsoft might try and otherwise tell you.
 
 **Powershell**
 
-If you haven't Powershell already installed on your machine (check by searching for Powershell in the navigation bar), follow [these instructions](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3) and install it (you most certainly have a 64 bit machine so download the `x64.msi` file).
+If you haven't Powershell already installed on your machine (check by searching for Powershell in the navigation bar), follow [these instructions](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3#installing-the-msi-package) and install it (you most certainly have a 64 bit machine so download the `x64.msi` file).
 
 **WSL**
 
-Open the Powershell as Administrator and run `wsl --install -d ubuntu`. This will first install WSL + a Ubuntu terminal environment on your Windows machine which is needed for Docker. More on that [here](https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-10#1-overview)
+Open the Powershell as Administrator and run `wsl --install -d ubuntu`. This will install WSL with a Ubuntu terminal environment on your Windows machine which is needed for Docker.
+More on that [here](https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-10#1-overview).
 
 **Bash shell**
 
 Install Git Bash on your system. Follow [these instructions](https://git-scm.com/downloads). When installing it, you will be asked
-a lot of configuration questions. Just leave the defaults as they are :)
-
-**Note: From this point on whenever the instructions specify to “open a terminal” please assume you are supposed to open the Git Bash terminal.**
+a lot of configuration questions. Just leave the defaults as they are.
 
 **Docker**
 
 [Download the installation file](https://docs.docker.com/desktop/install/windows-install/#install-docker-desktop-on-windows) and then follow [these instructions](https://docs.docker.com/desktop/install/windows-install/#install-docker-desktop-on-windows) to install Docker Desktop on your machine.
-
 After installing Docker Desktop, start it and leave it running while proceeding with the next steps.
 
 ```
 
 ```{tab-item} Linux
-
-***Modern Web Browser***
+**Modern Web Browser**
 Install Firefox or Chrome (Safari will also work). Microsoft Edge is not modern, despite what Microsoft might try and otherwise tell you.
 
 **Bash shell**
@@ -98,7 +94,6 @@ To check whether this is necessary, follow these steps:
 ```
 
 ```{tab-item} MacOs
-
 **Modern Web Browser**
 Install Firefox or Chrome (Safari will also work). Microsoft Edge is not modern, despite what Microsoft might try and otherwise tell you.
 
@@ -132,6 +127,8 @@ If you have questions during the installation procedure please check that link f
 ````
 
 ## Checking your install
+
+**Note for Windows Users: From this point on whenever the instructions specify to “open a terminal” please assume you are supposed to open the Git Bash terminal.**
 
 Now that you've installed everything it's time to check that everything works as expected! Type the following into your terminal (User tip: You can use the middle click on your mouse for effortless pasting):
 

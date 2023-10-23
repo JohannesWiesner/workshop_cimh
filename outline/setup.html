@@ -476,21 +476,21 @@ Windows</label><div class="sd-tab-content docutils">
 <p><strong>Modern Web Browser</strong>
 Install Firefox or Chrome (Safari will also work). Microsoft Edge is not modern, despite what Microsoft might try and otherwise tell you.</p>
 <p><strong>Powershell</strong></p>
-<p>If you haven’t Powershell already installed on your machine (check by searching for Powershell in the navigation bar), follow <a class="reference external" href="https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3">these instructions</a> and install it (you most certainly have a 64 bit machine so download the <code class="docutils literal notranslate"><span class="pre">x64.msi</span></code> file).</p>
+<p>If you haven’t Powershell already installed on your machine (check by searching for Powershell in the navigation bar), follow <a class="reference external" href="https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3#installing-the-msi-package">these instructions</a> and install it (you most certainly have a 64 bit machine so download the <code class="docutils literal notranslate"><span class="pre">x64.msi</span></code> file).</p>
 <p><strong>WSL</strong></p>
-<p>Open the Powershell as Administrator and run <code class="docutils literal notranslate"><span class="pre">wsl</span> <span class="pre">--install</span> <span class="pre">-d</span> <span class="pre">ubuntu</span></code>. This will first install WSL + a Ubuntu terminal environment on your Windows machine which is needed for Docker. More on that <a class="reference external" href="https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-10#1-overview">here</a></p>
+<p>Open the Powershell as Administrator and run <code class="docutils literal notranslate"><span class="pre">wsl</span> <span class="pre">--install</span> <span class="pre">-d</span> <span class="pre">ubuntu</span></code>. This will install WSL with a Ubuntu terminal environment on your Windows machine which is needed for Docker.
+More on that <a class="reference external" href="https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-10#1-overview">here</a>.</p>
 <p><strong>Bash shell</strong></p>
 <p>Install Git Bash on your system. Follow <a class="reference external" href="https://git-scm.com/downloads">these instructions</a>. When installing it, you will be asked
-a lot of configuration questions. Just leave the defaults as they are :)</p>
-<p><strong>Note: From this point on whenever the instructions specify to “open a terminal” please assume you are supposed to open the Git Bash terminal.</strong></p>
+a lot of configuration questions. Just leave the defaults as they are.</p>
 <p><strong>Docker</strong></p>
-<p><a class="reference external" href="https://docs.docker.com/desktop/install/windows-install/#install-docker-desktop-on-windows">Download the installation file</a> and then follow <a class="reference external" href="https://docs.docker.com/desktop/install/windows-install/#install-docker-desktop-on-windows">these instructions</a> to install Docker Desktop on your machine.</p>
-<p>After installing Docker Desktop, start it and leave it running while proceeding with the next steps.</p>
+<p><a class="reference external" href="https://docs.docker.com/desktop/install/windows-install/#install-docker-desktop-on-windows">Download the installation file</a> and then follow <a class="reference external" href="https://docs.docker.com/desktop/install/windows-install/#install-docker-desktop-on-windows">these instructions</a> to install Docker Desktop on your machine.
+After installing Docker Desktop, start it and leave it running while proceeding with the next steps.</p>
 </div>
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-1">
 Linux</label><div class="sd-tab-content docutils">
-<p><em><strong>Modern Web Browser</strong></em>
+<p><strong>Modern Web Browser</strong>
 Install Firefox or Chrome (Safari will also work). Microsoft Edge is not modern, despite what Microsoft might try and otherwise tell you.</p>
 <p><strong>Bash shell</strong></p>
 <p>You already have it!
@@ -547,6 +547,7 @@ If you have questions during the installation procedure please check that link f
 </section>
 <section id="checking-your-install">
 <h2>Checking your install<a class="headerlink" href="#checking-your-install" title="Permalink to this heading">#</a></h2>
+<p><strong>Note for Windows Users: From this point on whenever the instructions specify to “open a terminal” please assume you are supposed to open the Git Bash terminal.</strong></p>
 <p>Now that you’ve installed everything it’s time to check that everything works as expected! Type the following into your terminal (User tip: You can use the middle click on your mouse for effortless pasting):</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bash &lt;( curl -s https://raw.githubusercontent.com/JohannesWiesner/workshop_cimh/master/check_install.sh)
 </pre></div>
