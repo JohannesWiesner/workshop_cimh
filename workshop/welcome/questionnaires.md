@@ -1,13 +1,5 @@
 # Questionnaires
-Since this our first workshop, we got a lot to learn from you! We kindly ask you to fill out the pre- and post-workshop Questionnaires
-
-# Pre-Workshop Questionnaire
-
-Please fill out this [questionnaire](https://redcap2.zi-mannheim.de/surveys/?s=A9H78YAW7NT797LF)
-
-# Post-Workshop Questionnaire
-
-Please fill out the POST-WORKSHOP Questionnaire (PUT LINK HERE!!!!!!!!!!)
+Since this our first workshop, we got a lot to learn from you! We kindly ask you to fill out the pre- and post-workshop questionnaires. Here's the link to the [pre-workshop questionnaire](https://redcap2.zi-mannheim.de/surveys/?s=YRKX4N348YDKEPR8). After the workshop is over we kindly ask you to also fill out the [post-workshop questionnaire](https://redcap2.zi-mannheim.de/surveys/?s=D8X7LTW3KKHRENRJ) so that we know what can be improved!
 
 # Open Science Questionnaire
 
