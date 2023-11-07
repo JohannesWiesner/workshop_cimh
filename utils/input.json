@@ -1,0 +1,22 @@
+[
+    {
+        "Name ": "Prof. Emanuel Schwarz",
+        "Picture": "https://www.zi-mannheim.de/typo3temp/assets/_processed_/c/9/csm_Schwarz_Emanuel_web_af0447d754.jpg",
+        "ZI": "https://www.zi-mannheim.de/forschung/hector-institut-fuer-kuenstliche-intelligenz-in-der-psychiatrie-hitkip.html",
+        "Interests": "Open Data & Reproducible Data Analysis"
+    },
+    {
+        "Name ": "Johannes Wiesner",
+        "Picture": "https://avatars.githubusercontent.com/u/48254290?v=4",
+        "LinkedIn": "https://www.linkedin.com/in/johannes-wiesner-376002171",
+        "ZI": "https://tinyurl.com/CIMH-CSP-Lab",
+        "Interests": "Reproducible Data Analysis & Open Source Software"
+    },
+    {
+        "Name ": "Miroslava Jindrová",
+        "Picture": "https://i1.rgstatic.net/ii/profile.image/11431281203575648-1699370155203_Q512/Miroslava-Jindrova.jpg",
+        "ResearchGate": "https://www.researchgate.net/profile/Miroslava-Jindrova",
+        "ZI": "https://www.zi-mannheim.de/forschung/abteilungen-ags-institute/psm/arbeitsgruppen-psm/psychobio-selbstregulation.html",
+        "Interests": "Reproducible Data Analysis, Open Data & Open Source Software"
+    }
+]
