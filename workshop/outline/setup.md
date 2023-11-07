@@ -143,4 +143,4 @@ Now that you got everything installed correctly, it's time to download the cours
 
     bash <( curl -s https://raw.githubusercontent.com/JohannesWiesner/workshop_cimh/master/download_courses.sh)
 
-This will download all the data (and the docker image) for this workshop. If everything works correctly you should now have a folder named `courses` in your specified download directory.
+This will download all the data (and pull the docker image) for this workshop. If everything works correctly you should now have a folder named `workshop_cimh` in your specified download directory.
