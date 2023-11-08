@@ -24,7 +24,7 @@ run_docker(){
     -v ${PWD}/nipype/cache:/cache \
     -v ${PWD}/nipype/output:/output \
     -p 8888:8888 \
-    workshop_cimh:2023.07.14
+    johanneswiesner/workshop_cimh:2023.07.14
 }
 
 run_docker
