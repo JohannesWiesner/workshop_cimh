@@ -13,8 +13,8 @@ curl -kLSs https://github.com/JohannesWiesner/workshop_cimh/archive/master.tar.g
 # the nipype/data folder. Then unzip the two because neuroimaging software like SPM can't handle zipped files.
 ######################################################################################################################################
 
-curl --create-dirs https://s3.amazonaws.com/openneuro.org/ds004302/sub-02/anat/sub-02_T1w.nii.gz?versionId=93eQ.AwPcMeccJAT3sO9otYv4A_WH3Bj -o workshop_cimh/nipype/data/single_files/functional.nii.gz
-curl --create-dirs https://s3.amazonaws.com/openneuro.org/ds004302/sub-02/func/sub-02_task-speech_bold.nii.gz?versionId=fhx4kutoEiWzbik8u7lC0eqKKFkJ61HK -o workshop_cimh/nipype/data/single_files/anatomical.nii.gz
+curl --create-dirs https://s3.amazonaws.com/openneuro.org/ds004302/sub-02/anat/sub-02_T1w.nii.gz?versionId=93eQ.AwPcMeccJAT3sO9otYv4A_WH3Bj -o workshop_cimh/nipype/data/single_files/anatomical.nii.gz
+curl --create-dirs https://s3.amazonaws.com/openneuro.org/ds004302/sub-02/func/sub-02_task-speech_bold.nii.gz?versionId=fhx4kutoEiWzbik8u7lC0eqKKFkJ61HK -o workshop_cimh/nipype/data/single_files/functional.nii.gz
 gunzip workshop_cimh/nipype/data/single_files/functional.nii.gz
 gunzip workshop_cimh/nipype/data/single_files/anatomical.nii.gz
 
