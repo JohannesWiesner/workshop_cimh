@@ -10,61 +10,95 @@ markdown table.'
 import json
 import pandas as pd
 
-# define a dictionary that holds favicon links to attributes
-favicon_dict = {'ZI':"https://www.zi-mannheim.de/favicon.ico",
-                'LinkedIn':"https://www.linkedin.com/favicon.ico",
-                "ResearchGate":"https://www.researchgate.net/favicon.ico"}
+###############################################################################
+## User Settings 
+###############################################################################
 
-# define which attributes should be formatted as picture links
-picture_links = ['Picture']
+# define a dictionary that holds favicon links to columns. if a person's dictionary
+# contains any of those keys it wil be replaced by an favicon with a hyperlink
+# that points to the persons weppage
+favicon_dict = {'zi':"https://www.zi-mannheim.de/favicon.ico",
+                'linkedin':"https://www.linkedin.com/favicon.ico",
+                "researchgate":"https://www.researchgate.net/favicon.ico",
+                "orcid":"https://orcid.org/favicon.ico"}
 
-# define which attributes should be summarized as a new attribute 
-summarize = {'Links':['ZI','LinkedIn','ResearchGate']}
+# define which colum content should be html re-formatted to visualize the 
+# picture that the link points to
+picture_links = ['picture']
+
+# define if the json array should be sorted first using an key of choice
+sort_by = 'last_name'
+
+# define which columns should be merged under a new column and how the content 
+# of the old columns should be separated in the new cells
+merge_links = {'links':['zi','linkedin','researchgate','orcid']}
+merge_names = {'name':['first_name','last_name']}
+
+# cosmetics: decide over order of columns
+column_order = ['picture','name','interests','links']
+
+# decide if you want to rename columns
+rename_columns = {'name':'Name','picture':'','interests':'Interests','links':'Links'}
+
+###############################################################################
+## Run
+###############################################################################
 
 # read in input
 with open('./input.json') as fp:
-    persons = json.load(fp)
-
-# add the favicons to the attributes
-# for person in persons:
-#     for attribute,icon in favicon_dict.items():
-#         if attribute in person.keys():
-#             person[attribute] = f"<img height=16 width=16 src={favicon_dict[attribute]}> {person[attribute]}"
-
-for person in persons:
-    for attribute,icon in favicon_dict.items():
-        if attribute in person.keys():
-            person[attribute] = f"<a href={person[attribute]}> <img height=16 width=16 src={favicon_dict[attribute]}> </a>"
-            
-
-# add picture links
-for person in persons:
-    for attribute in picture_links:
-        if person[attribute] != None:
-            person[attribute] = f"<img width=100 src='{person[attribute]}'>"
-
-# now summarize the old attributes under a new attribute and define
-# how the old attributes should be separated
-separator = ' <br /> '
-# separator = ' '
-
-for person in persons:
-    for new_attribute,old_attributes in summarize.items():
-        
-        new_strings = []
-        
-        for old_attribute in old_attributes:
-            if old_attribute in person.keys():
-            
-                new_strings.append(person[old_attribute])
-                del person[old_attribute]
+    json_array = json.load(fp)
     
-        new_strings = separator.join(new_strings)
-        person[new_attribute] = new_strings
-        
-        
-# save the markdown table to a .txt file
-df = pd.DataFrame(persons)
+# sort array by key of choice
+json_array = sorted(json_array, key=lambda d: d[sort_by]) 
 
+
+# replace columns of choice with an html code that holds the favicon image
+# and a hyperlink
+for array_dict in json_array:
+    for key,icon in favicon_dict.items():
+        if key in array_dict.keys():
+            array_dict[key] = f"<a href={array_dict[key]}> <img height=16 width=16 src={favicon_dict[key]}> </a>"
+            
+# add picture links
+for array_dict in json_array:
+    for key in picture_links:
+        if key in array_dict.keys() and array_dict[key] != None:
+            array_dict[key] = f"<img width=100 src='{array_dict[key]}'>"
+
+# define a function that can do the merging
+def merge_json_fields(json_array,merge_dict,separator):
+
+    for array_dict in json_array:
+        for new_key,old_keys in merge_dict.items():
+            
+            new_strings = []
+            
+            for old_key in old_keys:
+                if old_key in array_dict.keys():
+                
+                    new_strings.append(array_dict[old_key])
+                    del array_dict[old_key]
+        
+            new_strings = separator.join(new_strings)
+            array_dict[new_key] = new_strings
+
+
+# now summarize the old keys under a new key
+merge_json_fields(json_array,merge_dict=merge_links,separator=' <br /> ')
+merge_json_fields(json_array,merge_dict=merge_names,separator=' ')
+        
+# create dataframe from array
+df = pd.DataFrame(json_array)
+
+# reorder columns
+df = df[column_order]
+
+# rename columns
+df = df.rename(columns=rename_columns)
+
+# replace NaN values with space-character
+df = df.fillna('')
+
+# save the markdown table to a .txt file
 with open('output.txt', 'w') as f:
     print(df.to_markdown(index=False),file=f)

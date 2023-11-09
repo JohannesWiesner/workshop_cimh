@@ -12,12 +12,10 @@ parts:
     - file: outline/setup
   - caption: Courses
     chapters:
-    - file: courses/containerization/containerization
+    - file: structure/containerization_nipype
       sections:
       - file: courses/containerization/containerization_basics
-      - file: courses/containerization/containerization_advanced
-    - file: courses/nipype/code/nipype_1_presentation
-      sections:
+      - file: courses/nipype/code/nipype_1_presentation
       - file: courses/nipype/code/nipype_2_introduction
       - file: courses/nipype/code/nipype_3_first_level
       - file: courses/nipype/code/nipype_4_handson

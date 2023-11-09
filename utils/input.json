@@ -1,22 +1,40 @@
 [
     {
-        "Name ": "Prof. Emanuel Schwarz",
-        "Picture": "https://www.zi-mannheim.de/typo3temp/assets/_processed_/c/9/csm_Schwarz_Emanuel_web_af0447d754.jpg",
-        "ZI": "https://www.zi-mannheim.de/forschung/hector-institut-fuer-kuenstliche-intelligenz-in-der-psychiatrie-hitkip.html",
-        "Interests": "Open Data & Reproducible Data Analysis"
+        "first_name": "Emanuel",
+        "last_name": "Schwarz",
+        "picture": "https://www.zi-mannheim.de/typo3temp/assets/_processed_/c/9/csm_Schwarz_Emanuel_web_af0447d754.jpg",
+        "zi": "https://www.zi-mannheim.de/forschung/hector-institut-fuer-kuenstliche-intelligenz-in-der-psychiatrie-hitkip.html",
+        "interests": "Open Data & Reproducible Data Analysis"
     },
     {
-        "Name ": "Johannes Wiesner",
-        "Picture": "https://avatars.githubusercontent.com/u/48254290?v=4",
-        "LinkedIn": "https://www.linkedin.com/in/johannes-wiesner-376002171",
-        "ZI": "https://tinyurl.com/CIMH-CSP-Lab",
-        "Interests": "Reproducible Data Analysis & Open Source Software"
+        "first_name": "Johannes",
+        "last_name": "Wiesner",
+        "picture": "https://avatars.githubusercontent.com/u/48254290?v=4",
+        "linkedin": "https://www.linkedin.com/in/johannes-wiesner-376002171",
+        "zi": "https://tinyurl.com/CIMH-CSP-Lab",
+        "interests": "Reproducible Data Analysis using free and Open Source Software",
+        "orcid":"https://orcid.org/0000-0001-7040-3516"
     },
     {
-        "Name ": "Miroslava Jindrová",
-        "Picture": "https://i1.rgstatic.net/ii/profile.image/11431281203575648-1699370155203_Q512/Miroslava-Jindrova.jpg",
-        "ResearchGate": "https://www.researchgate.net/profile/Miroslava-Jindrova",
-        "ZI": "https://www.zi-mannheim.de/forschung/abteilungen-ags-institute/psm/arbeitsgruppen-psm/psychobio-selbstregulation.html",
-        "Interests": "Reproducible Data Analysis, Open Data & Open Source Software"
+        "first_name": "Miroslava",
+        "last_name": "Jindrová",
+        "picture": "https://i1.rgstatic.net/ii/profile.image/11431281203575648-1699370155203_Q512/Miroslava-Jindrova.jpg",
+        "researchgate": "https://www.researchgate.net/profile/Miroslava-Jindrova",
+        "zi": "https://www.zi-mannheim.de/forschung/abteilungen-ags-institute/psm/arbeitsgruppen-psm/psychobio-selbstregulation.html",
+        "interests": "Reproducible Data Analysis, Open Data & Open Source Software"
+    },
+    {
+    "first_name":"Juli",
+    "last_name":"Nagel",
+    "zi": "https://www.zi-mannheim.de/forschung/abteilungen-ags-institute/klinpsych/arbeitsgruppen-klinpsych/psych-neurobio-sleep-memory.html",
+    "linkedin":"https://www.linkedin.com/in/juliane-tkotz-ba4b31205/",
+    "orcid":"https://orcid.org/0000-0002-5310-8088"
+    },
+    {
+    "first_name":"Niclas",
+    "last_name":"Willscheid",
+    "zi": "https://www.zi-mannheim.de/en/research/departments-research-groups-institutes/psychosomatics-psychotherapeutic-medicine-e/researchgroups-psychosomatic-psychotherapy/rg-slp-e.html",
+    "interests": "Preregistration and data sharing",
+    "orcid": "https://orcid.org/0000-0002-4630-7986"
     }
 ]
