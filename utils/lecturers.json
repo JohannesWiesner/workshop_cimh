@@ -1,0 +1,32 @@
+[
+    {
+        "first_name": "Johannes",
+        "last_name": "Wiesner",
+        "picture": "https://avatars.githubusercontent.com/u/48254290?v=4",
+        "linkedin": "https://www.linkedin.com/in/johannes-wiesner-376002171",
+        "zi": "https://tinyurl.com/CIMH-CSP-Lab",
+        "orcid":"https://orcid.org/0000-0001-7040-3516",
+        "github":"https://github.com/JohannesWiesner"
+    },
+    {
+        "first_name": "Miroslava",
+        "last_name": "Jindrová",
+        "picture": "https://i1.rgstatic.net/ii/profile.image/11431281203575648-1699370155203_Q512/Miroslava-Jindrova.jpg",
+        "researchgate": "https://www.researchgate.net/profile/Miroslava-Jindrova",
+        "zi": "https://www.zi-mannheim.de/forschung/abteilungen-ags-institute/psm/arbeitsgruppen-psm/psychobio-selbstregulation.html"
+    },
+    {
+        "first_name": "Niclas",
+        "last_name": "Willscheid",
+        "zi": "https://www.zi-mannheim.de/en/research/departments-research-groups-institutes/psychosomatics-psychotherapeutic-medicine-e/researchgroups-psychosomatic-psychotherapy/rg-slp-e.html",
+        "orcid":"https://orcid.org/0000-0002-4630-7986"
+    },
+    {
+        "first_name": "Çağatay",
+        "last_name": "Gürsoy",
+        "picture": "https://avatars.githubusercontent.com/u/25998029?v=4",
+        "linkedin":"https://www.linkedin.com/in/cagatay-gursoy/",
+        "zi": "https://www.zi-mannheim.de/forschung/abteilungen-ags-institute/klinpsych/arbeitsgruppen-klinpsych/psych-neurobio-sleep-memory.html",
+        "github":"https://github.com/caggursoy"
+    }
+]

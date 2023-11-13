@@ -9,10 +9,14 @@ markdown table.'
 
 import json
 import pandas as pd
+import os
 
 ###############################################################################
 ## User Settings 
 ###############################################################################
+
+# define input file
+input_file = './lecturers.json'
 
 # define a dictionary that holds favicon links to columns. if a person's dictionary
 # contains any of those keys it wil be replaced by an favicon with a hyperlink
@@ -20,7 +24,8 @@ import pandas as pd
 favicon_dict = {'zi':"https://www.zi-mannheim.de/favicon.ico",
                 'linkedin':"https://www.linkedin.com/favicon.ico",
                 "researchgate":"https://www.researchgate.net/favicon.ico",
-                "orcid":"https://orcid.org/favicon.ico"}
+                "orcid":"https://orcid.org/favicon.ico",
+                "github":"https://github.com/favicon.ico"}
 
 # define which colum content should be html re-formatted to visualize the 
 # picture that the link points to
@@ -31,11 +36,11 @@ sort_by = 'last_name'
 
 # define which columns should be merged under a new column and how the content 
 # of the old columns should be separated in the new cells
-merge_links = {'links':['zi','linkedin','researchgate','orcid']}
+merge_links = {'links':['zi','linkedin','researchgate','orcid','github']}
 merge_names = {'name':['first_name','last_name']}
 
 # cosmetics: decide over order of columns
-column_order = ['picture','name','interests','links']
+column_order = ['picture','name','links']
 
 # decide if you want to rename columns
 rename_columns = {'name':'Name','picture':'','interests':'Interests','links':'Links'}
@@ -45,7 +50,7 @@ rename_columns = {'name':'Name','picture':'','interests':'Interests','links':'Li
 ###############################################################################
 
 # read in input
-with open('./input.json') as fp:
+with open(input_file) as fp:
     json_array = json.load(fp)
     
 # sort array by key of choice
@@ -100,5 +105,7 @@ df = df.rename(columns=rename_columns)
 df = df.fillna('')
 
 # save the markdown table to a .txt file
-with open('output.txt', 'w') as f:
+filename = os.path.splitext(input_file)[0]
+
+with open(f"{filename}_output.txt", 'w') as f:
     print(df.to_markdown(index=False),file=f)
