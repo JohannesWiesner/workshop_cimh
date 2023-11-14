@@ -20,6 +20,8 @@ parts:
       - file: courses/nipype/code/nipype_3_first_level
       - file: courses/nipype/code/nipype_4_handson
       - file: courses/nipype/code/nipype_5_handson
+    - file: courses/preregistration/preregistration
+    - file: courses/internationals/internationals
   - caption: After the workshop
     chapters:
     - file: outro/outro
