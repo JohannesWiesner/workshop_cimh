@@ -26,4 +26,5 @@ research. All you need to do is to create a spreadsheet file with the packages y
 If you joined the containerization workshop, then check out [neurodocker](https://github.com/ReproNim/neurodocker). This project aims to provide an easier way to create personalized Docker containers.
 The CSP-group is already using neurodocker behind the scenes in their [csp_docker](https://github.com/JohannesWiesner/csp_docker) repo.
 
-
+## Nisupply helps you dealing with unstructured datasets
+Every encountered a situation where you were handed over a very messy dataset? [Nisupply](https://github.com/JohannesWiesner/nisupply) can help you with finding files of interest and bring them in a more structured format so your data analysis becomes less frustrating.
