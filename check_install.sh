@@ -40,12 +40,6 @@ function get_os() {
 
 curr_os=$( get_os )
 
-# if this script is run from Windows Git Bash (should equal to "msys") we have to put 'winpty'
-# before docker command
-if [ "${curr_os}" != "windows" ]; then
-    alias docker='winpty docker'
-fi
-
 # check basic installations
 check_installed git
 check_installed docker
