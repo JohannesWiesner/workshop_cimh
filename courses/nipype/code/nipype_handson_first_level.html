@@ -62,11 +62,9 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'courses/nipype/code/nipype_3_first_level';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'courses/nipype/code/nipype_handson_first_level';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Hands-On" href="nipype_4_handson.html" />
-    <link rel="prev" title="Nipype introduction" href="nipype_2_introduction.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -162,16 +160,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../../outline/setup.html">Setup for the workshop</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Courses</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../../structure/containerization_nipype.html">Containerization &amp; Nipype</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../containerization/containerization_basics.html">Containerization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nipype_1_presentation.html">Nipype</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nipype_2_introduction.html">Nipype introduction</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">First level analysis with Nipype + SPM</a></li>
-
-
-<li class="toctree-l2"><a class="reference internal" href="nipype_4_handson.html">Hands-On</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nipype_5_handson.html">Only for real nerds</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../structure/containerization_nipype.html">Containerization &amp; Nipype</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../containerization/containerization_presentation.html">Containerization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nipype_presentation.html">Nipype</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nipype_handson_introduction.html">Nipype introduction</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../preregistration/preregistration.html">Preregistration &amp; Data Sharing</a></li>
@@ -234,7 +227,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/JohannesWiesner/workshop_cimh/master?urlpath=tree/lecture/courses/nipype/code/nipype_3_first_level.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/JohannesWiesner/workshop_cimh/master?urlpath=tree/lecture/courses/nipype/code/nipype_handson_first_level.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -282,7 +275,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/JohannesWiesner/workshop_cimh/edit/master/lecture/courses/nipype/code/nipype_3_first_level.ipynb" target="_blank"
+      <li><a href="https://github.com/JohannesWiesner/workshop_cimh/edit/master/lecture/courses/nipype/code/nipype_handson_first_level.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -299,7 +292,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/JohannesWiesner/workshop_cimh/issues/new?title=Issue%20on%20page%20%2Fcourses/nipype/code/nipype_3_first_level.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/JohannesWiesner/workshop_cimh/issues/new?title=Issue%20on%20page%20%2Fcourses/nipype/code/nipype_handson_first_level.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -329,7 +322,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../../_sources/courses/nipype/code/nipype_3_first_level.ipynb" target="_blank"
+      <li><a href="../../../_sources/courses/nipype/code/nipype_handson_first_level.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -423,10 +416,9 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">First level analysis with Nipype + SPM</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-all-necessary-packages">Download all necessary packages</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-the-dataset">Download the dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-paths-to-our-functional-image-and-to-our-events-file">Get paths to our functional image and to our events file</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-first-3d-image-of-the-time-series">Plot the first 3D image of the time series</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenate-the-images-to-one-4d-file">Concatenate the images to one 4D file</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-also-get-the-events">Let’s also get the events</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-plot-the-events-file-so-we-know-what-s-going-on">Let’s plot the events file so we know what’s going on</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-nipype-spm-to-conduct-a-first-level-analysis">Use Nipype &amp; SPM to conduct a first level analysis</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specify-everything-that-spm-needs">Specify everything that SPM needs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connect-all-nodes-to-a-workflow">Connect all nodes to a Workflow</a></li>
@@ -457,9 +449,8 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nipype.interfaces</span> <span class="kn">import</span> <span class="n">spm</span>
-<span class="kn">from</span> <span class="nn">nilearn.datasets</span> <span class="kn">import</span> <span class="n">fetch_spm_auditory</span>
 <span class="kn">from</span> <span class="nn">nilearn.plotting</span> <span class="kn">import</span> <span class="n">plot_anat</span><span class="p">,</span> <span class="n">plot_img</span><span class="p">,</span> <span class="n">plot_stat_map</span>
-<span class="kn">from</span> <span class="nn">nilearn.image</span> <span class="kn">import</span> <span class="n">concat_imgs</span><span class="p">,</span> <span class="n">mean_img</span>
+<span class="kn">from</span> <span class="nn">nilearn.image</span> <span class="kn">import</span> <span class="n">index_img</span>
 <span class="kn">from</span> <span class="nn">nipype</span> <span class="kn">import</span> <span class="n">Workflow</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">os</span>
@@ -468,23 +459,12 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="download-the-dataset">
-<h2>Download the dataset<a class="headerlink" href="#download-the-dataset" title="Permalink to this heading">#</a></h2>
+<section id="get-paths-to-our-functional-image-and-to-our-events-file">
+<h2>Get paths to our functional image and to our events file<a class="headerlink" href="#get-paths-to-our-functional-image-and-to-our-events-file" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">subject_data</span> <span class="o">=</span> <span class="n">fetch_spm_auditory</span><span class="p">(</span><span class="n">data_dir</span><span class="o">=</span><span class="s1">&#39;/data&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset created in /data/spm_auditory
-
-Data absent, downloading...
-Downloading data from https://www.fil.ion.ucl.ac.uk/spm/download/data/MoAEpilot/MoAEpilot.zip ...
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloaded 28475392 of 34212021 bytes (83.2%,    0.4s remaining) ...done. (2 seconds, 0 min)
-Extracting data from /data/spm_auditory/sub001/MoAEpilot.zip..... done.
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">functional_img</span> <span class="o">=</span> <span class="s1">&#39;/data/single_files/auditory_fmri_img.nii&#39;</span>
+<span class="n">events_file</span> <span class="o">=</span> <span class="s1">&#39;/data/single_files/auditory_events.tsv&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -494,39 +474,24 @@ Extracting data from /data/spm_auditory/sub001/MoAEpilot.zip..... done.
 <h2>Plot the first 3D image of the time series<a class="headerlink" href="#plot-the-first-3d-image-of-the-time-series" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_img</span><span class="p">(</span><span class="n">subject_data</span><span class="o">.</span><span class="n">func</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">colorbar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cbar_tick_format</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%i</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="n">plot_anat</span><span class="p">(</span><span class="n">subject_data</span><span class="o">.</span><span class="n">anat</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cbar_tick_format</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%i</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_volume</span> <span class="o">=</span> <span class="n">index_img</span><span class="p">(</span><span class="n">functional_img</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">plot_img</span><span class="p">(</span><span class="n">first_volume</span><span class="p">,</span> <span class="n">cut_coords</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="n">colorbar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cbar_tick_format</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%i</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays._slicers.OrthoSlicer at 0x7f9b386ff5e0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays._slicers.OrthoSlicer at 0x7f08bc9b20b0&gt;
 </pre></div>
 </div>
-<img alt="../../../_images/d381ecb6106a057fd503be3fcc51da763c42db1b767e743b41983bf48b1fca30.png" src="../../../_images/d381ecb6106a057fd503be3fcc51da763c42db1b767e743b41983bf48b1fca30.png" />
-<img alt="../../../_images/fa0a0ccc4ca7ab3494b41d6943989da792bbb863fddd21062daa1bfad7c94aa8.png" src="../../../_images/fa0a0ccc4ca7ab3494b41d6943989da792bbb863fddd21062daa1bfad7c94aa8.png" />
+<img alt="../../../_images/72e1cf19a2eb00554007c54d7c90e529d494ab1191f554c815b6ec33f83b4901.png" src="../../../_images/72e1cf19a2eb00554007c54d7c90e529d494ab1191f554c815b6ec33f83b4901.png" />
 </div>
 </div>
 </section>
-<section id="concatenate-the-images-to-one-4d-file">
-<h2>Concatenate the images to one 4D file<a class="headerlink" href="#concatenate-the-images-to-one-4d-file" title="Permalink to this heading">#</a></h2>
+<section id="let-s-plot-the-events-file-so-we-know-what-s-going-on">
+<h2>Let’s plot the events file so we know what’s going on<a class="headerlink" href="#let-s-plot-the-events-file-so-we-know-what-s-going-on" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fmri_img</span> <span class="o">=</span> <span class="n">concat_imgs</span><span class="p">(</span><span class="n">subject_data</span><span class="o">.</span><span class="n">func</span><span class="p">)</span>
-<span class="n">fmri_img</span><span class="o">.</span><span class="n">to_filename</span><span class="p">(</span><span class="s1">&#39;/data/fmri_img.nii&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="let-s-also-get-the-events">
-<h2>Let’s also get the events<a class="headerlink" href="#let-s-also-get-the-events" title="Permalink to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">events</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="n">subject_data</span><span class="p">[</span><span class="s2">&quot;events&quot;</span><span class="p">])</span>
-<span class="c1"># BIDS needs to have an &#39;amplitude&#39; column which we just can set to 1</span>
-<span class="n">events</span><span class="p">[</span><span class="s1">&#39;amplitude&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">events</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;/data/events.tsv&#39;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">events</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="n">events_file</span><span class="p">)</span>
 <span class="n">events</span>
 </pre></div>
 </div>
@@ -697,13 +662,12 @@ Extracting data from /data/spm_auditory/sub001/MoAEpilot.zip..... done.
                                        <span class="n">output_units</span><span class="o">=</span><span class="s1">&#39;secs&#39;</span><span class="p">,</span>
                                        <span class="n">time_repetition</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span>
                                        <span class="n">high_pass_filter_cutoff</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span>
-                                       <span class="n">functional_runs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;/data/fmri_img.nii&#39;</span><span class="p">],</span>
-                                       <span class="n">bids_event_file</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;/data/events.tsv&#39;</span><span class="p">]</span>
+                                       <span class="n">functional_runs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;/data/single_files/auditory_fmri_img.nii&#39;</span><span class="p">],</span>
+                                       <span class="n">bids_event_file</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;/data/single_files/auditory_events.tsv&#39;</span><span class="p">]</span>
                                       <span class="p">),</span>
                        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;model_specifier&#39;</span><span class="p">)</span>
 
 <span class="c1"># Level1Design - Generates an SPM design matrix</span>
-<span class="c1"># We use the FAST method to correct for autocorrelations (see https://www.nature.com/articles/s41467-019-09230-w)</span>
 <span class="n">first_level_design</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">Level1Design</span><span class="p">(</span><span class="n">bases</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;hrf&#39;</span><span class="p">:{</span><span class="s1">&#39;derivs&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]}},</span>
                                        <span class="n">interscan_interval</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span>
                                        <span class="n">timing_units</span><span class="o">=</span><span class="s1">&#39;secs&#39;</span><span class="p">,</span>
@@ -738,54 +702,6 @@ Extracting data from /data/spm_auditory/sub001/MoAEpilot.zip..... done.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230504-15:32:07,560 nipype.workflow INFO:
-	 Workflow first_level_analysis settings: [&#39;check&#39;, &#39;execution&#39;, &#39;logging&#39;, &#39;monitoring&#39;]
-230504-15:32:07,564 nipype.workflow INFO:
-	 Running serially.
-230504-15:32:07,564 nipype.workflow INFO:
-	 [Node] Setting-up &quot;first_level_analysis.model_specifier&quot; in &quot;/cache/first_level_analysis/model_specifier&quot;.
-230504-15:32:07,566 nipype.workflow INFO:
-	 [Node] Executing &quot;model_specifier&quot; &lt;nipype.algorithms.modelgen.SpecifySPMModel&gt;
-230504-15:32:07,568 nipype.workflow INFO:
-	 [Node] Finished &quot;model_specifier&quot;, elapsed time 0.000529s.
-230504-15:32:07,569 nipype.workflow INFO:
-	 [Node] Setting-up &quot;first_level_analysis.first_level_design&quot; in &quot;/cache/first_level_analysis/first_level_design&quot;.
-230504-15:32:07,572 nipype.workflow INFO:
-	 [Node] Executing &quot;first_level_design&quot; &lt;nipype.interfaces.spm.model.Level1Design&gt;
-230504-15:32:17,994 nipype.workflow INFO:
-	 [Node] Finished &quot;first_level_design&quot;, elapsed time 10.421423s.
-230504-15:32:17,997 nipype.workflow INFO:
-	 [Node] Setting-up &quot;first_level_analysis.first_level_estimator&quot; in &quot;/cache/first_level_analysis/first_level_estimator&quot;.
-230504-15:32:18,1 nipype.workflow INFO:
-	 [Node] Executing &quot;first_level_estimator&quot; &lt;nipype.interfaces.spm.model.EstimateModel&gt;
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stty: &#39;standard input&#39;: Inappropriate ioctl for device
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230504-15:32:30,821 nipype.workflow INFO:
-	 [Node] Finished &quot;first_level_estimator&quot;, elapsed time 12.819687s.
-230504-15:32:30,824 nipype.workflow INFO:
-	 [Node] Setting-up &quot;first_level_analysis.first_level_contrasts&quot; in &quot;/cache/first_level_analysis/first_level_contrasts&quot;.
-230504-15:32:30,828 nipype.workflow INFO:
-	 [Node] Executing &quot;first_level_contrasts&quot; &lt;nipype.interfaces.spm.model.EstimateContrast&gt;
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stty: &#39;standard input&#39;: Inappropriate ioctl for device
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230504-15:32:40,928 nipype.workflow INFO:
-	 [Node] Finished &quot;first_level_contrasts&quot;, elapsed time 10.099322s.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stty: &#39;standard input&#39;: Inappropriate ioctl for device
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;networkx.classes.digraph.DiGraph at 0x7f9b386fc190&gt;
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="plot-the-workflow">
@@ -800,7 +716,7 @@ Extracting data from /data/spm_auditory/sub001/MoAEpilot.zip..... done.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230504-15:32:54,366 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231128-17:16:41,42 nipype.workflow INFO:
 	 Generated workflow graph: /cache/first_level_analysis/graph.png (graph2use=hierarchical, simple_form=True).
 </pre></div>
 </div>
@@ -818,12 +734,13 @@ Extracting data from /data/spm_auditory/sub001/MoAEpilot.zip..... done.
 <span class="kn">from</span> <span class="nn">nilearn.image</span> <span class="kn">import</span> <span class="n">mean_img</span>
 <span class="kn">from</span> <span class="nn">nilearn.plotting</span> <span class="kn">import</span> <span class="n">plot_stat_map</span>
 
-<span class="c1"># create a background image</span>
-<span class="n">mean_img</span> <span class="o">=</span> <span class="n">mean_img</span><span class="p">(</span><span class="n">fmri_img</span><span class="p">)</span>
+<span class="c1"># create a background image using the average of our functional image</span>
+<span class="n">mean_img</span> <span class="o">=</span> <span class="n">mean_img</span><span class="p">(</span><span class="n">functional_img</span><span class="p">)</span>
 
 <span class="c1"># load the contrast image</span>
 <span class="n">contrast_img</span> <span class="o">=</span> <span class="n">load_img</span><span class="p">(</span><span class="s1">&#39;/cache/first_level_analysis/first_level_contrasts/spmT_0001.nii&#39;</span><span class="p">)</span>
 
+<span class="c1"># plot contrast on top functional image</span>
 <span class="n">plot_stat_map</span><span class="p">(</span><span class="n">stat_map_img</span><span class="o">=</span><span class="n">contrast_img</span><span class="p">,</span>
               <span class="n">bg_img</span><span class="o">=</span><span class="n">mean_img</span><span class="p">,</span>
               <span class="n">threshold</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span>
@@ -836,7 +753,7 @@ Extracting data from /data/spm_auditory/sub001/MoAEpilot.zip..... done.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays._slicers.ZSlicer at 0x7f9b3884a5c0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays._slicers.ZSlicer at 0x7f08a3de8070&gt;
 </pre></div>
 </div>
 <img alt="../../../_images/9d0fcae23b0e28705b71704573afcc2431abdec05a3622c615cd0ad85c716228.png" src="../../../_images/9d0fcae23b0e28705b71704573afcc2431abdec05a3622c615cd0ad85c716228.png" />
@@ -853,52 +770,6 @@ Extracting data from /data/spm_auditory/sub001/MoAEpilot.zip..... done.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230504-15:33:15,595 nipype.workflow INFO:
-	 Workflow first_level_analysis settings: [&#39;check&#39;, &#39;execution&#39;, &#39;logging&#39;, &#39;monitoring&#39;]
-230504-15:33:15,599 nipype.workflow INFO:
-	 Running serially.
-230504-15:33:15,599 nipype.workflow INFO:
-	 [Node] Setting-up &quot;first_level_analysis.model_specifier&quot; in &quot;/cache/first_level_analysis/model_specifier&quot;.
-230504-15:33:15,600 nipype.workflow INFO:
-	 [Node] Cached &quot;first_level_analysis.model_specifier&quot; - collecting precomputed outputs
-230504-15:33:15,601 nipype.workflow INFO:
-	 [Node] &quot;first_level_analysis.model_specifier&quot; found cached.
-230504-15:33:15,601 nipype.workflow INFO:
-	 [Node] Setting-up &quot;first_level_analysis.first_level_design&quot; in &quot;/cache/first_level_analysis/first_level_design&quot;.
-230504-15:33:15,603 nipype.workflow INFO:
-	 [Node] Cached &quot;first_level_analysis.first_level_design&quot; - collecting precomputed outputs
-230504-15:33:15,603 nipype.workflow INFO:
-	 [Node] &quot;first_level_analysis.first_level_design&quot; found cached.
-230504-15:33:15,603 nipype.workflow INFO:
-	 [Node] Setting-up &quot;first_level_analysis.first_level_estimator&quot; in &quot;/cache/first_level_analysis/first_level_estimator&quot;.
-230504-15:33:15,605 nipype.workflow INFO:
-	 [Node] Cached &quot;first_level_analysis.first_level_estimator&quot; - collecting precomputed outputs
-230504-15:33:15,605 nipype.workflow INFO:
-	 [Node] &quot;first_level_analysis.first_level_estimator&quot; found cached.
-230504-15:33:15,606 nipype.workflow INFO:
-	 [Node] Setting-up &quot;first_level_analysis.first_level_contrasts&quot; in &quot;/cache/first_level_analysis/first_level_contrasts&quot;.
-230504-15:33:15,607 nipype.workflow INFO:
-	 [Node] Outdated cache found for &quot;first_level_analysis.first_level_contrasts&quot;.
-230504-15:33:15,613 nipype.workflow INFO:
-	 [Node] Executing &quot;first_level_contrasts&quot; &lt;nipype.interfaces.spm.model.EstimateContrast&gt;
-230504-15:33:25,543 nipype.workflow INFO:
-	 [Node] Finished &quot;first_level_contrasts&quot;, elapsed time 9.929518999999999s.
-230504-15:33:25,546 nipype.workflow INFO:
-	 [Node] Setting-up &quot;first_level_analysis.datasink&quot; in &quot;/cache/first_level_analysis/datasink&quot;.
-230504-15:33:25,548 nipype.workflow INFO:
-	 [Node] Executing &quot;datasink&quot; &lt;nipype.interfaces.io.DataSink&gt;
-230504-15:33:25,551 nipype.workflow INFO:
-	 [Node] Finished &quot;datasink&quot;, elapsed time 0.001619s.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stty: &#39;standard input&#39;: Inappropriate ioctl for device
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;networkx.classes.digraph.DiGraph at 0x7f9b388e3c40&gt;
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 </section>
@@ -906,66 +777,14 @@ Extracting data from /data/spm_auditory/sub001/MoAEpilot.zip..... done.
 <h1>I always can’t remember what the numbers in T_xxxx stand for…<a class="headerlink" href="#i-always-can-t-remember-what-the-numbers-in-t-xxxx-stand-for" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define a DataSink node where files should be stored</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># let&#39;s remove the last datasink node, redefine it and reconnect it again</span>
+<span class="n">wf</span><span class="o">.</span><span class="n">remove_nodes</span><span class="p">([</span><span class="n">datasink</span><span class="p">])</span>
 <span class="n">datasink</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">DataSink</span><span class="p">(</span><span class="n">base_directory</span><span class="o">=</span><span class="s1">&#39;/output&#39;</span><span class="p">,</span>
                          <span class="n">substitutions</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;spmT_0001.nii&#39;</span><span class="p">,</span><span class="s1">&#39;active_greater_rest.nii&#39;</span><span class="p">),</span>
-                                                                 <span class="p">(</span><span class="s1">&#39;spmT_0002.nii&#39;</span><span class="p">,</span><span class="s1">&#39;rest_greater_active.nii&#39;</span><span class="p">)]),</span>
+                                        <span class="p">(</span><span class="s1">&#39;spmT_0002.nii&#39;</span><span class="p">,</span><span class="s1">&#39;rest_greater_active.nii&#39;</span><span class="p">)]),</span>
                 <span class="n">name</span><span class="o">=</span><span class="s2">&quot;datasink&quot;</span><span class="p">)</span>
-<span class="n">wf</span> <span class="o">=</span> <span class="n">Workflow</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;first_level_analysis&#39;</span><span class="p">,</span><span class="n">base_dir</span><span class="o">=</span><span class="s1">&#39;/cache&#39;</span><span class="p">)</span>
-<span class="n">wf</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">model_specifier</span><span class="p">,</span><span class="s1">&#39;session_info&#39;</span><span class="p">,</span><span class="n">first_level_design</span><span class="p">,</span><span class="s1">&#39;session_info&#39;</span><span class="p">)</span>
-<span class="n">wf</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">first_level_design</span><span class="p">,</span><span class="s1">&#39;spm_mat_file&#39;</span><span class="p">,</span><span class="n">first_level_estimator</span><span class="p">,</span><span class="s1">&#39;spm_mat_file&#39;</span><span class="p">)</span>
-<span class="n">wf</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">first_level_estimator</span><span class="p">,</span><span class="s1">&#39;spm_mat_file&#39;</span><span class="p">,</span><span class="n">first_level_contrasts</span><span class="p">,</span><span class="s1">&#39;spm_mat_file&#39;</span><span class="p">)</span>
-<span class="n">wf</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">first_level_estimator</span><span class="p">,</span><span class="s1">&#39;beta_images&#39;</span><span class="p">,</span><span class="n">first_level_contrasts</span><span class="p">,</span><span class="s1">&#39;beta_images&#39;</span><span class="p">)</span>
-<span class="n">wf</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">first_level_estimator</span><span class="p">,</span><span class="s1">&#39;residual_image&#39;</span><span class="p">,</span><span class="n">first_level_contrasts</span><span class="p">,</span><span class="s1">&#39;residual_image&#39;</span><span class="p">)</span>
 <span class="n">wf</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">first_level_contrasts</span><span class="p">,</span><span class="s1">&#39;spmT_images&#39;</span><span class="p">,</span><span class="n">datasink</span><span class="p">,</span><span class="s1">&#39;spm_contrast_images&#39;</span><span class="p">)</span>
 <span class="n">wf</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230504-15:33:46,892 nipype.workflow INFO:
-	 Workflow first_level_analysis settings: [&#39;check&#39;, &#39;execution&#39;, &#39;logging&#39;, &#39;monitoring&#39;]
-230504-15:33:46,896 nipype.workflow INFO:
-	 Running serially.
-230504-15:33:46,896 nipype.workflow INFO:
-	 [Node] Setting-up &quot;first_level_analysis.model_specifier&quot; in &quot;/cache/first_level_analysis/model_specifier&quot;.
-230504-15:33:46,897 nipype.workflow INFO:
-	 [Node] Cached &quot;first_level_analysis.model_specifier&quot; - collecting precomputed outputs
-230504-15:33:46,898 nipype.workflow INFO:
-	 [Node] &quot;first_level_analysis.model_specifier&quot; found cached.
-230504-15:33:46,898 nipype.workflow INFO:
-	 [Node] Setting-up &quot;first_level_analysis.first_level_design&quot; in &quot;/cache/first_level_analysis/first_level_design&quot;.
-230504-15:33:46,900 nipype.workflow INFO:
-	 [Node] Cached &quot;first_level_analysis.first_level_design&quot; - collecting precomputed outputs
-230504-15:33:46,901 nipype.workflow INFO:
-	 [Node] &quot;first_level_analysis.first_level_design&quot; found cached.
-230504-15:33:46,901 nipype.workflow INFO:
-	 [Node] Setting-up &quot;first_level_analysis.first_level_estimator&quot; in &quot;/cache/first_level_analysis/first_level_estimator&quot;.
-230504-15:33:46,903 nipype.workflow INFO:
-	 [Node] Cached &quot;first_level_analysis.first_level_estimator&quot; - collecting precomputed outputs
-230504-15:33:46,903 nipype.workflow INFO:
-	 [Node] &quot;first_level_analysis.first_level_estimator&quot; found cached.
-230504-15:33:46,904 nipype.workflow INFO:
-	 [Node] Setting-up &quot;first_level_analysis.first_level_contrasts&quot; in &quot;/cache/first_level_analysis/first_level_contrasts&quot;.
-230504-15:33:46,906 nipype.workflow INFO:
-	 [Node] Cached &quot;first_level_analysis.first_level_contrasts&quot; - collecting precomputed outputs
-230504-15:33:46,906 nipype.workflow INFO:
-	 [Node] &quot;first_level_analysis.first_level_contrasts&quot; found cached.
-230504-15:33:46,907 nipype.workflow INFO:
-	 [Node] Setting-up &quot;first_level_analysis.datasink&quot; in &quot;/cache/first_level_analysis/datasink&quot;.
-230504-15:33:46,908 nipype.workflow INFO:
-	 [Node] Outdated cache found for &quot;first_level_analysis.datasink&quot;.
-230504-15:33:46,911 nipype.workflow INFO:
-	 [Node] Executing &quot;datasink&quot; &lt;nipype.interfaces.io.DataSink&gt;
-230504-15:33:46,912 nipype.interface INFO:
-	 sub: /output/spm_contrast_images/spmT_0001.nii -&gt; /output/spm_contrast_images/active_greater_rest.nii
-230504-15:33:46,913 nipype.interface INFO:
-	 sub: /output/spm_contrast_images/spmT_0002.nii -&gt; /output/spm_contrast_images/rest_greater_active.nii
-230504-15:33:46,914 nipype.workflow INFO:
-	 [Node] Finished &quot;datasink&quot;, elapsed time 0.002756s.
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;networkx.classes.digraph.DiGraph at 0x7f9b3860f460&gt;
 </pre></div>
 </div>
 </div>
@@ -1003,24 +822,6 @@ Extracting data from /data/spm_auditory/sub001/MoAEpilot.zip..... done.
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="nipype_2_introduction.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Nipype introduction</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="nipype_4_handson.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Hands-On</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div></div>
   
 </div>
@@ -1041,10 +842,9 @@ Extracting data from /data/spm_auditory/sub001/MoAEpilot.zip..... done.
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">First level analysis with Nipype + SPM</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-all-necessary-packages">Download all necessary packages</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-the-dataset">Download the dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-paths-to-our-functional-image-and-to-our-events-file">Get paths to our functional image and to our events file</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-first-3d-image-of-the-time-series">Plot the first 3D image of the time series</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenate-the-images-to-one-4d-file">Concatenate the images to one 4D file</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-also-get-the-events">Let’s also get the events</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-plot-the-events-file-so-we-know-what-s-going-on">Let’s plot the events file so we know what’s going on</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-nipype-spm-to-conduct-a-first-level-analysis">Use Nipype &amp; SPM to conduct a first level analysis</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specify-everything-that-spm-needs">Specify everything that SPM needs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connect-all-nodes-to-a-workflow">Connect all nodes to a Workflow</a></li>

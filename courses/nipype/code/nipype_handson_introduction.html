@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Hands-On &#8212; CIMH Workshop</title>
+    <title>Nipype introduction &#8212; CIMH Workshop</title>
   
   
   
@@ -62,11 +62,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'courses/nipype/code/nipype_4_handson';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'courses/nipype/code/nipype_handson_introduction';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Only for real nerds" href="nipype_5_handson.html" />
-    <link rel="prev" title="First level analysis with Nipype + SPM" href="nipype_3_first_level.html" />
+    <link rel="next" title="Preregistration &amp; Data Sharing" href="../../preregistration/preregistration.html" />
+    <link rel="prev" title="Nipype" href="nipype_presentation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -164,14 +164,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Courses</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../../../structure/containerization_nipype.html">Containerization &amp; Nipype</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../containerization/containerization_basics.html">Containerization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nipype_1_presentation.html">Nipype</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nipype_2_introduction.html">Nipype introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nipype_3_first_level.html">First level analysis with Nipype + SPM</a></li>
-
-
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Hands-On</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nipype_5_handson.html">Only for real nerds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../containerization/containerization_presentation.html">Containerization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nipype_presentation.html">Nipype</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Nipype introduction</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../preregistration/preregistration.html">Preregistration &amp; Data Sharing</a></li>
@@ -234,7 +229,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/JohannesWiesner/workshop_cimh/master?urlpath=tree/lecture/courses/nipype/code/nipype_4_handson.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/JohannesWiesner/workshop_cimh/master?urlpath=tree/lecture/courses/nipype/code/nipype_handson_introduction.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -282,7 +277,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/JohannesWiesner/workshop_cimh/edit/master/lecture/courses/nipype/code/nipype_4_handson.ipynb" target="_blank"
+      <li><a href="https://github.com/JohannesWiesner/workshop_cimh/edit/master/lecture/courses/nipype/code/nipype_handson_introduction.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -299,7 +294,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/JohannesWiesner/workshop_cimh/issues/new?title=Issue%20on%20page%20%2Fcourses/nipype/code/nipype_4_handson.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/JohannesWiesner/workshop_cimh/issues/new?title=Issue%20on%20page%20%2Fcourses/nipype/code/nipype_handson_introduction.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -329,7 +324,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../../_sources/courses/nipype/code/nipype_4_handson.ipynb" target="_blank"
+      <li><a href="../../../_sources/courses/nipype/code/nipype_handson_introduction.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -398,7 +393,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -409,11 +406,23 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Hands-On</h1>
+    <h1>Nipype introduction</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-your-analysis-import-packages-set-paths-etc">Setup your analysis (import packages, set paths, etc.)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neuroimaging-example">Neuroimaging example</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-check-what-happend-behind-the-scenes">Let’s check what happend behind the scenes</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -423,51 +432,73 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="hands-on">
-<h1>Hands-On<a class="headerlink" href="#hands-on" title="Permalink to this heading">#</a></h1>
-<div class="cell docutils container">
+  <section class="tex2jax_ignore mathjax_ignore" id="nipype-introduction">
+<h1>Nipype introduction<a class="headerlink" href="#nipype-introduction" title="Permalink to this heading">#</a></h1>
+<section id="setup-your-analysis-import-packages-set-paths-etc">
+<h2>Setup your analysis (import packages, set paths, etc.)<a class="headerlink" href="#setup-your-analysis-import-packages-set-paths-etc" title="Permalink to this heading">#</a></h2>
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define a workflow that iterates over two subjects and then:</span>
-<span class="c1"># 1.) Skullstrip (using FSL BET)</span>
-<span class="c1"># 2.) Normalize (use ANTS): https://miykael.github.io/nipype_tutorial/notebooks/example_normalize.html#Normalization-with-ANTs</span>
-<span class="c1"># Use https://nipype.readthedocs.io/en/latest/api/generated/nipype.interfaces.ants.html#registrationsynquick otherwise it will take too long!</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all the packages that we need</span>
+<span class="kn">from</span> <span class="nn">nipype</span> <span class="kn">import</span> <span class="n">Node</span>
+<span class="kn">from</span> <span class="nn">nipype.interfaces.spm</span> <span class="kn">import</span> <span class="n">Smooth</span>
+<span class="kn">from</span> <span class="nn">nipype.interfaces</span> <span class="kn">import</span> <span class="n">spm</span>
+<span class="kn">from</span> <span class="nn">nilearn.plotting</span> <span class="kn">import</span> <span class="n">plot_anat</span>
 
-<span class="c1">#t1_image = &#39;/home/johannes.wiesner/work/repos/workshop_cimh/workshop/courses/nipype/data/anatomical.nii&#39;</span>
-<span class="c1">#import nipype.interfaces.fsl as fsl</span>
-<span class="c1">#mybet = fsl.BET(in_file=t1_image, out_file=&#39;bar.nii&#39;)</span>
-<span class="c1">#result = mybet.run()</span>
-
-<span class="kn">from</span> <span class="nn">nipype.interfaces.utility</span> <span class="kn">import</span> <span class="n">Function</span><span class="p">,</span><span class="n">IdentityInterface</span><span class="p">,</span> <span class="n">Rename</span>
-<span class="kn">from</span> <span class="nn">nipype.interfaces.io</span> <span class="kn">import</span> <span class="n">BIDSDataGrabber</span>
-<span class="kn">from</span> <span class="nn">nipype</span> <span class="kn">import</span> <span class="n">Workflow</span><span class="p">,</span> <span class="n">Node</span>
-
-<span class="n">data_dir</span> <span class="o">=</span> <span class="s1">&#39;/home/johannes.wiesner/work/repos/workshop_cimh/workshop/courses/nipype/data/bids_dataset/&#39;</span>
-<span class="n">cache_dir</span> <span class="o">=</span> <span class="s1">&#39;/home/johannes.wiesner/work/repos/workshop_cimh/workshop/courses/nipype/cache/&#39;</span>
-
-<span class="c1"># create a node that iterates over the subject(s)</span>
-<span class="n">subject_iterator</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">IdentityInterface</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;subject_id&quot;</span><span class="p">]),</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;subject_iterator&quot;</span><span class="p">)</span>
-<span class="n">subject_iterator</span><span class="o">.</span><span class="n">iterables</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;subject_id&quot;</span><span class="p">,[</span><span class="s1">&#39;01&#39;</span><span class="p">,</span><span class="s1">&#39;02&#39;</span><span class="p">])]</span>
-
-<span class="c1"># create a Node that takes in a BIDS-Dataset and returns data for one subject</span>
-<span class="n">data_grabber</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">BIDSDataGrabber</span><span class="p">(</span><span class="n">base_dir</span><span class="o">=</span><span class="n">data_dir</span><span class="p">,</span><span class="n">raise_on_empty</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;data_grabber&#39;</span><span class="p">)</span>
-
-<span class="c1"># define workflow</span>
-<span class="n">wf</span> <span class="o">=</span> <span class="n">Workflow</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;anatomical_workflow&#39;</span><span class="p">,</span><span class="n">base_dir</span><span class="o">=</span><span class="n">cache_dir</span><span class="p">)</span>
-<span class="n">wf</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">subject_iterator</span><span class="p">,</span><span class="s1">&#39;subject_id&#39;</span><span class="p">,</span><span class="n">data_grabber</span><span class="p">,</span><span class="s1">&#39;subject&#39;</span><span class="p">)</span>
-<span class="n">wf</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-
-
-<span class="kn">import</span> <span class="nn">nipype.interfaces.fsl</span> <span class="k">as</span> <span class="nn">fsl</span>
-<span class="n">mybet</span> <span class="o">=</span> <span class="n">fsl</span><span class="o">.</span><span class="n">BET</span><span class="p">(</span><span class="n">in_file</span><span class="o">=</span><span class="s1">&#39;/data/anatomical.nii&#39;</span><span class="p">,</span> <span class="n">out_file</span><span class="o">=</span><span class="s1">&#39;bar.nii&#39;</span><span class="p">)</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">mybet</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-
-<span class="kn">from</span> <span class="nn">nipype.interfaces.ants</span> <span class="kn">import</span> <span class="n">RegistrationSynQuick</span>
-<span class="n">reg</span> <span class="o">=</span> <span class="n">RegistrationSynQuick</span><span class="p">(</span><span class="n">moving_image</span><span class="o">=</span><span class="s1">&#39;/data/anatomical.nii&#39;</span><span class="p">,</span><span class="n">fixed_image</span><span class="o">=</span><span class="s1">&#39;/data/1mm_T1.nii.gz&#39;</span><span class="p">)</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="c1"># set general paths (we need to tell nipype where it should store the output and where the input image is)</span>
+<span class="n">base_dir</span> <span class="o">=</span> <span class="s1">&#39;/cache&#39;</span>
+<span class="n">anatomical_image</span> <span class="o">=</span> <span class="s1">&#39;/data/single_files/anatomical.nii&#39;</span>
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="neuroimaging-example">
+<h2>Neuroimaging example<a class="headerlink" href="#neuroimaging-example" title="Permalink to this heading">#</a></h2>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s smooth a structural image</span>
+<span class="n">smooth</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">Smooth</span><span class="p">(</span><span class="n">fwhm</span><span class="o">=</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span><span class="n">in_files</span><span class="o">=</span><span class="n">anatomical_image</span><span class="p">),</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;smooth&#39;</span><span class="p">,</span><span class="n">base_dir</span><span class="o">=</span><span class="n">base_dir</span><span class="p">)</span>
+<span class="n">smooth</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="let-s-check-what-happend-behind-the-scenes">
+<h3>Let’s check what happend behind the scenes<a class="headerlink" href="#let-s-check-what-happend-behind-the-scenes" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># let&#39;s print what&#39;s inside our cache directory</span>
+<span class="o">!</span>ls<span class="w"> </span>-la<span class="w"> </span>/cache/smooth
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># let&#39;s check what&#39;s inside pyscript_smooth.m</span>
+<span class="o">!</span>cat<span class="w"> </span>/cache/smooth/pyscript_smooth.m<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="o">(</span>head<span class="w"> </span>--lines<span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>tail<span class="w"> </span>--lines<span class="w"> </span><span class="m">20</span><span class="o">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s plot the image before and after smoothing</span>
+<span class="n">plot_anat</span><span class="p">(</span><span class="n">anatomical_image</span><span class="p">,</span><span class="n">annotate</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">draw_cross</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plot_anat</span><span class="p">(</span><span class="s1">&#39;/cache/smooth/sanatomical.nii&#39;</span><span class="p">,</span><span class="n">annotate</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">draw_cross</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays._slicers.OrthoSlicer at 0x7f7d8d5539a0&gt;
+</pre></div>
+</div>
+<img alt="../../../_images/ed74ad83a402720d90752e958baeee6c789a7e947f495bd834bf4ed8580100e9.png" src="../../../_images/ed74ad83a402720d90752e958baeee6c789a7e947f495bd834bf4ed8580100e9.png" />
+<img alt="../../../_images/067d23aa8204e6d7dffa95a93f16dcac6b9250d8de44e3823a2090ab22feeabc.png" src="../../../_images/067d23aa8204e6d7dffa95a93f16dcac6b9250d8de44e3823a2090ab22feeabc.png" />
+</div>
+</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -502,20 +533,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="nipype_3_first_level.html"
+       href="nipype_presentation.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">First level analysis with Nipype + SPM</p>
+        <p class="prev-next-title">Nipype</p>
       </div>
     </a>
     <a class="right-next"
-       href="nipype_5_handson.html"
+       href="../../preregistration/preregistration.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Only for real nerds</p>
+        <p class="prev-next-title">Preregistration &amp; Data Sharing</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -528,6 +559,24 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-your-analysis-import-packages-set-paths-etc">Setup your analysis (import packages, set paths, etc.)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neuroimaging-example">Neuroimaging example</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-check-what-happend-behind-the-scenes">Let’s check what happend behind the scenes</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
