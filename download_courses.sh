@@ -20,6 +20,14 @@ gunzip workshop_cimh/nipype/data/single_files/functional.nii.gz
 gunzip workshop_cimh/nipype/data/single_files/anatomical.nii.gz
 
 #####################################################################################################################################
+# Download SPM-auditory dataset
+######################################################################################################################################
+
+curl --create-dirs  https://raw.githubusercontent.com/JohannesWiesner/workshop_cimh/master/data/auditory_events.tsv -o workshop_cimh/nipype/data/single_files/auditory_events.tsv
+curl --create-dirs  https://raw.githubusercontent.com/JohannesWiesner/workshop_cimh/master/data/auditory_fmri_img.nii.gz -o workshop_cimh/nipype/data/single_files/auditory_fmri_img.nii.gz
+gunzip workshop_cimh/nipype/data/single_files/auditory_fmri_img.nii.gz
+
+#####################################################################################################################################
 # Download anatomical files of two subjects as a BIDS-dataset
 #####################################################################################################################################
 

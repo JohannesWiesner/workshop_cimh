@@ -14,12 +14,10 @@ parts:
     chapters:
     - file: structure/containerization_nipype
       sections:
-      - file: courses/containerization/containerization_basics
-      - file: courses/nipype/code/nipype_1_presentation
-      - file: courses/nipype/code/nipype_2_introduction
-      - file: courses/nipype/code/nipype_3_first_level
-      - file: courses/nipype/code/nipype_4_handson
-      - file: courses/nipype/code/nipype_5_handson
+      - file: courses/containerization/containerization_presentation
+      - file: courses/nipype/code/nipype_presentation
+      - file: courses/nipype/code/nipype_handson_introduction
+      - file: courses/nipype/code/nipype_handson_firstlevel
     - file: courses/preregistration/preregistration
     - file: courses/internationals/internationals
   - caption: After the workshop
