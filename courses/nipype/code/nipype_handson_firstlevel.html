@@ -168,8 +168,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="nipype_presentation.html">Nipype</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nipype_handson_introduction.html">Nipype introduction</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">First level analysis with Nipype + SPM</a></li>
-
-
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../preregistration/preregistration.html">Preregistration &amp; Data Sharing</a></li>
@@ -419,7 +417,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">First level analysis with Nipype + SPM</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-all-necessary-packages">Download all necessary packages</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-paths-to-our-functional-image-and-to-our-events-file">Get paths to our functional image and to our events file</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-first-3d-image-of-the-time-series">Plot the first 3D image of the time series</a></li>
@@ -428,15 +425,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specify-everything-that-spm-needs">Specify everything that SPM needs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connect-all-nodes-to-a-workflow">Connect all nodes to a Workflow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-workflow">Plot the workflow</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-statistical-image">Plot the statistical image</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-statistical-image">Plot the statistical image</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-first-level-analysis-folder-looks-nasty-can-t-we-make-it-more-pretty">The ‘first_level_analysis’ folder looks nasty. Can’t we make it more pretty?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-always-can-t-remember-what-the-numbers-in-t-xxxx-stand-for">I always can’t remember what the numbers in T_xxxx stand for…</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#i-always-can-t-remember-what-the-numbers-in-t-xxxx-stand-for">I always can’t remember what the numbers in T_xxxx stand for…</a></li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -729,9 +721,8 @@ document.write(`
 </div>
 </div>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="plot-the-statistical-image">
-<h1>Plot the statistical image<a class="headerlink" href="#plot-the-statistical-image" title="Permalink to this heading">#</a></h1>
+<section id="plot-the-statistical-image">
+<h2>Plot the statistical image<a class="headerlink" href="#plot-the-statistical-image" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the image</span>
@@ -764,6 +755,7 @@ document.write(`
 <img alt="../../../_images/9d0fcae23b0e28705b71704573afcc2431abdec05a3622c615cd0ad85c716228.png" src="../../../_images/9d0fcae23b0e28705b71704573afcc2431abdec05a3622c615cd0ad85c716228.png" />
 </div>
 </div>
+</section>
 <section id="the-first-level-analysis-folder-looks-nasty-can-t-we-make-it-more-pretty">
 <h2>The ‘first_level_analysis’ folder looks nasty. Can’t we make it more pretty?<a class="headerlink" href="#the-first-level-analysis-folder-looks-nasty-can-t-we-make-it-more-pretty" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
@@ -777,9 +769,8 @@ document.write(`
 </div>
 </div>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="i-always-can-t-remember-what-the-numbers-in-t-xxxx-stand-for">
-<h1>I always can’t remember what the numbers in T_xxxx stand for…<a class="headerlink" href="#i-always-can-t-remember-what-the-numbers-in-t-xxxx-stand-for" title="Permalink to this heading">#</a></h1>
+<section id="i-always-can-t-remember-what-the-numbers-in-t-xxxx-stand-for">
+<h2>I always can’t remember what the numbers in T_xxxx stand for…<a class="headerlink" href="#i-always-can-t-remember-what-the-numbers-in-t-xxxx-stand-for" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># let&#39;s remove the last datasink node, redefine it and reconnect it again</span>
@@ -794,6 +785,7 @@ document.write(`
 </div>
 </div>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -863,7 +855,6 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">First level analysis with Nipype + SPM</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-all-necessary-packages">Download all necessary packages</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-paths-to-our-functional-image-and-to-our-events-file">Get paths to our functional image and to our events file</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-first-3d-image-of-the-time-series">Plot the first 3D image of the time series</a></li>
@@ -872,15 +863,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specify-everything-that-spm-needs">Specify everything that SPM needs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connect-all-nodes-to-a-workflow">Connect all nodes to a Workflow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-workflow">Plot the workflow</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-statistical-image">Plot the statistical image</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-statistical-image">Plot the statistical image</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-first-level-analysis-folder-looks-nasty-can-t-we-make-it-more-pretty">The ‘first_level_analysis’ folder looks nasty. Can’t we make it more pretty?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-always-can-t-remember-what-the-numbers-in-t-xxxx-stand-for">I always can’t remember what the numbers in T_xxxx stand for…</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#i-always-can-t-remember-what-the-numbers-in-t-xxxx-stand-for">I always can’t remember what the numbers in T_xxxx stand for…</a></li>
-</ul>
-
   </nav></div>
 
 </div></div>
