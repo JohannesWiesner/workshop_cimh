@@ -442,8 +442,6 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all the packages that we need</span>
 <span class="kn">from</span> <span class="nn">nipype</span> <span class="kn">import</span> <span class="n">Node</span>
 <span class="kn">from</span> <span class="nn">nipype.interfaces.spm</span> <span class="kn">import</span> <span class="n">Smooth</span>
-<span class="kn">from</span> <span class="nn">nipype.interfaces</span> <span class="kn">import</span> <span class="n">spm</span>
-<span class="kn">from</span> <span class="nn">nilearn.plotting</span> <span class="kn">import</span> <span class="n">plot_anat</span>
 
 <span class="c1"># set general paths (we need to tell nipype where it should store the output and where the input image is)</span>
 <span class="n">base_dir</span> <span class="o">=</span> <span class="s1">&#39;/cache&#39;</span>
@@ -485,13 +483,14 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s plot the image before and after smoothing</span>
+<span class="kn">from</span> <span class="nn">nilearn.plotting</span> <span class="kn">import</span> <span class="n">plot_anat</span>
 <span class="n">plot_anat</span><span class="p">(</span><span class="n">anatomical_image</span><span class="p">,</span><span class="n">annotate</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">draw_cross</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">plot_anat</span><span class="p">(</span><span class="s1">&#39;/cache/smooth/sanatomical.nii&#39;</span><span class="p">,</span><span class="n">annotate</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">draw_cross</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays._slicers.OrthoSlicer at 0x7f7d8d5539a0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays._slicers.OrthoSlicer at 0x7fb00d5eaf80&gt;
 </pre></div>
 </div>
 <img alt="../../../_images/ed74ad83a402720d90752e958baeee6c789a7e947f495bd834bf4ed8580100e9.png" src="../../../_images/ed74ad83a402720d90752e958baeee6c789a7e947f495bd834bf4ed8580100e9.png" />

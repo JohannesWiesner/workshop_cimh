@@ -425,6 +425,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specify-everything-that-spm-needs">Specify everything that SPM needs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connect-all-nodes-to-a-workflow">Connect all nodes to a Workflow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-workflow">Plot the workflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-workflow">Run the workflow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-statistical-image">Plot the statistical image</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-first-level-analysis-folder-looks-nasty-can-t-we-make-it-more-pretty">The ‘first_level_analysis’ folder looks nasty. Can’t we make it more pretty?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-always-can-t-remember-what-the-numbers-in-t-xxxx-stand-for">I always can’t remember what the numbers in T_xxxx stand for…</a></li>
@@ -477,7 +478,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays._slicers.OrthoSlicer at 0x7f08bc9b20b0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays._slicers.OrthoSlicer at 0x7f97db0c1930&gt;
 </pre></div>
 </div>
 <img alt="../../../_images/72e1cf19a2eb00554007c54d7c90e529d494ab1191f554c815b6ec33f83b4901.png" src="../../../_images/72e1cf19a2eb00554007c54d7c90e529d494ab1191f554c815b6ec33f83b4901.png" />
@@ -640,11 +641,9 @@ document.write(`
 <h2>Use Nipype &amp; SPM to conduct a first level analysis<a class="headerlink" href="#use-nipype-spm-to-conduct-a-first-level-analysis" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nipype.interfaces.spm</span> <span class="kn">import</span> <span class="n">Level1Design</span><span class="p">,</span> <span class="n">EstimateModel</span><span class="p">,</span> <span class="n">EstimateContrast</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nipype</span> <span class="kn">import</span> <span class="n">Node</span>
+<span class="kn">from</span> <span class="nn">nipype.interfaces.spm</span> <span class="kn">import</span> <span class="n">Level1Design</span><span class="p">,</span> <span class="n">EstimateModel</span><span class="p">,</span> <span class="n">EstimateContrast</span>
 <span class="kn">from</span> <span class="nn">nipype.algorithms.modelgen</span> <span class="kn">import</span> <span class="n">SpecifySPMModel</span>
-<span class="kn">from</span> <span class="nn">nipype.interfaces.utility</span> <span class="kn">import</span> <span class="n">Function</span><span class="p">,</span> <span class="n">IdentityInterface</span>
-<span class="kn">from</span> <span class="nn">nipype.interfaces.io</span> <span class="kn">import</span> <span class="n">SelectFiles</span><span class="p">,</span> <span class="n">DataSink</span>
-<span class="kn">from</span> <span class="nn">nipype</span> <span class="kn">import</span> <span class="n">Workflow</span><span class="p">,</span> <span class="n">Node</span>
 </pre></div>
 </div>
 </div>
@@ -689,13 +688,13 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define workflow</span>
+<span class="kn">from</span> <span class="nn">nipype</span> <span class="kn">import</span> <span class="n">Workflow</span>
 <span class="n">wf</span> <span class="o">=</span> <span class="n">Workflow</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;first_level_analysis&#39;</span><span class="p">,</span><span class="n">base_dir</span><span class="o">=</span><span class="s1">&#39;/cache&#39;</span><span class="p">)</span>
 <span class="n">wf</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">model_specifier</span><span class="p">,</span><span class="s1">&#39;session_info&#39;</span><span class="p">,</span><span class="n">first_level_design</span><span class="p">,</span><span class="s1">&#39;session_info&#39;</span><span class="p">)</span>
 <span class="n">wf</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">first_level_design</span><span class="p">,</span><span class="s1">&#39;spm_mat_file&#39;</span><span class="p">,</span><span class="n">first_level_estimator</span><span class="p">,</span><span class="s1">&#39;spm_mat_file&#39;</span><span class="p">)</span>
 <span class="n">wf</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">first_level_estimator</span><span class="p">,</span><span class="s1">&#39;spm_mat_file&#39;</span><span class="p">,</span><span class="n">first_level_contrasts</span><span class="p">,</span><span class="s1">&#39;spm_mat_file&#39;</span><span class="p">)</span>
 <span class="n">wf</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">first_level_estimator</span><span class="p">,</span><span class="s1">&#39;beta_images&#39;</span><span class="p">,</span><span class="n">first_level_contrasts</span><span class="p">,</span><span class="s1">&#39;beta_images&#39;</span><span class="p">)</span>
 <span class="n">wf</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">first_level_estimator</span><span class="p">,</span><span class="s1">&#39;residual_image&#39;</span><span class="p">,</span><span class="n">first_level_contrasts</span><span class="p">,</span><span class="s1">&#39;residual_image&#39;</span><span class="p">)</span>
-<span class="n">wf</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -713,11 +712,21 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231128-17:16:41,42 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>231129-16:41:42,582 nipype.workflow INFO:
 	 Generated workflow graph: /cache/first_level_analysis/graph.png (graph2use=hierarchical, simple_form=True).
 </pre></div>
 </div>
 <img alt="../../../_images/7e277e32c7c23d697a15d68e23dee16e2d02cb3c64f73108c3e7da544fd8120c.png" src="../../../_images/7e277e32c7c23d697a15d68e23dee16e2d02cb3c64f73108c3e7da544fd8120c.png" />
+</div>
+</div>
+</section>
+<section id="run-the-workflow">
+<h2>Run the workflow<a class="headerlink" href="#run-the-workflow" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wf</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -749,7 +758,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays._slicers.ZSlicer at 0x7f08a3de8070&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays._slicers.ZSlicer at 0x7f97daef7d60&gt;
 </pre></div>
 </div>
 <img alt="../../../_images/9d0fcae23b0e28705b71704573afcc2431abdec05a3622c615cd0ad85c716228.png" src="../../../_images/9d0fcae23b0e28705b71704573afcc2431abdec05a3622c615cd0ad85c716228.png" />
@@ -761,6 +770,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Yes we can! By defining a DataSink node where files should be stored</span>
+<span class="kn">from</span> <span class="nn">nipype.interfaces.io</span> <span class="kn">import</span> <span class="n">DataSink</span>
 <span class="n">datasink</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">DataSink</span><span class="p">(</span><span class="n">base_directory</span><span class="o">=</span><span class="s1">&#39;/output&#39;</span><span class="p">),</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;datasink&quot;</span><span class="p">)</span>
 <span class="n">wf</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">first_level_contrasts</span><span class="p">,</span><span class="s1">&#39;spmT_images&#39;</span><span class="p">,</span><span class="n">datasink</span><span class="p">,</span><span class="s1">&#39;spm_contrast_images&#39;</span><span class="p">)</span>
 <span class="n">wf</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
@@ -863,6 +873,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specify-everything-that-spm-needs">Specify everything that SPM needs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connect-all-nodes-to-a-workflow">Connect all nodes to a Workflow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-workflow">Plot the workflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-workflow">Run the workflow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-statistical-image">Plot the statistical image</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-first-level-analysis-folder-looks-nasty-can-t-we-make-it-more-pretty">The ‘first_level_analysis’ folder looks nasty. Can’t we make it more pretty?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-always-can-t-remember-what-the-numbers-in-t-xxxx-stand-for">I always can’t remember what the numbers in T_xxxx stand for…</a></li>
