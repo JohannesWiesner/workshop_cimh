@@ -1,4 +1,4 @@
-# Nipype
+# Introduction to Nipype
 
 The following section gives you an overview about Nipype, what it is and what it can do for you.
 

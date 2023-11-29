@@ -24,17 +24,54 @@
         "interests": "Reproducible Data Analysis, Open Data & Open Source Software"
     },
     {
-    "first_name":"Juli",
-    "last_name":"Nagel",
-    "zi": "https://www.zi-mannheim.de/forschung/abteilungen-ags-institute/klinpsych/arbeitsgruppen-klinpsych/psych-neurobio-sleep-memory.html",
-    "linkedin":"https://www.linkedin.com/in/juliane-tkotz-ba4b31205/",
-    "orcid":"https://orcid.org/0000-0002-5310-8088"
+        "first_name":"Juli",
+        "last_name":"Nagel",
+        "picture":"https://media.licdn.com/dms/image/D4E03AQGJQrMwPm4mfg/profile-displayphoto-shrink_200_200/0/1699528227854?e=1706745600&v=beta&t=oTg_ew7SJIROhW3eY3gk1BEwseB_bzLDg9tAH0DS2OA",
+        "zi": "https://www.zi-mannheim.de/forschung/abteilungen-ags-institute/klinpsych/arbeitsgruppen-klinpsych/psych-neurobio-sleep-memory.html",
+        "linkedin":"https://www.linkedin.com/in/juliane-nagel-ba4b31205",
+        "orcid":"https://orcid.org/0000-0002-5310-8088"
     },
     {
-    "first_name":"Niclas",
-    "last_name":"Willscheid",
-    "zi": "https://www.zi-mannheim.de/en/research/departments-research-groups-institutes/psychosomatics-psychotherapeutic-medicine-e/researchgroups-psychosomatic-psychotherapy/rg-slp-e.html",
-    "interests": "Preregistration and data sharing",
-    "orcid": "https://orcid.org/0000-0002-4630-7986"
+        "first_name":"Niclas",
+        "last_name":"Willscheid",
+        "zi": "https://www.zi-mannheim.de/en/research/departments-research-groups-institutes/psychosomatics-psychotherapeutic-medicine-e/researchgroups-psychosomatic-psychotherapy/rg-slp-e.html",
+        "interests": "Preregistration and data sharing",
+        "orcid": "https://orcid.org/0000-0002-4630-7986"
+    },
+    {
+        "first_name":"Marcus",
+        "last_name":"Meinhardt",
+        "picture":"https://media.licdn.com/dms/image/C4D03AQGkQL4IXWgv_A/profile-displayphoto-shrink_200_200/0/1548509799864?e=1706745600&v=beta&t=Sxm2U7pK4Rv6vc9-IGRW-40wcVkvbVtHVFYc4Sv2X8g",
+        "zi": "https://www.zi-mannheim.de/forschung/abteilungen-ags-institute/institut-psychopharmakologie/arbeitsgruppen-psychpharm/ag-translationale-psychopharmakologie.html",
+        "interests": "Ethical animal research using the 6R principle (reduce, refine, replace, robustness, reporting, registration)",
+        "orcid": "https://orcid.org/0000-0002-5103-0731",
+        "linkedin":"https://www.linkedin.com/in/marcus-meinhardt-b0690795"
+    },
+    {
+        "first_name":"Björn",
+        "last_name":"Gerlach",
+        "picture":"https://www.zi-mannheim.de/fileadmin/_processed_/9/4/csm_Bjoern_Gerlach_c69aba93de.jpg",
+        "zi": "https://www.zi-mannheim.de/forschung/abteilungen-ags-institute/institut-psychopharmakologie.html",
+        "linkedin":"https://www.linkedin.com/in/bj%C3%B6rn-gerlach-2844197b"
+    },
+    {
+        "first_name":"Christoph",
+        "last_name":"Korn",
+        "picture":"https://www.klinikum.uni-heidelberg.de/fileadmin/_processed_/9/9/csm_korn_christoph_4081193206.jpg",
+        "interests":"preregistration, open code, open data, generalizibility",
+        "orcid": "https://orcid.org/0000-0002-8228-2624"
+    },
+        {
+        "first_name":"Melanie",
+        "last_name":"Fritz",
+        "picture":"https://www.zi-mannheim.de/fileadmin/_processed_/3/7/csm_Fritz_Melanie_Web_41f1c62270.jpg",
+        "zi":"https://www.zi-mannheim.de/forschung/personen/person/8077.html"
+    },
+    {
+        "first_name":"Gordon",
+        "last_name":"Feld",
+        "picture":"https://www.zi-mannheim.de/typo3temp/assets/_processed_/c/8/csm_Feld-Gordon_71c10d9fef.jpg",
+        "zi":"https://www.zi-mannheim.de/forschung/personen/person/15954.html"
     }
+
 ]

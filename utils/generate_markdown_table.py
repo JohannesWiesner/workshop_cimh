@@ -16,7 +16,7 @@ import os
 ###############################################################################
 
 # define input file
-input_file = './lecturers.json'
+input_file = './oso_members.json'
 
 # define a dictionary that holds favicon links to columns. if a person's dictionary
 # contains any of those keys it wil be replaced by an favicon with a hyperlink
